@@ -1,0 +1,67 @@
+.market-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+
+.market-card {
+  text-align: left;
+}
+
+.market-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.market-head h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.slug {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.timing {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+.latest-box {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--accent-soft);
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+.latest-box h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.latest-box p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+.market-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.market-actions a {
+  display: inline-block;
+  background: #0f4c81;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 7px 12px;
+  font-size: 13px;
+  font-weight: 600;
+}

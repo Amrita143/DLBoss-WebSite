@@ -1,0 +1,41 @@
+{
+  "name": "dlboss-clone",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "ingest:sitemap": "tsx scripts/ingest/fetch-sitemap.ts",
+    "ingest:pages": "tsx scripts/ingest/fetch-pages.ts",
+    "ingest:parse:charts": "tsx scripts/ingest/parse-chart-pages.ts",
+    "ingest:parse:content": "tsx scripts/ingest/parse-content-pages.ts",
+    "ingest:extract-css": "tsx scripts/ingest/extract-css.ts",
+    "ingest:seed": "tsx scripts/ingest/seed-db.ts",
+    "admin:create-owner": "tsx scripts/admin/create-owner.ts",
+    "admin:reset-data": "tsx scripts/admin/reset-admin-data.ts",
+    "test:admin-flow": "tsx scripts/tests/admin-public-flow.ts",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.57.2",
+    "cheerio": "^1.1.2",
+    "next": "^15.4.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "eslint": "^9.34.0",
+    "eslint-config-next": "^15.4.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}

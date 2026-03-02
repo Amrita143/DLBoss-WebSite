@@ -1,0 +1,51 @@
+:root {
+  --bg: #fff8e8;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #4b5563;
+  --border: #d1d5db;
+  --accent: #0f4c81;
+  --accent-soft: #e6f0f8;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: var(--accent);
+}
+
+.site-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px 12px 48px;
+}
+
+.hero-card,
+.panel-card,
+.market-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 18px rgb(0 0 0 / 8%);
+}
+
+.hero-card {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.hero-card h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.hero-card p {
+  margin: 4px 0;
+  color: var(--muted);
+}
