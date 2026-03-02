@@ -21,7 +21,7 @@ export default async function AdminResultsPage() {
 
   return (
     <main>
-      <AdminNav />
+      <AdminNav session={session} />
       <section className="admin-card">
         <h1>Outcomes</h1>
         <p>Manage daily market outcomes shown to users on the public site.</p>

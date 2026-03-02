@@ -6,8 +6,8 @@ import './styles/chart.css';
 import './styles/content.css';
 
 export const metadata: Metadata = {
-  title: 'Market Results App',
-  description: 'Admin-driven market outcomes and charts.'
+  title: 'DLBOSS.COM | Satta Matka | Kalyan Matka | Fast Result',
+  description: 'DLBOSS.COM fast result board with admin-driven market outcomes, jodi charts, panel charts, and market details.'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

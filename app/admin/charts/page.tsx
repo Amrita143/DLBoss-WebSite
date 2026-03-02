@@ -21,7 +21,7 @@ export default async function AdminChartsPage() {
 
   return (
     <main>
-      <AdminNav />
+      <AdminNav session={session} />
       <section className="admin-card">
         <h1>Charts</h1>
       </section>

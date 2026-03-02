@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="816" height="271" viewBox="0 0 816 271" role="img" aria-label="DLBOSS.COM logo">
+  <rect width="816" height="271" fill="#f7cda3"/>
+  <g transform="translate(0 6)">
+    <text x="72" y="195" fill="#ea0095" font-size="208" font-weight="700" font-family="'Brush Script MT','Segoe Script','Apple Chancery','Comic Sans MS',cursive">DL</text>
+    <text x="350" y="175" fill="#060606" font-size="82" font-weight="800" letter-spacing="1.5" font-family="Helvetica,Arial,sans-serif">BOSS.COM</text>
+  </g>
+  <path d="M786 216l8 12 12 2-12 4-4 11-6-11-11-4 10-2z" fill="#ffefd8" opacity="0.85"/>
+</svg>

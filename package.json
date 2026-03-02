@@ -15,6 +15,7 @@
     "ingest:extract-css": "tsx scripts/ingest/extract-css.ts",
     "ingest:seed": "tsx scripts/ingest/seed-db.ts",
     "admin:create-owner": "tsx scripts/admin/create-owner.ts",
+    "admin:create-superadmin": "tsx scripts/admin/create-owner.ts",
     "admin:reset-data": "tsx scripts/admin/reset-admin-data.ts",
     "test:admin-flow": "tsx scripts/tests/admin-public-flow.ts",
     "test:e2e": "playwright test"

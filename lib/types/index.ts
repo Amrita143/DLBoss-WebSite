@@ -68,10 +68,23 @@ export interface SiteSetting {
   updated_at: string;
 }
 
+export type AdminRole = 'superadmin' | 'admin';
+
+export interface AdminUser {
+  id: string;
+  auth_user_id: string;
+  login_id: string;
+  email: string;
+  role: AdminRole;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface AdminSession {
   userId: string;
+  loginId: string;
   email: string;
-  role: 'owner';
+  role: AdminRole;
 }
 
 export interface ParsedChartRecord {

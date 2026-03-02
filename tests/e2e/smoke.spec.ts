@@ -4,7 +4,7 @@ test.describe('Admin-driven market app smoke', () => {
   test('homepage loads', async ({ page }) => {
     const response = await page.goto('/', { waitUntil: 'domcontentloaded' });
     expect(response?.status()).toBe(200);
-    await expect(page.getByText('Market Results Dashboard')).toBeVisible();
+    await expect(page.getByText('Satta Matka DLBOSS.COM Kalyan Matka Result')).toBeVisible();
   });
 
   test('admin login loads', async ({ page }) => {

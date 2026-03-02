@@ -5,9 +5,10 @@ import { useRouter } from 'next/navigation';
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState('');
+  const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [showResetHint, setShowResetHint] = useState(false);
   const [loading, setLoading] = useState(false);
 
   async function onSubmit(event: React.FormEvent) {
@@ -18,7 +19,7 @@ export default function AdminLoginPage() {
     const response = await fetch('/api/admin/auth/login', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ identifier, password })
     });
 
     if (!response.ok) {
@@ -36,11 +37,17 @@ export default function AdminLoginPage() {
     <main>
       <section className="admin-card" style={{ maxWidth: 480, margin: '40px auto' }}>
         <h1>Admin Login</h1>
-        <p>Use owner credentials configured in Supabase auth.</p>
+        <p>Use your assigned Admin ID and password.</p>
         <form onSubmit={onSubmit}>
           <div style={{ marginBottom: 12 }}>
-            <label htmlFor="email">Email</label>
-            <input id="email" className="admin-input" value={email} onChange={(event) => setEmail(event.target.value)} />
+            <label htmlFor="identifier">Admin ID</label>
+            <input
+              id="identifier"
+              className="admin-input"
+              value={identifier}
+              onChange={(event) => setIdentifier(event.target.value)}
+              placeholder="e.g. developerdlboss.com"
+            />
           </div>
           <div style={{ marginBottom: 12 }}>
             <label htmlFor="password">Password</label>
@@ -51,6 +58,17 @@ export default function AdminLoginPage() {
               value={password}
               onChange={(event) => setPassword(event.target.value)}
             />
+          </div>
+          <div style={{ marginBottom: 12 }}>
+            <button
+              type="button"
+              className="admin-btn secondary"
+              onClick={() => setShowResetHint((state) => !state)}
+              style={{ width: '100%' }}
+            >
+              Forgot Password?
+            </button>
+            {showResetHint ? <p style={{ marginTop: 8 }}>Please contact the developer for resetting your password.</p> : null}
           </div>
           {error ? <p style={{ color: '#b91c1c' }}>{error}</p> : null}
           <button className="admin-btn" type="submit" disabled={loading}>

@@ -20,10 +20,12 @@ export default async function AdminDashboardPage() {
 
   return (
     <main>
-      <AdminNav />
+      <AdminNav session={session} />
       <section className="admin-card">
         <h1>Admin Dashboard</h1>
-        <p>Logged in as {session.email}</p>
+        <p>
+          Logged in as {session.loginId} ({session.role})
+        </p>
       </section>
       <section className="admin-card">
         <h2>Data Summary</h2>

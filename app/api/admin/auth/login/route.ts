@@ -3,7 +3,7 @@ import { z } from 'zod';
 import { createAdminSession } from '@/lib/auth';
 
 const schema = z.object({
-  email: z.string().email(),
+  identifier: z.string().min(1),
   password: z.string().min(1)
 });
 
@@ -15,10 +15,10 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Invalid credentials format' }, { status: 400 });
   }
 
-  const ok = await createAdminSession(parsed.data.email, parsed.data.password);
+  const result = await createAdminSession(parsed.data.identifier, parsed.data.password);
 
-  if (!ok) {
-    return NextResponse.json({ error: 'Invalid email or password' }, { status: 401 });
+  if (!result.ok) {
+    return NextResponse.json({ error: result.error ?? 'Invalid admin ID or password' }, { status: 401 });
   }
 
   return NextResponse.json({ ok: true });

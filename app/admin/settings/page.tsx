@@ -17,7 +17,7 @@ export default async function AdminSettingsPage() {
 
   return (
     <main>
-      <AdminNav />
+      <AdminNav session={session} />
       <section className="admin-card">
         <h1>Settings</h1>
       </section>

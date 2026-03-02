@@ -18,7 +18,7 @@ export default async function AdminMarketsPage() {
 
   return (
     <main>
-      <AdminNav />
+      <AdminNav session={session} />
       <section className="admin-card">
         <h1>Markets</h1>
       </section>
