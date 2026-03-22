@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { sanitizeHexColor } from '@/lib/chart-display';
 import { getActiveMarkets, getLatestResultsByMarket } from '@/lib/page-resolver';
 import { HomeScrollRestore } from '@/app/_components/HomeScrollRestore';
 import { ReloadButton } from '@/app/_components/ReloadButton';
 import { getGeneralInfoSections } from '@/lib/dpboss-general-info';
-import type { MarketResult } from '@/lib/types';
+import type { Market, MarketResult } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
 
@@ -16,6 +16,8 @@ type HomeMarket = {
   close_time: string | null;
   has_jodi: boolean;
   has_panel: boolean;
+  is_highlighted: boolean;
+  highlight_color: string;
   latest?: MarketResult;
 };
 
@@ -51,6 +53,15 @@ function formatRange(open: string | null, close: string | null): string {
   return `${open || '--'}   ${close || '--'}`;
 }
 
+function getHighlightStyle(market: Pick<Market, 'is_highlighted' | 'highlight_color'>) {
+  const safeColor = sanitizeHexColor(market.highlight_color);
+  if (!market.is_highlighted || !safeColor) {
+    return undefined;
+  }
+
+  return { backgroundColor: safeColor };
+}
+
 export default async function HomePage() {
   const markets = await getActiveMarkets();
   const latestByMarket = await getLatestResultsByMarket(markets.map((market) => market.id));
@@ -64,6 +75,8 @@ export default async function HomePage() {
     close_time: market.close_time,
     has_jodi: market.has_jodi,
     has_panel: market.has_panel,
+    is_highlighted: market.is_highlighted,
+    highlight_color: market.highlight_color,
     latest: latestByMarket.get(market.id)
   }));
 
@@ -96,7 +109,7 @@ export default async function HomePage() {
         ) : (
           <div className="lv-mc">
             {liveRows.map((market) => (
-              <div key={market.id} className="live-item">
+              <div key={market.id} className="live-item" style={getHighlightStyle(market)}>
                 <span className="h8">{market.name.toUpperCase()}</span>
                 <span className="h9">{formatMainResult(market.latest)}</span>
                 <ReloadButton className="reload-btn">Refresh</ReloadButton>
@@ -116,7 +129,7 @@ export default async function HomePage() {
       ) : (
         <section className="tkt-val" id="market-results">
           {rows.map((market) => (
-            <article key={market.id} className="market-row">
+            <article key={market.id} className={`market-row${market.is_highlighted ? ' market-row-highlighted' : ''}`} style={getHighlightStyle(market)}>
               <h4>{market.name.toUpperCase()}</h4>
               <span>{formatMainResult(market.latest)}</span>
               <p>{formatRange(market.open_time, market.close_time)}</p>
@@ -132,9 +145,6 @@ export default async function HomePage() {
                     Panel Chart
                   </a>
                 ) : null}
-                <Link href={`/market/${market.slug}`} className="gm-clk">
-                  Market Details
-                </Link>
               </div>
             </article>
           ))}

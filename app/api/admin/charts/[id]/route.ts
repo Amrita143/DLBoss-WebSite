@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { getSupabaseAdmin } from '@/lib/supabase/admin';
 import { ensureAdmin } from '@/lib/admin-api';
+import { normalizeChartCellStyles } from '@/lib/chart-display';
 
 const updateSchema = z.object({
   week_start: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
@@ -12,6 +13,8 @@ const updateSchema = z.object({
   thu: z.string().optional(),
   fri: z.string().optional(),
   sat: z.string().optional(),
+  sun: z.string().optional(),
+  cell_styles: z.record(z.unknown()).optional(),
   source_year_label: z.string().optional()
 });
 
@@ -27,14 +30,19 @@ export async function PUT(request: Request, context: { params: Promise<{ id: str
     return NextResponse.json({ error: parsed.error.message }, { status: 400 });
   }
 
+  const payload = {
+    ...parsed.data,
+    ...(parsed.data.cell_styles !== undefined ? { cell_styles: normalizeChartCellStyles(parsed.data.cell_styles) } : {})
+  };
+
   const supabase = getSupabaseAdmin();
-  const { data, error: updateError } = await supabase.from('chart_records').update(parsed.data).eq('id', id).select('*').single();
+  const { data, error: updateError } = await supabase.from('chart_records').update(payload).eq('id', id).select('*').single();
 
   if (updateError) {
     return NextResponse.json({ error: updateError.message }, { status: 500 });
   }
 
-  await supabase.from('admin_audit_log').insert({ action: 'chart.update', payload: { id, ...parsed.data } });
+  await supabase.from('admin_audit_log').insert({ action: 'chart.update', payload: { id, ...payload } });
 
   return NextResponse.json({ item: data });
 }

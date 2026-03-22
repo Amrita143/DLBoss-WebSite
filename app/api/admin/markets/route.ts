@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { getSupabaseAdmin } from '@/lib/supabase/admin';
 import { ensureAdmin } from '@/lib/admin-api';
+import { sanitizeHexColor } from '@/lib/chart-display';
 
 const createSchema = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/),
@@ -10,7 +11,10 @@ const createSchema = z.object({
   open_time: z.string().optional(),
   close_time: z.string().optional(),
   has_jodi: z.boolean().default(true),
-  has_panel: z.boolean().default(true)
+  has_panel: z.boolean().default(true),
+  show_sunday: z.boolean().default(false),
+  is_highlighted: z.boolean().default(false),
+  highlight_color: z.string().optional()
 });
 
 export async function GET() {
@@ -40,10 +44,18 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: parsed.error.message }, { status: 400 });
   }
 
+  const highlightColor = sanitizeHexColor(parsed.data.highlight_color) ?? '#fff200';
+
   const supabase = getSupabaseAdmin();
   const { data, error: insertError } = await supabase
     .from('markets')
-    .insert({ ...parsed.data, open_time: parsed.data.open_time ?? '', close_time: parsed.data.close_time ?? '', status: 'active' })
+    .insert({
+      ...parsed.data,
+      open_time: parsed.data.open_time ?? '',
+      close_time: parsed.data.close_time ?? '',
+      highlight_color: highlightColor,
+      status: 'active'
+    })
     .select('*')
     .single();
 

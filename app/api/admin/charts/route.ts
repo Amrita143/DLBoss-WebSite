@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { getSupabaseAdmin } from '@/lib/supabase/admin';
 import { ensureAdmin } from '@/lib/admin-api';
+import { normalizeChartCellStyles } from '@/lib/chart-display';
 
 const createSchema = z.object({
   market_id: z.string().uuid(),
@@ -14,6 +15,8 @@ const createSchema = z.object({
   thu: z.string(),
   fri: z.string(),
   sat: z.string(),
+  sun: z.string().optional(),
+  cell_styles: z.record(z.unknown()).optional(),
   source_year_label: z.string().min(1)
 });
 
@@ -51,14 +54,20 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: parsed.error.message }, { status: 400 });
   }
 
+  const payload = {
+    ...parsed.data,
+    sun: parsed.data.sun ?? '**',
+    cell_styles: normalizeChartCellStyles(parsed.data.cell_styles)
+  };
+
   const supabase = getSupabaseAdmin();
-  const { data, error: insertError } = await supabase.from('chart_records').insert(parsed.data).select('*').single();
+  const { data, error: insertError } = await supabase.from('chart_records').insert(payload).select('*').single();
 
   if (insertError) {
     return NextResponse.json({ error: insertError.message }, { status: 500 });
   }
 
-  await supabase.from('admin_audit_log').insert({ action: 'chart.create', payload: parsed.data });
+  await supabase.from('admin_audit_log').insert({ action: 'chart.create', payload });
 
   return NextResponse.json({ item: data }, { status: 201 });
 }

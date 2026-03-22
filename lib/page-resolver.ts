@@ -75,11 +75,12 @@ export async function getChartRecords(marketId: string, chartType: 'jodi' | 'pan
     .from('chart_records')
     .select('*')
     .eq('market_id', marketId)
-    .eq('chart_type', chartType)
-    .order('week_start', { ascending: true });
+    .eq('chart_type', chartType);
 
   if (!includeAll) {
-    query = query.limit(300);
+    query = query.order('week_start', { ascending: false }).limit(300);
+  } else {
+    query = query.order('week_start', { ascending: true });
   }
 
   const { data, error } = await query;
@@ -92,7 +93,8 @@ export async function getChartRecords(marketId: string, chartType: 'jodi' | 'pan
     throw new Error(`Failed to fetch chart records for ${marketId}: ${error.message}`);
   }
 
-  return (data ?? []) as ChartRecord[];
+  const rows = (data ?? []) as ChartRecord[];
+  return includeAll ? rows : [...rows].reverse();
 }
 
 export async function getMarketResults(marketId: string, limit = 30): Promise<MarketResult[]> {

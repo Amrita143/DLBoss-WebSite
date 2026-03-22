@@ -18,6 +18,7 @@
     "admin:create-superadmin": "tsx scripts/admin/create-owner.ts",
     "admin:reset-data": "tsx scripts/admin/reset-admin-data.ts",
     "test:admin-flow": "tsx scripts/tests/admin-public-flow.ts",
+    "test:read-db": "tsx scripts/tests/read-db.ts",
     "test:e2e": "playwright test"
   },
   "dependencies": {

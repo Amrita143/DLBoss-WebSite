@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { formatDisplayDate } from '@/lib/chart-display';
 import { getChartRecords, getMarketBySlug, getMarketResults } from '@/lib/page-resolver';
 
 export const dynamic = 'force-dynamic';
@@ -47,7 +48,7 @@ export default async function MarketDetailsPage({ params }: { params: Promise<{ 
             <tbody>
               {results.map((row) => (
                 <tr key={row.id}>
-                  <td>{row.result_date}</td>
+                  <td>{formatDisplayDate(row.result_date)}</td>
                   <td>
                     {row.open_panna || '--'} ({row.open_ank || '--'})
                   </td>

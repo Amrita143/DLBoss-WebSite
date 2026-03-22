@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { getSupabaseAdmin } from '@/lib/supabase/admin';
 import { ensureAdmin } from '@/lib/admin-api';
+import { sanitizeHexColor } from '@/lib/chart-display';
 
 const updateSchema = z.object({
   name: z.string().min(1).optional(),
@@ -10,7 +11,10 @@ const updateSchema = z.object({
   open_time: z.string().optional(),
   close_time: z.string().optional(),
   has_jodi: z.boolean().optional(),
-  has_panel: z.boolean().optional()
+  has_panel: z.boolean().optional(),
+  show_sunday: z.boolean().optional(),
+  is_highlighted: z.boolean().optional(),
+  highlight_color: z.string().optional()
 });
 
 export async function PUT(request: Request, context: { params: Promise<{ id: string }> }) {
@@ -26,14 +30,21 @@ export async function PUT(request: Request, context: { params: Promise<{ id: str
     return NextResponse.json({ error: parsed.error.message }, { status: 400 });
   }
 
+  const payload = {
+    ...parsed.data,
+    ...(parsed.data.highlight_color !== undefined
+      ? { highlight_color: sanitizeHexColor(parsed.data.highlight_color) ?? '#fff200' }
+      : {})
+  };
+
   const supabase = getSupabaseAdmin();
-  const { data, error: updateError } = await supabase.from('markets').update(parsed.data).eq('id', id).select('*').single();
+  const { data, error: updateError } = await supabase.from('markets').update(payload).eq('id', id).select('*').single();
 
   if (updateError) {
     return NextResponse.json({ error: updateError.message }, { status: 500 });
   }
 
-  await supabase.from('admin_audit_log').insert({ action: 'market.update', payload: { id, ...parsed.data } });
+  await supabase.from('admin_audit_log').insert({ action: 'market.update', payload: { id, ...payload } });
 
   return NextResponse.json({ item: data });
 }

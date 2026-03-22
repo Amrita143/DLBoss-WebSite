@@ -1,4 +1,12 @@
 export type ChartType = 'jodi' | 'panel';
+export type ChartDayKey = 'mon' | 'tue' | 'wed' | 'thu' | 'fri' | 'sat' | 'sun';
+
+export interface ChartCellStyle {
+  textColor?: string | null;
+  highlightColor?: string | null;
+}
+
+export type ChartCellStyles = Partial<Record<ChartDayKey, ChartCellStyle>>;
 
 export interface Market {
   id: string;
@@ -10,6 +18,9 @@ export interface Market {
   close_time: string | null;
   has_jodi: boolean;
   has_panel: boolean;
+  show_sunday: boolean;
+  is_highlighted: boolean;
+  highlight_color: string;
   created_at: string;
   updated_at: string;
 }
@@ -26,6 +37,8 @@ export interface ChartRecord {
   thu: string;
   fri: string;
   sat: string;
+  sun: string;
+  cell_styles: ChartCellStyles | null;
   source_year_label: string;
   created_at: string;
   updated_at: string;

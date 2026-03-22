@@ -86,7 +86,53 @@ a {
   font-weight: 600;
 }
 
+.chart-day-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.chart-day-editor {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px;
+  background: #f8fafc;
+}
+
+.chart-day-label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.chart-style-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.chart-day-summary {
+  display: grid;
+  gap: 4px;
+  font-size: 13px;
+}
+
 .public-snapshot {
   max-width: 100%;
   margin: 0 auto;
+}
+
+@media (max-width: 960px) {
+  .chart-day-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .chart-day-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

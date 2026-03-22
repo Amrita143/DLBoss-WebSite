@@ -7,18 +7,23 @@ interface Props {
   initialMarkets: Market[];
 }
 
+const defaultForm = {
+  slug: '',
+  name: '',
+  sort_order: 999,
+  open_time: '',
+  close_time: '',
+  has_jodi: true,
+  has_panel: true,
+  show_sunday: false,
+  is_highlighted: false,
+  highlight_color: '#fff200'
+};
+
 export function MarketsManager({ initialMarkets }: Props) {
   const [markets, setMarkets] = useState(initialMarkets);
   const [error, setError] = useState('');
-  const [form, setForm] = useState({
-    slug: '',
-    name: '',
-    sort_order: 999,
-    open_time: '',
-    close_time: '',
-    has_jodi: true,
-    has_panel: true
-  });
+  const [form, setForm] = useState(defaultForm);
 
   async function refresh() {
     const response = await fetch('/api/admin/markets');
@@ -39,7 +44,7 @@ export function MarketsManager({ initialMarkets }: Props) {
       return;
     }
 
-    setForm({ slug: '', name: '', sort_order: 999, open_time: '', close_time: '', has_jodi: true, has_panel: true });
+    setForm(defaultForm);
     await refresh();
   }
 
@@ -73,7 +78,7 @@ export function MarketsManager({ initialMarkets }: Props) {
     await refresh();
   }
 
-  function patchMarket(id: string, field: keyof Market, value: string | number | boolean) {
+  function patchMarket<K extends keyof Market>(id: string, field: K, value: Market[K]) {
     setMarkets((prev) => prev.map((row) => (row.id === id ? { ...row, [field]: value } : row)));
   }
 
@@ -113,7 +118,7 @@ export function MarketsManager({ initialMarkets }: Props) {
             value={form.close_time}
             onChange={(event) => setForm((state) => ({ ...state, close_time: event.target.value }))}
           />
-          <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
             <label>
               <input
                 type="checkbox"
@@ -129,6 +134,32 @@ export function MarketsManager({ initialMarkets }: Props) {
                 onChange={(event) => setForm((state) => ({ ...state, has_panel: event.target.checked }))}
               />{' '}
               Panel
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                checked={form.show_sunday}
+                onChange={(event) => setForm((state) => ({ ...state, show_sunday: event.target.checked }))}
+              />{' '}
+              Show Sunday
+            </label>
+          </div>
+          <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
+            <label>
+              <input
+                type="checkbox"
+                checked={form.is_highlighted}
+                onChange={(event) => setForm((state) => ({ ...state, is_highlighted: event.target.checked }))}
+              />{' '}
+              Highlight market
+            </label>
+            <label style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              Highlight color
+              <input
+                type="color"
+                value={form.highlight_color}
+                onChange={(event) => setForm((state) => ({ ...state, highlight_color: event.target.value }))}
+              />
             </label>
           </div>
         </div>
@@ -152,6 +183,8 @@ export function MarketsManager({ initialMarkets }: Props) {
               <th>Sort</th>
               <th>Status</th>
               <th>Charts</th>
+              <th>Open Days</th>
+              <th>Highlight</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -218,6 +251,33 @@ export function MarketsManager({ initialMarkets }: Props) {
                   </label>
                 </td>
                 <td>
+                  <label>
+                    <input
+                      type="checkbox"
+                      checked={market.show_sunday}
+                      onChange={(event) => patchMarket(market.id, 'show_sunday', event.target.checked)}
+                    />{' '}
+                    Sunday enabled
+                  </label>
+                </td>
+                <td>
+                  <label>
+                    <input
+                      type="checkbox"
+                      checked={market.is_highlighted}
+                      onChange={(event) => patchMarket(market.id, 'is_highlighted', event.target.checked)}
+                    />{' '}
+                    Active
+                  </label>
+                  <div style={{ marginTop: 6 }}>
+                    <input
+                      type="color"
+                      value={market.highlight_color || '#fff200'}
+                      onChange={(event) => patchMarket(market.id, 'highlight_color', event.target.value)}
+                    />
+                  </div>
+                </td>
+                <td>
                   <button
                     className="admin-btn"
                     type="button"
@@ -229,7 +289,10 @@ export function MarketsManager({ initialMarkets }: Props) {
                         sort_order: market.sort_order,
                         status: market.status,
                         has_jodi: market.has_jodi,
-                        has_panel: market.has_panel
+                        has_panel: market.has_panel,
+                        show_sunday: market.show_sunday,
+                        is_highlighted: market.is_highlighted,
+                        highlight_color: market.highlight_color
                       })
                     }
                   >
