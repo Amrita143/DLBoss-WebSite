@@ -61,13 +61,17 @@ export async function POST(request: Request) {
   };
 
   const supabase = getSupabaseAdmin();
-  const { data, error: insertError } = await supabase.from('chart_records').insert(payload).select('*').single();
+  const { data, error: insertError } = await supabase
+    .from('chart_records')
+    .upsert(payload, { onConflict: 'market_id,chart_type,week_start' })
+    .select('*')
+    .single();
 
   if (insertError) {
     return NextResponse.json({ error: insertError.message }, { status: 500 });
   }
 
-  await supabase.from('admin_audit_log').insert({ action: 'chart.create', payload });
+  await supabase.from('admin_audit_log').insert({ action: 'chart.upsert', payload });
 
   return NextResponse.json({ item: data }, { status: 201 });
 }

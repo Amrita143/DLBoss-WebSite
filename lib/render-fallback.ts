@@ -45,12 +45,12 @@ function renderPanelValue(value: string, record: ChartRecord, day: ChartDayKey) 
   }
 
   return `<div class="panel-value"${styleAttr}>
-  <span class="panel-side">${parts.left
+  <span class="panel-side panel-side-left">${parts.left
     .split('')
     .map((digit) => `<span>${escapeHtml(digit)}</span>`)
     .join('')}</span>
   <span class="panel-center">${escapeHtml(parts.center)}</span>
-  <span class="panel-side">${parts.right
+  <span class="panel-side panel-side-right">${parts.right
     .split('')
     .map((digit) => `<span>${escapeHtml(digit)}</span>`)
     .join('')}</span>
@@ -105,24 +105,44 @@ body{background:#fc9;font-family:Helvetica,sans-serif;font-style:italic;font-wei
 .container{max-width:1320px;margin:0 auto}
 .heading{background:#3f51b5;color:#fff;padding:8px;border-radius:8px;margin-bottom:8px}
 .meta{border:2px solid #ff182c;border-radius:10px;padding:8px;margin-bottom:8px;background:#ffe4c0}
-table{width:100%;border-collapse:collapse;background:#fff6ea}
-th,td{border:1px solid #ff0016;padding:4px;font-size:13px;text-align:center;vertical-align:middle}
+table{width:100%;border-collapse:collapse;table-layout:fixed;background:#f4c79b}
+th,td{border:1px solid #ff0016;padding:4px 2px;font-size:clamp(7px,1.55vw,13px);text-align:center;vertical-align:middle;background:#f4c79b}
+th{background:#f7bf14;color:#111;font-style:normal;font-weight:900}
 a.btn{display:inline-block;margin:4px;padding:6px 12px;border:2px solid #2244aa;border-radius:6px;color:#0a2463;text-decoration:none;font-weight:800}
-.table-wrap{overflow-x:auto}
-.chart-date{min-width:110px;font-size:18px;line-height:1.1;font-style:normal}
-.chart-cell-jodi{min-width:92px}
-.chart-cell-panel{min-width:132px}
-.jodi-value{display:inline-block;padding:2px 8px;font-size:28px;line-height:1.1;color:#111;border-radius:4px}
-.panel-value{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:4px 8px;border-radius:4px;min-height:62px}
-.panel-side{display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:18px;line-height:0.92}
-.panel-center{display:inline-block;font-size:22px;line-height:1;color:#111}
-.panel-fallback{display:inline-block;padding:2px 6px;border-radius:4px;font-size:22px;line-height:1.1}
+.table-wrap{overflow:visible}
+.chart-date{width:clamp(40px,13vw,120px);font-size:clamp(7px,2vw,18px);line-height:1.05;font-style:normal;font-weight:900;background:#f4c79b}
+.chart-cell-jodi,.chart-cell-panel{width:auto}
+.jodi-value{display:inline-block;padding:2px 4px;font-size:clamp(11px,3vw,28px);line-height:1.05;color:#111;border-radius:4px;font-style:normal}
+.panel-value{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;column-gap:clamp(1px,0.75vw,8px);padding:2px 3px;border-radius:4px;min-height:clamp(34px,6.2vw,72px);width:100%;max-width:100%;box-sizing:border-box;color:inherit;font-style:normal}
+.panel-side{display:grid;grid-template-rows:repeat(3,1fr);font-size:clamp(6px,2vw,18px);line-height:0.86;color:inherit}
+.panel-side-left{justify-items:start;text-align:left;padding-left:1px}
+.panel-side-right{justify-items:end;text-align:right;padding-right:1px}
+.panel-center{display:inline-block;font-size:clamp(10px,3.4vw,34px);line-height:1;color:inherit;font-weight:900;justify-self:center}
+.panel-fallback{display:inline-block;padding:2px 4px;border-radius:4px;font-size:clamp(10px,3.2vw,22px);line-height:1.05;color:inherit;font-style:normal}
 @media (max-width:700px){
-  .chart-date{font-size:15px;min-width:96px}
-  .chart-cell-panel{min-width:110px}
-  .panel-value{gap:5px;padding:4px}
-  .panel-side{font-size:16px}
-  .panel-center,.panel-fallback,.jodi-value{font-size:20px}
+  body{padding:3px}
+  .container{max-width:none}
+  .meta{padding:6px}
+  a.btn{margin:3px;padding:5px 8px;font-size:13px}
+  th,td{padding:3px 1px;font-size:clamp(6px,1.85vw,11px)}
+  .chart-date{width:clamp(34px,16vw,78px);font-size:clamp(6px,1.95vw,11px)}
+  .jodi-value{padding:1px 2px;font-size:clamp(8px,3vw,16px)}
+  .panel-value{column-gap:clamp(1px,0.55vw,4px);padding:1px 2px;min-height:clamp(26px,9vw,44px)}
+  .panel-side{font-size:clamp(5px,1.65vw,10px)}
+  .panel-center{font-size:clamp(8px,3vw,16px)}
+  .panel-fallback{font-size:clamp(8px,2.8vw,14px)}
+}
+@media (max-width:420px){
+  body{padding:2px}
+  .heading{padding:7px 4px}
+  .meta{padding:5px}
+  a.btn{margin:2px;padding:4px 6px;font-size:12px}
+  th,td{padding:2px 1px;font-size:clamp(5px,1.7vw,8px)}
+  .chart-date{width:clamp(30px,18vw,64px);font-size:clamp(5px,1.7vw,8px)}
+  .jodi-value{font-size:clamp(7px,2.7vw,13px)}
+  .panel-side{font-size:clamp(4px,1.45vw,8px)}
+  .panel-center{font-size:clamp(7px,2.7vw,13px)}
+  .panel-fallback{font-size:clamp(7px,2.5vw,12px)}
 }
 </style>
 </head>

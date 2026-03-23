@@ -1,0 +1,103 @@
+- generic [ref=e2]:
+  - heading "SHIVANSH PANEL CHART" [level=1] [ref=e3]
+  - generic [ref=e4]:
+    - paragraph [ref=e5]:
+      - strong [ref=e6]: "Market:"
+      - text: Shivansh
+    - paragraph [ref=e7]:
+      - strong [ref=e8]: "Timings:"
+      - text: 10:00 AM - 12:00 PM
+    - paragraph [ref=e9]:
+      - strong [ref=e10]: "Open Days:"
+      - text: Mon - Sat
+  - link "Home" [ref=e11] [cursor=pointer]:
+    - /url: /
+  - link "Go to Bottom" [ref=e12] [cursor=pointer]:
+    - /url: "#bottom"
+  - link "View Full Chart" [ref=e13] [cursor=pointer]:
+    - /url: "?full_chart"
+  - generic [ref=e14]: SHIVANSH PANEL RECORD (2026 - 2026)
+  - table [ref=e16]:
+    - rowgroup [ref=e17]:
+      - row "Date Mon Tue Wed Thu Fri Sat" [ref=e18]:
+        - columnheader "Date" [ref=e19]
+        - columnheader "Mon" [ref=e20]
+        - columnheader "Tue" [ref=e21]
+        - columnheader "Wed" [ref=e22]
+        - columnheader "Thu" [ref=e23]
+        - columnheader "Fri" [ref=e24]
+        - columnheader "Sat" [ref=e25]
+    - rowgroup [ref=e26]:
+      - row "01/03/2026 to 07/03/2026 1 2 3 45 5 4 6 3 2 4 65 7 6 5 4 3 7 97 6 5 4 4 3 2 86 2 1 3 6 5 7 54 3 2 1 6 5 2 64 5 4 3" [ref=e27]:
+        - cell "01/03/2026 to 07/03/2026" [ref=e28]:
+          - text: 01/03/2026
+          - text: to
+          - text: 07/03/2026
+        - cell "1 2 3 45 5 4 6" [ref=e29]:
+          - generic [ref=e30]:
+            - generic [ref=e31]:
+              - generic [ref=e32]: "1"
+              - generic [ref=e33]: "2"
+              - generic [ref=e34]: "3"
+            - generic [ref=e35]: "45"
+            - generic [ref=e36]:
+              - generic [ref=e37]: "5"
+              - generic [ref=e38]: "4"
+              - generic [ref=e39]: "6"
+        - cell "3 2 4 65 7 6 5" [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]:
+              - generic [ref=e43]: "3"
+              - generic [ref=e44]: "2"
+              - generic [ref=e45]: "4"
+            - generic [ref=e46]: "65"
+            - generic [ref=e47]:
+              - generic [ref=e48]: "7"
+              - generic [ref=e49]: "6"
+              - generic [ref=e50]: "5"
+        - cell "4 3 7 97 6 5 4" [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e53]:
+              - generic [ref=e54]: "4"
+              - generic [ref=e55]: "3"
+              - generic [ref=e56]: "7"
+            - generic [ref=e57]: "97"
+            - generic [ref=e58]:
+              - generic [ref=e59]: "6"
+              - generic [ref=e60]: "5"
+              - generic [ref=e61]: "4"
+        - cell "4 3 2 86 2 1 3" [ref=e62]:
+          - generic [ref=e63]:
+            - generic [ref=e64]:
+              - generic [ref=e65]: "4"
+              - generic [ref=e66]: "3"
+              - generic [ref=e67]: "2"
+            - generic [ref=e68]: "86"
+            - generic [ref=e69]:
+              - generic [ref=e70]: "2"
+              - generic [ref=e71]: "1"
+              - generic [ref=e72]: "3"
+        - cell "6 5 7 54 3 2 1" [ref=e73]:
+          - generic [ref=e74]:
+            - generic [ref=e75]:
+              - generic [ref=e76]: "6"
+              - generic [ref=e77]: "5"
+              - generic [ref=e78]: "7"
+            - generic [ref=e79]: "54"
+            - generic [ref=e80]:
+              - generic [ref=e81]: "3"
+              - generic [ref=e82]: "2"
+              - generic [ref=e83]: "1"
+        - cell "6 5 2 64 5 4 3" [ref=e84]:
+          - generic [ref=e85]:
+            - generic [ref=e86]:
+              - generic [ref=e87]: "6"
+              - generic [ref=e88]: "5"
+              - generic [ref=e89]: "2"
+            - generic [ref=e90]: "64"
+            - generic [ref=e91]:
+              - generic [ref=e92]: "5"
+              - generic [ref=e93]: "4"
+              - generic [ref=e94]: "3"
+  - link "Go to Top" [ref=e95] [cursor=pointer]:
+    - /url: "#top"

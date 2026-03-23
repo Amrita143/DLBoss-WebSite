@@ -155,6 +155,11 @@ export function ChartsManager({ initialRecords, markets }: Props) {
     return map;
   }, [markets]);
 
+  async function readErrorMessage(response: Response, fallback: string) {
+    const payload = (await response.json().catch(() => ({ error: fallback }))) as { error?: string };
+    return payload.error ?? fallback;
+  }
+
   async function refresh() {
     const response = await fetch('/api/admin/charts?limit=200');
     const payload = (await response.json()) as { items: ChartRecord[] };
@@ -170,7 +175,7 @@ export function ChartsManager({ initialRecords, markets }: Props) {
     });
 
     if (!response.ok) {
-      setError('Failed to create chart record');
+      setError(await readErrorMessage(response, 'Failed to create chart record'));
       return;
     }
 
@@ -198,7 +203,7 @@ export function ChartsManager({ initialRecords, markets }: Props) {
     });
 
     if (!response.ok) {
-      setError('Failed to update chart record');
+      setError(await readErrorMessage(response, 'Failed to update chart record'));
       return;
     }
 
@@ -213,7 +218,7 @@ export function ChartsManager({ initialRecords, markets }: Props) {
 
     const response = await fetch(`/api/admin/charts/${id}`, { method: 'DELETE' });
     if (!response.ok) {
-      setError('Failed to delete chart record');
+      setError(await readErrorMessage(response, 'Failed to delete chart record'));
       return;
     }
 
@@ -250,7 +255,7 @@ export function ChartsManager({ initialRecords, markets }: Props) {
   return (
     <div>
       <div className="admin-card">
-        <h3>Create Chart Record</h3>
+        <h3>Save Chart Record</h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,minmax(0,1fr))', gap: 8 }}>
           <select
             className="admin-select"
@@ -313,7 +318,7 @@ export function ChartsManager({ initialRecords, markets }: Props) {
         </div>
         <div style={{ marginTop: 8 }}>
           <button className="admin-btn" type="button" onClick={createRecord}>
-            Create
+            Save Chart Record
           </button>
           {error ? <p style={{ color: '#b91c1c' }}>{error}</p> : null}
         </div>
