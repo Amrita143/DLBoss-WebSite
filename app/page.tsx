@@ -4,6 +4,7 @@ import { getActiveMarkets, getLatestResultsByMarket } from '@/lib/page-resolver'
 import { HomeScrollRestore } from '@/app/_components/HomeScrollRestore';
 import { ReloadButton } from '@/app/_components/ReloadButton';
 import { getGeneralInfoSections } from '@/lib/dpboss-general-info';
+import { PANNA_PATTI_RECORDS } from '@/lib/panna-patti-records';
 import type { Market, MarketResult } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
@@ -150,6 +151,28 @@ export default async function HomePage() {
           ))}
         </section>
       )}
+
+      <section className="panna-patti-section" aria-labelledby="panna-patti-heading">
+        <h4 id="panna-patti-heading">PANNA PATTI CHART RECORD</h4>
+        <div className="panna-patti-list">
+          {PANNA_PATTI_RECORDS.map((record) => (
+            <article key={record.id} className="panna-patti-card">
+              <div className="panna-patti-heading">
+                <span>{record.left}</span>
+                <span className="panna-patti-digit" style={{ color: record.accentColor }}>
+                  ({record.digit})
+                </span>
+                <span>{record.right}</span>
+              </div>
+              <div className="panna-patti-rows">
+                {record.rows.map((row) => (
+                  <p key={`${record.id}-${row}`}>{row}</p>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
       {generalInfo.faqBlocks.map((html, index) => (
         <section

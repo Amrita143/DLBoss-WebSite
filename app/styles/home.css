@@ -32,6 +32,7 @@
 .text2,
 .liv-rslt,
 .tkt-val,
+.panna-patti-section,
 .qtn14,
 .be-stone,
 .dis12,
@@ -259,6 +260,76 @@
   text-shadow: none;
 }
 
+.panna-patti-section {
+  overflow: hidden;
+  border-color: #8ac0e6;
+  background: linear-gradient(180deg, #5f49ca, #2297e8);
+}
+
+.panna-patti-section h4 {
+  margin: 0;
+  padding: 10px 12px;
+  background: #29ff00;
+  color: #3d0078;
+  font-size: 30px;
+  line-height: 1.1;
+  text-shadow: none;
+  font-style: normal;
+  border-radius: 8px 8px 0 0;
+}
+
+.panna-patti-list {
+  display: block;
+}
+
+.panna-patti-card {
+  padding: 14px 12px 16px;
+  color: #fff;
+  border-top: 3px solid rgb(210 205 208 / 70%);
+  background: linear-gradient(135deg, rgb(147 53 189 / 92%), rgb(42 139 228 / 92%));
+}
+
+.panna-patti-card:first-child {
+  border-top-width: 0;
+}
+
+.panna-patti-heading {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 12px;
+  color: #fff;
+  font-size: 34px;
+  line-height: 1;
+  text-shadow: none;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.panna-patti-digit {
+  display: inline-block;
+  min-width: 1.8ch;
+}
+
+.panna-patti-rows {
+  margin-top: 18px;
+}
+
+.panna-patti-rows p {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1.22;
+  text-shadow: none;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.panna-patti-rows p:last-child {
+  margin-bottom: 0;
+}
+
 .qtn14 {
   border: 2px solid #003db6;
   background: #ffd9e8;
@@ -452,6 +523,18 @@
   .market-row p {
     font-size: 17px;
   }
+
+  .panna-patti-section h4 {
+    font-size: 26px;
+  }
+
+  .panna-patti-heading {
+    font-size: 30px;
+  }
+
+  .panna-patti-rows p {
+    font-size: 24px;
+  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -485,6 +568,27 @@
 
   .market-row p {
     font-size: 16px;
+  }
+
+  .panna-patti-section h4 {
+    font-size: 22px;
+  }
+
+  .panna-patti-card {
+    padding: 12px 9px 13px;
+  }
+
+  .panna-patti-heading {
+    gap: 8px;
+    font-size: 24px;
+  }
+
+  .panna-patti-rows {
+    margin-top: 12px;
+  }
+
+  .panna-patti-rows p {
+    font-size: 18px;
   }
 }
 
@@ -523,6 +627,29 @@
 
   .market-row p {
     font-size: 13px;
+  }
+
+  .panna-patti-section h4 {
+    padding: 8px 6px;
+    font-size: 18px;
+  }
+
+  .panna-patti-card {
+    padding: 10px 7px 11px;
+  }
+
+  .panna-patti-heading {
+    gap: 5px;
+    font-size: 15px;
+  }
+
+  .panna-patti-rows {
+    margin-top: 10px;
+  }
+
+  .panna-patti-rows p {
+    font-size: 12px;
+    line-height: 1.28;
   }
 
   .result-actions {

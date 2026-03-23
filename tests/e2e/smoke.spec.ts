@@ -5,6 +5,7 @@ test.describe('Admin-driven market app smoke', () => {
     const response = await page.goto('/', { waitUntil: 'domcontentloaded' });
     expect(response?.status()).toBe(200);
     await expect(page.getByText('Satta Matka DLBOSS.COM Kalyan Matka Result')).toBeVisible();
+    await expect(page.getByText('PANNA PATTI CHART RECORD')).toBeVisible();
     await expect(page.getByText('Market Details')).toHaveCount(0);
   });
 
