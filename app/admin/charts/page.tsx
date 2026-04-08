@@ -7,6 +7,8 @@ import type { ChartRecord, Market } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
 
+const PAGE_SIZE = 50;
+
 export default async function AdminChartsPage() {
   const session = await requireAdminSession();
   if (!session) {
@@ -14,8 +16,8 @@ export default async function AdminChartsPage() {
   }
 
   const supabase = getSupabaseAdmin();
-  const [{ data: records }, { data: markets }] = await Promise.all([
-    supabase.from('chart_records').select('*').order('week_start', { ascending: false }).limit(100),
+  const [{ data: records, count }, { data: markets }] = await Promise.all([
+    supabase.from('chart_records').select('*', { count: 'exact' }).order('week_start', { ascending: false }).range(0, PAGE_SIZE - 1),
     supabase.from('markets').select('*').order('sort_order', { ascending: true })
   ]);
 
@@ -25,7 +27,12 @@ export default async function AdminChartsPage() {
       <section className="admin-card">
         <h1>Charts</h1>
       </section>
-      <ChartsManager initialRecords={(records ?? []) as ChartRecord[]} markets={(markets ?? []) as Market[]} />
+      <ChartsManager
+        initialRecords={(records ?? []) as ChartRecord[]}
+        initialTotal={count ?? 0}
+        pageSize={PAGE_SIZE}
+        markets={(markets ?? []) as Market[]}
+      />
     </main>
   );
 }

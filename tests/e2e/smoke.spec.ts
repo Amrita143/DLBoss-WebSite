@@ -32,7 +32,7 @@ test.describe('Admin-driven market app smoke', () => {
   test('chart tables fit mobile width without horizontal scrolling', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
 
-    const panelResponse = await page.goto('/panel-chart-record/shivansh.php', { waitUntil: 'domcontentloaded' });
+    const panelResponse = await page.goto('/panel-chart-record/doller.php', { waitUntil: 'domcontentloaded' });
     expect(panelResponse?.status()).toBe(200);
 
     const panelViewport = await page.evaluate(() => ({
@@ -41,7 +41,7 @@ test.describe('Admin-driven market app smoke', () => {
     }));
     expect(panelViewport.scrollWidth).toBeLessThanOrEqual(panelViewport.clientWidth + 1);
 
-    const jodiResponse = await page.goto('/jodi-chart-record/shivansh.php', { waitUntil: 'domcontentloaded' });
+    const jodiResponse = await page.goto('/jodi-chart-record/doller.php', { waitUntil: 'domcontentloaded' });
     expect(jodiResponse?.status()).toBe(200);
 
     const jodiViewport = await page.evaluate(() => ({
@@ -52,7 +52,7 @@ test.describe('Admin-driven market app smoke', () => {
   });
 
   test('panel table uses gold headers and tan body styling', async ({ page }) => {
-    const response = await page.goto('/panel-chart-record/shivansh.php', { waitUntil: 'domcontentloaded' });
+    const response = await page.goto('/panel-chart-record/doller.php', { waitUntil: 'domcontentloaded' });
     expect(response?.status()).toBe(200);
 
     const headerBackground = await page.locator('thead th').first().evaluate((element) => getComputedStyle(element).backgroundColor);
@@ -63,7 +63,7 @@ test.describe('Admin-driven market app smoke', () => {
   });
 
   test('panel cell styling colors the full value and keeps center digits larger', async ({ page }) => {
-    const response = await page.goto('/panel-chart-record/shivansh.php', { waitUntil: 'domcontentloaded' });
+    const response = await page.goto('/panel-chart-record/doller.php', { waitUntil: 'domcontentloaded' });
     expect(response?.status()).toBe(200);
 
     const styledPanel = page.locator('.panel-value[style*="color:#ff0000"]').first();

@@ -1,0 +1,14 @@
+- main [ref=e3]:
+  - generic [ref=e4]:
+    - heading "Admin Login" [level=1] [ref=e5]
+    - paragraph [ref=e6]: Use your assigned Admin ID and password.
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - text: Admin ID
+        - textbox "Admin ID" [ref=e9]:
+          - /placeholder: e.g. developerdlboss.com
+      - generic [ref=e10]:
+        - text: Password
+        - textbox "Password" [ref=e11]
+      - button "Forgot Password?" [ref=e13] [cursor=pointer]
+      - button "Sign In" [ref=e14] [cursor=pointer]

@@ -1,13 +1,18 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { CHART_DAY_KEYS, normalizeChartCellStyles, type ChartDayKey } from '@/lib/chart-display';
 import type { ChartCellStyle, ChartCellStyles, ChartRecord, Market } from '@/lib/types';
 
 interface Props {
   initialRecords: ChartRecord[];
+  initialTotal: number;
+  pageSize: number;
   markets: Market[];
 }
+
+type ChartTypeFilter = 'all' | 'jodi' | 'panel';
+type WeekdayFilter = 'all' | ChartDayKey;
 
 interface ChartDraft {
   market_id: string;
@@ -141,11 +146,74 @@ function DaySummary(props: { record: ChartRecord; showSunday: boolean }) {
   );
 }
 
-export function ChartsManager({ initialRecords, markets }: Props) {
+function PaginationControls(props: {
+  currentPage: number;
+  totalPages: number;
+  totalRecords: number;
+  pageSize: number;
+  loading: boolean;
+  onPageChange: (page: number) => void;
+}) {
+  const { currentPage, totalPages, totalRecords, pageSize, loading, onPageChange } = props;
+
+  if (totalRecords === 0) {
+    return null;
+  }
+
+  const start = (currentPage - 1) * pageSize + 1;
+  const end = Math.min(currentPage * pageSize, totalRecords);
+  const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
+
+  return (
+    <div className="admin-pagination">
+      <p className="admin-pagination-summary">
+        Showing {start}-{end} of {totalRecords} records
+      </p>
+      <div className="admin-pagination-controls">
+        <button
+          className="admin-btn secondary"
+          type="button"
+          disabled={loading || currentPage === 1}
+          onClick={() => onPageChange(currentPage - 1)}
+        >
+          Prev
+        </button>
+        {pages.map((page) => (
+          <button
+            key={page}
+            className={`admin-btn secondary${page === currentPage ? ' active' : ''}`}
+            type="button"
+            disabled={loading || page === currentPage}
+            onClick={() => onPageChange(page)}
+          >
+            {page}
+          </button>
+        ))}
+        <button
+          className="admin-btn secondary"
+          type="button"
+          disabled={loading || currentPage === totalPages}
+          onClick={() => onPageChange(currentPage + 1)}
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export function ChartsManager({ initialRecords, initialTotal, pageSize, markets }: Props) {
   const [records, setRecords] = useState(initialRecords);
+  const [totalRecords, setTotalRecords] = useState(initialTotal);
   const [error, setError] = useState('');
   const [editingId, setEditingId] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [loadingPage, setLoadingPage] = useState(false);
+  const [marketFilter, setMarketFilter] = useState<string>('all');
+  const [chartTypeFilter, setChartTypeFilter] = useState<ChartTypeFilter>('all');
+  const [weekdayFilter, setWeekdayFilter] = useState<WeekdayFilter>('all');
   const [form, setForm] = useState<ChartDraft>(createDefaultForm(markets[0]?.id ?? ''));
+  const didMountRef = useRef(false);
 
   const marketById = useMemo(() => {
     const map = new Map<string, Market>();
@@ -160,11 +228,47 @@ export function ChartsManager({ initialRecords, markets }: Props) {
     return payload.error ?? fallback;
   }
 
-  async function refresh() {
-    const response = await fetch('/api/admin/charts?limit=200');
-    const payload = (await response.json()) as { items: ChartRecord[] };
+  async function refresh(page = currentPage, filters?: { marketId?: string; chartType?: ChartTypeFilter }) {
+    setLoadingPage(true);
+    const params = new URLSearchParams({
+      page: String(page),
+      pageSize: String(pageSize)
+    });
+
+    const marketId = filters?.marketId ?? marketFilter;
+    const chartType = filters?.chartType ?? chartTypeFilter;
+
+    if (marketId !== 'all') {
+      params.set('marketId', marketId);
+    }
+
+    if (chartType !== 'all') {
+      params.set('chartType', chartType);
+    }
+
+    const response = await fetch(`/api/admin/charts?${params.toString()}`);
+
+    if (!response.ok) {
+      setError(await readErrorMessage(response, 'Failed to load chart records'));
+      setLoadingPage(false);
+      return;
+    }
+
+    const payload = (await response.json()) as { items: ChartRecord[]; total: number; page: number };
     setRecords(payload.items ?? []);
+    setTotalRecords(payload.total ?? 0);
+    setCurrentPage(payload.page ?? page);
+    setLoadingPage(false);
   }
+
+  useEffect(() => {
+    if (!didMountRef.current) {
+      didMountRef.current = true;
+      return;
+    }
+
+    void refresh(currentPage);
+  }, [currentPage, marketFilter, chartTypeFilter]);
 
   async function createRecord() {
     setError('');
@@ -180,7 +284,12 @@ export function ChartsManager({ initialRecords, markets }: Props) {
     }
 
     setForm(createDefaultForm(markets[0]?.id ?? ''));
-    await refresh();
+    if (currentPage !== 1) {
+      setCurrentPage(1);
+      return;
+    }
+
+    await refresh(1);
   }
 
   async function updateRecord(row: ChartRecord) {
@@ -208,7 +317,7 @@ export function ChartsManager({ initialRecords, markets }: Props) {
     }
 
     setEditingId(null);
-    await refresh();
+    await refresh(currentPage);
   }
 
   async function removeRecord(id: string) {
@@ -222,7 +331,16 @@ export function ChartsManager({ initialRecords, markets }: Props) {
       return;
     }
 
-    await refresh();
+    const remainingTotal = Math.max(totalRecords - 1, 0);
+    const lastPageAfterDelete = Math.max(1, Math.ceil(remainingTotal / pageSize));
+    const targetPage = Math.min(currentPage, lastPageAfterDelete);
+
+    if (targetPage !== currentPage) {
+      setCurrentPage(targetPage);
+      return;
+    }
+
+    await refresh(targetPage);
   }
 
   function patchFormDay(day: ChartDayKey, value: string) {
@@ -251,6 +369,34 @@ export function ChartsManager({ initialRecords, markets }: Props) {
   }
 
   const selectedMarket = marketById.get(form.market_id);
+  const totalPages = Math.max(1, Math.ceil(totalRecords / pageSize));
+
+  const visibleDaysForRecord = (market?: Market) => {
+    if (weekdayFilter !== 'all') {
+      return [weekdayFilter];
+    }
+
+    return market?.show_sunday ? CHART_DAY_KEYS : CHART_DAY_KEYS.slice(0, 6);
+  };
+
+  function handleMarketFilterChange(value: string) {
+    setEditingId(null);
+    setError('');
+    setMarketFilter(value);
+    setCurrentPage(1);
+  }
+
+  function handleChartTypeFilterChange(value: ChartTypeFilter) {
+    setEditingId(null);
+    setError('');
+    setChartTypeFilter(value);
+    setCurrentPage(1);
+  }
+
+  function handleWeekdayFilterChange(value: WeekdayFilter) {
+    setEditingId(null);
+    setWeekdayFilter(value);
+  }
 
   return (
     <div>
@@ -326,6 +472,54 @@ export function ChartsManager({ initialRecords, markets }: Props) {
 
       <div className="admin-card">
         <h3>Latest Chart Records</h3>
+        <div className="admin-filter-bar">
+          <label>
+            <span>Filter by Market</span>
+            <select className="admin-select" value={marketFilter} onChange={(event) => handleMarketFilterChange(event.target.value)}>
+              <option value="all">All Markets</option>
+              {markets.map((market) => (
+                <option key={market.id} value={market.id}>
+                  {market.name}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label>
+            <span>Filter by Type</span>
+            <select
+              className="admin-select"
+              value={chartTypeFilter}
+              onChange={(event) => handleChartTypeFilterChange(event.target.value as ChartTypeFilter)}
+            >
+              <option value="all">All Types</option>
+              <option value="jodi">Jodi</option>
+              <option value="panel">Panel</option>
+            </select>
+          </label>
+          <label>
+            <span>Filter by Weekday</span>
+            <select
+              className="admin-select"
+              value={weekdayFilter}
+              onChange={(event) => handleWeekdayFilterChange(event.target.value as WeekdayFilter)}
+            >
+              <option value="all">All Weekdays</option>
+              {CHART_DAY_KEYS.map((day) => (
+                <option key={day} value={day}>
+                  {formatDayLabel(day)}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <PaginationControls
+          currentPage={currentPage}
+          totalPages={totalPages}
+          totalRecords={totalRecords}
+          pageSize={pageSize}
+          loading={loadingPage}
+          onPageChange={setCurrentPage}
+        />
         <table className="admin-table">
           <thead>
             <tr>
@@ -341,6 +535,7 @@ export function ChartsManager({ initialRecords, markets }: Props) {
             {records.map((record) => {
               const editable = editingId === record.id;
               const market = marketById.get(record.market_id);
+              const visibleDays = visibleDaysForRecord(market);
 
               return (
                 <tr key={record.id}>
@@ -365,7 +560,7 @@ export function ChartsManager({ initialRecords, markets }: Props) {
                   <td>
                     {editable ? (
                       <div className="chart-day-grid">
-                        {CHART_DAY_KEYS.map((day) => (
+                        {visibleDays.map((day) => (
                           <DayEditor
                             key={day}
                             day={day}
@@ -394,7 +589,26 @@ export function ChartsManager({ initialRecords, markets }: Props) {
                         ))}
                       </div>
                     ) : (
-                      <DaySummary record={record} showSunday={Boolean(market?.show_sunday)} />
+                      <div className="chart-day-summary">
+                        {visibleDays.map((day) => {
+                          const styleState = getCellStyle(record.cell_styles, day);
+                          const style: React.CSSProperties = {};
+
+                          if (styleState.textColor) {
+                            style.color = styleState.textColor;
+                          }
+
+                          if (styleState.highlightColor) {
+                            style.backgroundColor = styleState.highlightColor;
+                          }
+
+                          return (
+                            <div key={day}>
+                              <strong>{formatDayLabel(day)}:</strong> <span style={style}>{record[day]}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
                     )}
                   </td>
                   <td>
@@ -434,6 +648,14 @@ export function ChartsManager({ initialRecords, markets }: Props) {
             })}
           </tbody>
         </table>
+        <PaginationControls
+          currentPage={currentPage}
+          totalPages={totalPages}
+          totalRecords={totalRecords}
+          pageSize={pageSize}
+          loading={loadingPage}
+          onPageChange={setCurrentPage}
+        />
       </div>
     </div>
   );

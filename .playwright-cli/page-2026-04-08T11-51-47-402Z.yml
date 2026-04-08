@@ -1,0 +1,26 @@
+- generic [active] [ref=e1]:
+  - main [ref=e25]:
+    - navigation [ref=e26]:
+      - link "Dashboard" [ref=e27] [cursor=pointer]:
+        - /url: /admin
+      - link "Markets" [ref=e28] [cursor=pointer]:
+        - /url: /admin/markets
+      - link "Outcomes" [ref=e29] [cursor=pointer]:
+        - /url: /admin/results
+      - link "Charts" [ref=e30] [cursor=pointer]:
+        - /url: /admin/charts
+      - link "Admins" [ref=e31] [cursor=pointer]:
+        - /url: /admin/admins
+      - button "Logout" [ref=e33] [cursor=pointer]
+    - generic [ref=e34]:
+      - heading "Admin Dashboard" [level=1] [ref=e35]
+      - paragraph [ref=e36]: Logged in as developerdlboss.com (superadmin)
+    - generic [ref=e37]:
+      - heading "Data Summary" [level=2] [ref=e38]
+      - list [ref=e39]:
+        - listitem [ref=e40]: "Markets: 9"
+        - listitem [ref=e41]: "Market outcomes: 8"
+        - listitem [ref=e42]: "Chart records: 900"
+  - button "Open Next.js Dev Tools" [ref=e20] [cursor=pointer]:
+    - img [ref=e21]
+  - alert [ref=e24]

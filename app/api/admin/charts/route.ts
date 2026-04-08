@@ -27,20 +27,35 @@ export async function GET(request: Request) {
   }
 
   const url = new URL(request.url);
-  const limit = Number(url.searchParams.get('limit') ?? '100');
+  const page = Math.max(Number(url.searchParams.get('page') ?? '1') || 1, 1);
+  const pageSizeParam = Number(url.searchParams.get('pageSize') ?? url.searchParams.get('limit') ?? '50') || 50;
+  const pageSize = Math.min(Math.max(pageSizeParam, 1), 100);
+  const from = (page - 1) * pageSize;
+  const to = from + pageSize - 1;
+  const marketId = url.searchParams.get('marketId');
+  const chartType = url.searchParams.get('chartType');
 
   const supabase = getSupabaseAdmin();
-  const { data, error: queryError } = await supabase
+  let query = supabase
     .from('chart_records')
-    .select('*')
-    .order('week_start', { ascending: false })
-    .limit(Math.min(limit, 1000));
+    .select('*', { count: 'exact' })
+    .order('week_start', { ascending: false });
+
+  if (marketId) {
+    query = query.eq('market_id', marketId);
+  }
+
+  if (chartType === 'jodi' || chartType === 'panel') {
+    query = query.eq('chart_type', chartType);
+  }
+
+  const { data, count, error: queryError } = await query.range(from, to);
 
   if (queryError) {
     return NextResponse.json({ error: queryError.message }, { status: 500 });
   }
 
-  return NextResponse.json({ items: data ?? [] });
+  return NextResponse.json({ items: data ?? [], total: count ?? 0, page, pageSize });
 }
 
 export async function POST(request: Request) {

@@ -1,0 +1,2987 @@
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - navigation [ref=e4]:
+      - link "Dashboard" [ref=e5] [cursor=pointer]:
+        - /url: /admin
+      - link "Markets" [ref=e6] [cursor=pointer]:
+        - /url: /admin/markets
+      - link "Outcomes" [ref=e7] [cursor=pointer]:
+        - /url: /admin/results
+      - link "Charts" [ref=e8] [cursor=pointer]:
+        - /url: /admin/charts
+      - link "Admins" [ref=e9] [cursor=pointer]:
+        - /url: /admin/admins
+      - button "Logout" [ref=e11] [cursor=pointer]
+    - heading "Charts" [level=1] [ref=e13]
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - heading "Save Chart Record" [level=3] [ref=e16]
+        - generic [ref=e17]:
+          - combobox [ref=e18]:
+            - option "doller" [selected]
+            - option "sridevi"
+            - option "Suraj Mukhi"
+            - option "kashi"
+            - option "kalyan"
+            - option "doller night"
+            - option "sridevi night"
+            - option "KBC"
+            - option "main bazar"
+          - combobox [ref=e19]:
+            - option "jodi" [selected]
+            - option "panel"
+          - textbox "week_start (YYYY-MM-DD)" [ref=e20]
+          - textbox "week_end (YYYY-MM-DD)" [ref=e21]
+          - textbox "source year" [ref=e22]: "2026"
+        - paragraph [ref=e23]:
+          - text: Sunday values are only shown publicly when the selected market has
+          - strong [ref=e24]: Show Sunday
+          - text: "enabled in Manage Markets. Current setting: Mon - Sun"
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - generic [ref=e27]: Mon
+            - textbox [ref=e28]: "**"
+            - generic [ref=e29]:
+              - checkbox "Color numbers" [ref=e30]
+              - text: Color numbers
+            - generic [ref=e31]:
+              - checkbox "Highlight" [ref=e32]
+              - text: Highlight
+          - generic [ref=e33]:
+            - generic [ref=e34]: Tue
+            - textbox [ref=e35]: "**"
+            - generic [ref=e36]:
+              - checkbox "Color numbers" [ref=e37]
+              - text: Color numbers
+            - generic [ref=e38]:
+              - checkbox "Highlight" [ref=e39]
+              - text: Highlight
+          - generic [ref=e40]:
+            - generic [ref=e41]: Wed
+            - textbox [ref=e42]: "**"
+            - generic [ref=e43]:
+              - checkbox "Color numbers" [ref=e44]
+              - text: Color numbers
+            - generic [ref=e45]:
+              - checkbox "Highlight" [ref=e46]
+              - text: Highlight
+          - generic [ref=e47]:
+            - generic [ref=e48]: Thu
+            - textbox [ref=e49]: "**"
+            - generic [ref=e50]:
+              - checkbox "Color numbers" [ref=e51]
+              - text: Color numbers
+            - generic [ref=e52]:
+              - checkbox "Highlight" [ref=e53]
+              - text: Highlight
+          - generic [ref=e54]:
+            - generic [ref=e55]: Fri
+            - textbox [ref=e56]: "**"
+            - generic [ref=e57]:
+              - checkbox "Color numbers" [ref=e58]
+              - text: Color numbers
+            - generic [ref=e59]:
+              - checkbox "Highlight" [ref=e60]
+              - text: Highlight
+          - generic [ref=e61]:
+            - generic [ref=e62]: Sat
+            - textbox [ref=e63]: "**"
+            - generic [ref=e64]:
+              - checkbox "Color numbers" [ref=e65]
+              - text: Color numbers
+            - generic [ref=e66]:
+              - checkbox "Highlight" [ref=e67]
+              - text: Highlight
+          - generic [ref=e68]:
+            - generic [ref=e69]: Sun
+            - textbox [ref=e70]: "**"
+            - generic [ref=e71]:
+              - checkbox "Color numbers" [ref=e72]
+              - text: Color numbers
+            - generic [ref=e73]:
+              - checkbox "Highlight" [ref=e74]
+              - text: Highlight
+        - button "Save Chart Record" [ref=e76] [cursor=pointer]
+      - generic [ref=e77]:
+        - heading "Latest Chart Records" [level=3] [ref=e78]
+        - table [ref=e79]:
+          - rowgroup [ref=e80]:
+            - row "Type Market Week Days Year Actions" [ref=e81]:
+              - columnheader "Type" [ref=e82]
+              - columnheader "Market" [ref=e83]
+              - columnheader "Week" [ref=e84]
+              - columnheader "Days" [ref=e85]
+              - columnheader "Year" [ref=e86]
+              - columnheader "Actions" [ref=e87]
+          - rowgroup [ref=e88]:
+            - 'row "panel KBC 2026-04-06 to 2026-04-11 Mon: 78943238 Tue: 78833788 Wed: Thu: Fri: Sat: 2026 Edit Delete" [ref=e89]':
+              - cell "panel" [ref=e90]
+              - cell "KBC" [ref=e91]
+              - cell "2026-04-06 to 2026-04-11" [ref=e92]
+              - 'cell "Mon: 78943238 Tue: 78833788 Wed: Thu: Fri: Sat:" [ref=e93]':
+                - generic [ref=e94]:
+                  - generic [ref=e95]:
+                    - strong [ref=e96]: "Mon:"
+                    - text: "78943238"
+                  - generic [ref=e97]:
+                    - strong [ref=e98]: "Tue:"
+                    - text: "78833788"
+                  - strong [ref=e100]: "Wed:"
+                  - strong [ref=e102]: "Thu:"
+                  - strong [ref=e104]: "Fri:"
+                  - strong [ref=e106]: "Sat:"
+              - cell "2026" [ref=e107]
+              - cell "Edit Delete" [ref=e108]:
+                - button "Edit" [ref=e109] [cursor=pointer]
+                - button "Delete" [ref=e110] [cursor=pointer]
+            - 'row "panel doller 2026-04-06 to 2026-04-12 Mon: 58035456 Tue: 15841380 Wed: Thu: Fri: Sat: Sun: 2026 Edit Delete" [ref=e111]':
+              - cell "panel" [ref=e112]
+              - cell "doller" [ref=e113]
+              - cell "2026-04-06 to 2026-04-12" [ref=e114]
+              - 'cell "Mon: 58035456 Tue: 15841380 Wed: Thu: Fri: Sat: Sun:" [ref=e115]':
+                - generic [ref=e116]:
+                  - generic [ref=e117]:
+                    - strong [ref=e118]: "Mon:"
+                    - text: "58035456"
+                  - generic [ref=e119]:
+                    - strong [ref=e120]: "Tue:"
+                    - text: "15841380"
+                  - strong [ref=e122]: "Wed:"
+                  - strong [ref=e124]: "Thu:"
+                  - strong [ref=e126]: "Fri:"
+                  - strong [ref=e128]: "Sat:"
+                  - strong [ref=e130]: "Sun:"
+              - cell "2026" [ref=e131]
+              - cell "Edit Delete" [ref=e132]:
+                - button "Edit" [ref=e133] [cursor=pointer]
+                - button "Delete" [ref=e134] [cursor=pointer]
+            - 'row "panel sridevi 2026-04-06 to 2026-04-12 Mon: 29903355 Tue: 27988260 Wed: Thu: Fri: Sat: Sun: 2026 Edit Delete" [ref=e135]':
+              - cell "panel" [ref=e136]
+              - cell "sridevi" [ref=e137]
+              - cell "2026-04-06 to 2026-04-12" [ref=e138]
+              - 'cell "Mon: 29903355 Tue: 27988260 Wed: Thu: Fri: Sat: Sun:" [ref=e139]':
+                - generic [ref=e140]:
+                  - generic [ref=e141]:
+                    - strong [ref=e142]: "Mon:"
+                    - text: "29903355"
+                  - generic [ref=e143]:
+                    - strong [ref=e144]: "Tue:"
+                    - text: "27988260"
+                  - strong [ref=e146]: "Wed:"
+                  - strong [ref=e148]: "Thu:"
+                  - strong [ref=e150]: "Fri:"
+                  - strong [ref=e152]: "Sat:"
+                  - strong [ref=e154]: "Sun:"
+              - cell "2026" [ref=e155]
+              - cell "Edit Delete" [ref=e156]:
+                - button "Edit" [ref=e157] [cursor=pointer]
+                - button "Delete" [ref=e158] [cursor=pointer]
+            - 'row "panel doller night 2026-04-06 to 2026-04-12 Mon: 13371579 Tue: 79062480 Wed: Thu: Fri: Sat: Sun: 2026 Edit Delete" [ref=e159]':
+              - cell "panel" [ref=e160]
+              - cell "doller night" [ref=e161]
+              - cell "2026-04-06 to 2026-04-12" [ref=e162]
+              - 'cell "Mon: 13371579 Tue: 79062480 Wed: Thu: Fri: Sat: Sun:" [ref=e163]':
+                - generic [ref=e164]:
+                  - generic [ref=e165]:
+                    - strong [ref=e166]: "Mon:"
+                    - text: "13371579"
+                  - generic [ref=e167]:
+                    - strong [ref=e168]: "Tue:"
+                    - text: "79062480"
+                  - strong [ref=e170]: "Wed:"
+                  - strong [ref=e172]: "Thu:"
+                  - strong [ref=e174]: "Fri:"
+                  - strong [ref=e176]: "Sat:"
+                  - strong [ref=e178]: "Sun:"
+              - cell "2026" [ref=e179]
+              - cell "Edit Delete" [ref=e180]:
+                - button "Edit" [ref=e181] [cursor=pointer]
+                - button "Delete" [ref=e182] [cursor=pointer]
+            - 'row "panel Suraj Mukhi 2026-04-06 to 2026-04-12 Mon: 16850488 Tue: 28007359 Wed: Thu: Fri: Sat: 2026 Edit Delete" [ref=e183]':
+              - cell "panel" [ref=e184]
+              - cell "Suraj Mukhi" [ref=e185]
+              - cell "2026-04-06 to 2026-04-12" [ref=e186]
+              - 'cell "Mon: 16850488 Tue: 28007359 Wed: Thu: Fri: Sat:" [ref=e187]':
+                - generic [ref=e188]:
+                  - generic [ref=e189]:
+                    - strong [ref=e190]: "Mon:"
+                    - text: "16850488"
+                  - generic [ref=e191]:
+                    - strong [ref=e192]: "Tue:"
+                    - text: "28007359"
+                  - strong [ref=e194]: "Wed:"
+                  - strong [ref=e196]: "Thu:"
+                  - strong [ref=e198]: "Fri:"
+                  - strong [ref=e200]: "Sat:"
+              - cell "2026" [ref=e201]
+              - cell "Edit Delete" [ref=e202]:
+                - button "Edit" [ref=e203] [cursor=pointer]
+                - button "Delete" [ref=e204] [cursor=pointer]
+            - 'row "panel sridevi night 2026-04-06 to 2026-04-12 Mon: 78055140 Tue: 57791380 Wed: Thu: Fri: Sat: Sun: 2026 Edit Delete" [ref=e205]':
+              - cell "panel" [ref=e206]
+              - cell "sridevi night" [ref=e207]
+              - cell "2026-04-06 to 2026-04-12" [ref=e208]
+              - 'cell "Mon: 78055140 Tue: 57791380 Wed: Thu: Fri: Sat: Sun:" [ref=e209]':
+                - generic [ref=e210]:
+                  - generic [ref=e211]:
+                    - strong [ref=e212]: "Mon:"
+                    - text: "78055140"
+                  - generic [ref=e213]:
+                    - strong [ref=e214]: "Tue:"
+                    - text: "57791380"
+                  - strong [ref=e216]: "Wed:"
+                  - strong [ref=e218]: "Thu:"
+                  - strong [ref=e220]: "Fri:"
+                  - strong [ref=e222]: "Sat:"
+                  - strong [ref=e224]: "Sun:"
+              - cell "2026" [ref=e225]
+              - cell "Edit Delete" [ref=e226]:
+                - button "Edit" [ref=e227] [cursor=pointer]
+                - button "Delete" [ref=e228] [cursor=pointer]
+            - 'row "panel kalyan 2026-04-06 to 2026-04-11 Mon: 15951560 Tue: 27876457 Wed: Thu: Fri: Sat: 2026 Edit Delete" [ref=e229]':
+              - cell "panel" [ref=e230]
+              - cell "kalyan" [ref=e231]
+              - cell "2026-04-06 to 2026-04-11" [ref=e232]
+              - 'cell "Mon: 15951560 Tue: 27876457 Wed: Thu: Fri: Sat:" [ref=e233]':
+                - generic [ref=e234]:
+                  - generic [ref=e235]:
+                    - strong [ref=e236]: "Mon:"
+                    - text: "15951560"
+                  - generic [ref=e237]:
+                    - strong [ref=e238]: "Tue:"
+                    - text: "27876457"
+                  - strong [ref=e240]: "Wed:"
+                  - strong [ref=e242]: "Thu:"
+                  - strong [ref=e244]: "Fri:"
+                  - strong [ref=e246]: "Sat:"
+              - cell "2026" [ref=e247]
+              - cell "Edit Delete" [ref=e248]:
+                - button "Edit" [ref=e249] [cursor=pointer]
+                - button "Delete" [ref=e250] [cursor=pointer]
+            - 'row "panel main bazar 2026-04-06 to 2026-04-10 Mon: 47892237 Tue: 37991470 Wed: Thu: Fri: Sat: 2026 Edit Delete" [ref=e251]':
+              - cell "panel" [ref=e252]
+              - cell "main bazar" [ref=e253]
+              - cell "2026-04-06 to 2026-04-10" [ref=e254]
+              - 'cell "Mon: 47892237 Tue: 37991470 Wed: Thu: Fri: Sat:" [ref=e255]':
+                - generic [ref=e256]:
+                  - generic [ref=e257]:
+                    - strong [ref=e258]: "Mon:"
+                    - text: "47892237"
+                  - generic [ref=e259]:
+                    - strong [ref=e260]: "Tue:"
+                    - text: "37991470"
+                  - strong [ref=e262]: "Wed:"
+                  - strong [ref=e264]: "Thu:"
+                  - strong [ref=e266]: "Fri:"
+                  - strong [ref=e268]: "Sat:"
+              - cell "2026" [ref=e269]
+              - cell "Edit Delete" [ref=e270]:
+                - button "Edit" [ref=e271] [cursor=pointer]
+                - button "Delete" [ref=e272] [cursor=pointer]
+            - 'row "panel main bazar 2026-03-30 to 2026-04-03 Mon: 34749234 Tue: 23726457 Wed: 45767340 Thu: 14057359 Fri: 68931137 Sat: 2026 Edit Delete" [ref=e273]':
+              - cell "panel" [ref=e274]
+              - cell "main bazar" [ref=e275]
+              - cell "2026-03-30 to 2026-04-03" [ref=e276]
+              - 'cell "Mon: 34749234 Tue: 23726457 Wed: 45767340 Thu: 14057359 Fri: 68931137 Sat:" [ref=e277]':
+                - generic [ref=e278]:
+                  - generic [ref=e279]:
+                    - strong [ref=e280]: "Mon:"
+                    - text: "34749234"
+                  - generic [ref=e281]:
+                    - strong [ref=e282]: "Tue:"
+                    - text: "23726457"
+                  - generic [ref=e283]:
+                    - strong [ref=e284]: "Wed:"
+                    - text: "45767340"
+                  - generic [ref=e285]:
+                    - strong [ref=e286]: "Thu:"
+                    - text: "14057359"
+                  - generic [ref=e287]:
+                    - strong [ref=e288]: "Fri:"
+                    - text: "68931137"
+                  - strong [ref=e290]: "Sat:"
+              - cell "2026" [ref=e291]
+              - cell "Edit Delete" [ref=e292]:
+                - button "Edit" [ref=e293] [cursor=pointer]
+                - button "Delete" [ref=e294] [cursor=pointer]
+            - 'row "panel doller 2026-03-30 to 2026-04-05 Mon: 18093300 Tue: 22932390 Wed: 35083111 Thu: 66680280 Fri: 56014680 Sat: 14055159 Sun: 25072110 2026 Edit Delete" [ref=e295]':
+              - cell "panel" [ref=e296]
+              - cell "doller" [ref=e297]
+              - cell "2026-03-30 to 2026-04-05" [ref=e298]
+              - 'cell "Mon: 18093300 Tue: 22932390 Wed: 35083111 Thu: 66680280 Fri: 56014680 Sat: 14055159 Sun: 25072110" [ref=e299]':
+                - generic [ref=e300]:
+                  - generic [ref=e301]:
+                    - strong [ref=e302]: "Mon:"
+                    - text: "18093300"
+                  - generic [ref=e303]:
+                    - strong [ref=e304]: "Tue:"
+                    - text: "22932390"
+                  - generic [ref=e305]:
+                    - strong [ref=e306]: "Wed:"
+                    - text: "35083111"
+                  - generic [ref=e307]:
+                    - strong [ref=e308]: "Thu:"
+                    - text: "66680280"
+                  - generic [ref=e309]:
+                    - strong [ref=e310]: "Fri:"
+                    - text: "56014680"
+                  - generic [ref=e311]:
+                    - strong [ref=e312]: "Sat:"
+                    - text: "14055159"
+                  - generic [ref=e313]:
+                    - strong [ref=e314]: "Sun:"
+                    - text: "25072110"
+              - cell "2026" [ref=e315]
+              - cell "Edit Delete" [ref=e316]:
+                - button "Edit" [ref=e317] [cursor=pointer]
+                - button "Delete" [ref=e318] [cursor=pointer]
+            - 'row "panel kalyan 2026-03-30 to 2026-04-04 Mon: 56674248 Tue: 57804446 Wed: 67819126 Thu: 67816150 Fri: 88950370 Sat: 13826246 2026 Edit Delete" [ref=e319]':
+              - cell "panel" [ref=e320]
+              - cell "kalyan" [ref=e321]
+              - cell "2026-03-30 to 2026-04-04" [ref=e322]
+              - 'cell "Mon: 56674248 Tue: 57804446 Wed: 67819126 Thu: 67816150 Fri: 88950370 Sat: 13826246" [ref=e323]':
+                - generic [ref=e324]:
+                  - generic [ref=e325]:
+                    - strong [ref=e326]: "Mon:"
+                    - text: "56674248"
+                  - generic [ref=e327]:
+                    - strong [ref=e328]: "Tue:"
+                    - text: "57804446"
+                  - generic [ref=e329]:
+                    - strong [ref=e330]: "Wed:"
+                    - text: "67819126"
+                  - generic [ref=e331]:
+                    - strong [ref=e332]: "Thu:"
+                    - text: "67816150"
+                  - generic [ref=e333]:
+                    - strong [ref=e334]: "Fri:"
+                    - text: "88950370"
+                  - generic [ref=e335]:
+                    - strong [ref=e336]: "Sat:"
+                    - text: "13826246"
+              - cell "2026" [ref=e337]
+              - cell "Edit Delete" [ref=e338]:
+                - button "Edit" [ref=e339] [cursor=pointer]
+                - button "Delete" [ref=e340] [cursor=pointer]
+            - 'row "panel sridevi 2026-03-30 to 2026-04-05 Mon: 55886600 Tue: 14720370 Wed: 14940145 Thu: 28993247 Fri: 34854158 Sat: 57809117 Sun: 11357179 2026 Edit Delete" [ref=e341]':
+              - cell "panel" [ref=e342]
+              - cell "sridevi" [ref=e343]
+              - cell "2026-03-30 to 2026-04-05" [ref=e344]
+              - 'cell "Mon: 55886600 Tue: 14720370 Wed: 14940145 Thu: 28993247 Fri: 34854158 Sat: 57809117 Sun: 11357179" [ref=e345]':
+                - generic [ref=e346]:
+                  - generic [ref=e347]:
+                    - strong [ref=e348]: "Mon:"
+                    - text: "55886600"
+                  - generic [ref=e349]:
+                    - strong [ref=e350]: "Tue:"
+                    - text: "14720370"
+                  - generic [ref=e351]:
+                    - strong [ref=e352]: "Wed:"
+                    - text: "14940145"
+                  - generic [ref=e353]:
+                    - strong [ref=e354]: "Thu:"
+                    - text: "28993247"
+                  - generic [ref=e355]:
+                    - strong [ref=e356]: "Fri:"
+                    - text: "34854158"
+                  - generic [ref=e357]:
+                    - strong [ref=e358]: "Sat:"
+                    - text: "57809117"
+                  - generic [ref=e359]:
+                    - strong [ref=e360]: "Sun:"
+                    - text: "11357179"
+              - cell "2026" [ref=e361]
+              - cell "Edit Delete" [ref=e362]:
+                - button "Edit" [ref=e363] [cursor=pointer]
+                - button "Delete" [ref=e364] [cursor=pointer]
+            - 'row "panel doller night 2026-03-30 to 2026-04-05 Mon: 15065456 Tue: 34077160 Wed: 23052688 Thu: 15843158 Fri: 30033580 Sat: 48800488 Sun: 34962147 2026 Edit Delete" [ref=e365]':
+              - cell "panel" [ref=e366]
+              - cell "doller night" [ref=e367]
+              - cell "2026-03-30 to 2026-04-05" [ref=e368]
+              - 'cell "Mon: 15065456 Tue: 34077160 Wed: 23052688 Thu: 15843158 Fri: 30033580 Sat: 48800488 Sun: 34962147" [ref=e369]':
+                - generic [ref=e370]:
+                  - generic [ref=e371]:
+                    - strong [ref=e372]: "Mon:"
+                    - text: "15065456"
+                  - generic [ref=e373]:
+                    - strong [ref=e374]: "Tue:"
+                    - text: "34077160"
+                  - generic [ref=e375]:
+                    - strong [ref=e376]: "Wed:"
+                    - text: "23052688"
+                  - generic [ref=e377]:
+                    - strong [ref=e378]: "Thu:"
+                    - text: "15843158"
+                  - generic [ref=e379]:
+                    - strong [ref=e380]: "Fri:"
+                    - text: "30033580"
+                  - generic [ref=e381]:
+                    - strong [ref=e382]: "Sat:"
+                    - text: "48800488"
+                  - generic [ref=e383]:
+                    - strong [ref=e384]: "Sun:"
+                    - text: "34962147"
+              - cell "2026" [ref=e385]
+              - cell "Edit Delete" [ref=e386]:
+                - button "Edit" [ref=e387] [cursor=pointer]
+                - button "Delete" [ref=e388] [cursor=pointer]
+            - 'row "panel KBC 2026-03-30 to 2026-04-04 Mon: 47891399 Tue: 13481678 Wed: 12700235 Thu: 12362499 Fri: 27983120 Sat: 23839450 2026 Edit Delete" [ref=e389]':
+              - cell "panel" [ref=e390]
+              - cell "KBC" [ref=e391]
+              - cell "2026-03-30 to 2026-04-04" [ref=e392]
+              - 'cell "Mon: 47891399 Tue: 13481678 Wed: 12700235 Thu: 12362499 Fri: 27983120 Sat: 23839450" [ref=e393]':
+                - generic [ref=e394]:
+                  - generic [ref=e395]:
+                    - strong [ref=e396]: "Mon:"
+                    - text: "47891399"
+                  - generic [ref=e397]:
+                    - strong [ref=e398]: "Tue:"
+                    - text: "13481678"
+                  - generic [ref=e399]:
+                    - strong [ref=e400]: "Wed:"
+                    - text: "12700235"
+                  - generic [ref=e401]:
+                    - strong [ref=e402]: "Thu:"
+                    - text: "12362499"
+                  - generic [ref=e403]:
+                    - strong [ref=e404]: "Fri:"
+                    - text: "27983120"
+                  - generic [ref=e405]:
+                    - strong [ref=e406]: "Sat:"
+                    - text: "23839450"
+              - cell "2026" [ref=e407]
+              - cell "Edit Delete" [ref=e408]:
+                - button "Edit" [ref=e409] [cursor=pointer]
+                - button "Delete" [ref=e410] [cursor=pointer]
+            - 'row "panel sridevi night 2026-03-30 to 2026-04-05 Mon: 38907278 Tue: 34528279 Wed: 12702390 Thu: 28002138 Fri: 36763689 Sat: 23831669 Sun: 25746448 2026 Edit Delete" [ref=e411]':
+              - cell "panel" [ref=e412]
+              - cell "sridevi night" [ref=e413]
+              - cell "2026-03-30 to 2026-04-05" [ref=e414]
+              - 'cell "Mon: 38907278 Tue: 34528279 Wed: 12702390 Thu: 28002138 Fri: 36763689 Sat: 23831669 Sun: 25746448" [ref=e415]':
+                - generic [ref=e416]:
+                  - generic [ref=e417]:
+                    - strong [ref=e418]: "Mon:"
+                    - text: "38907278"
+                  - generic [ref=e419]:
+                    - strong [ref=e420]: "Tue:"
+                    - text: "34528279"
+                  - generic [ref=e421]:
+                    - strong [ref=e422]: "Wed:"
+                    - text: "12702390"
+                  - generic [ref=e423]:
+                    - strong [ref=e424]: "Thu:"
+                    - text: "28002138"
+                  - generic [ref=e425]:
+                    - strong [ref=e426]: "Fri:"
+                    - text: "36763689"
+                  - generic [ref=e427]:
+                    - strong [ref=e428]: "Sat:"
+                    - text: "23831669"
+                  - generic [ref=e429]:
+                    - strong [ref=e430]: "Sun:"
+                    - text: "25746448"
+              - cell "2026" [ref=e431]
+              - cell "Edit Delete" [ref=e432]:
+                - button "Edit" [ref=e433] [cursor=pointer]
+                - button "Delete" [ref=e434] [cursor=pointer]
+            - 'row "panel Suraj Mukhi 2026-03-30 to 2026-04-04 Mon: 14500145 Tue: 12038378 Wed: 12812110 Thu: 37990389 Fri: 45099450 Sat: 13717160 2026 Edit Delete" [ref=e435]':
+              - cell "panel" [ref=e436]
+              - cell "Suraj Mukhi" [ref=e437]
+              - cell "2026-03-30 to 2026-04-04" [ref=e438]
+              - 'cell "Mon: 14500145 Tue: 12038378 Wed: 12812110 Thu: 37990389 Fri: 45099450 Sat: 13717160" [ref=e439]':
+                - generic [ref=e440]:
+                  - generic [ref=e441]:
+                    - strong [ref=e442]: "Mon:"
+                    - text: "14500145"
+                  - generic [ref=e443]:
+                    - strong [ref=e444]: "Tue:"
+                    - text: "12038378"
+                  - generic [ref=e445]:
+                    - strong [ref=e446]: "Wed:"
+                    - text: "12812110"
+                  - generic [ref=e447]:
+                    - strong [ref=e448]: "Thu:"
+                    - text: "37990389"
+                  - generic [ref=e449]:
+                    - strong [ref=e450]: "Fri:"
+                    - text: "45099450"
+                  - generic [ref=e451]:
+                    - strong [ref=e452]: "Sat:"
+                    - text: "13717160"
+              - cell "2026" [ref=e453]
+              - cell "Edit Delete" [ref=e454]:
+                - button "Edit" [ref=e455] [cursor=pointer]
+                - button "Delete" [ref=e456] [cursor=pointer]
+            - 'row "panel doller night 2026-03-23 to 2026-03-29 Mon: 23056123 Tue: 48919180 Wed: 89965140 Thu: 17080389 Fri: 14724347 Sat: 23835122 Sun: 11571470 2026 Edit Delete" [ref=e457]':
+              - cell "panel" [ref=e458]
+              - cell "doller night" [ref=e459]
+              - cell "2026-03-23 to 2026-03-29" [ref=e460]
+              - 'cell "Mon: 23056123 Tue: 48919180 Wed: 89965140 Thu: 17080389 Fri: 14724347 Sat: 23835122 Sun: 11571470" [ref=e461]':
+                - generic [ref=e462]:
+                  - generic [ref=e463]:
+                    - strong [ref=e464]: "Mon:"
+                    - text: "23056123"
+                  - generic [ref=e465]:
+                    - strong [ref=e466]: "Tue:"
+                    - text: "48919180"
+                  - generic [ref=e467]:
+                    - strong [ref=e468]: "Wed:"
+                    - text: "89965140"
+                  - generic [ref=e469]:
+                    - strong [ref=e470]: "Thu:"
+                    - text: "17080389"
+                  - generic [ref=e471]:
+                    - strong [ref=e472]: "Fri:"
+                    - text: "14724347"
+                  - generic [ref=e473]:
+                    - strong [ref=e474]: "Sat:"
+                    - text: "23835122"
+                  - generic [ref=e475]:
+                    - strong [ref=e476]: "Sun:"
+                    - text: "11571470"
+              - cell "2026" [ref=e477]
+              - cell "Edit Delete" [ref=e478]:
+                - button "Edit" [ref=e479] [cursor=pointer]
+                - button "Delete" [ref=e480] [cursor=pointer]
+            - 'row "panel sridevi 2026-03-23 to 2026-03-29 Mon: 13823445 Tue: 11803689 Wed: 77821100 Thu: 37003139 Fri: 17087368 Sat: 80086358 Sun: 12697890 2026 Edit Delete" [ref=e481]':
+              - cell "panel" [ref=e482]
+              - cell "sridevi" [ref=e483]
+              - cell "2026-03-23 to 2026-03-29" [ref=e484]
+              - 'cell "Mon: 13823445 Tue: 11803689 Wed: 77821100 Thu: 37003139 Fri: 17087368 Sat: 80086358 Sun: 12697890" [ref=e485]':
+                - generic [ref=e486]:
+                  - generic [ref=e487]:
+                    - strong [ref=e488]: "Mon:"
+                    - text: "13823445"
+                  - generic [ref=e489]:
+                    - strong [ref=e490]: "Tue:"
+                    - text: "11803689"
+                  - generic [ref=e491]:
+                    - strong [ref=e492]: "Wed:"
+                    - text: "77821100"
+                  - generic [ref=e493]:
+                    - strong [ref=e494]: "Thu:"
+                    - text: "37003139"
+                  - generic [ref=e495]:
+                    - strong [ref=e496]: "Fri:"
+                    - text: "17087368"
+                  - generic [ref=e497]:
+                    - strong [ref=e498]: "Sat:"
+                    - text: "80086358"
+                  - generic [ref=e499]:
+                    - strong [ref=e500]: "Sun:"
+                    - text: "12697890"
+              - cell "2026" [ref=e501]
+              - cell "Edit Delete" [ref=e502]:
+                - button "Edit" [ref=e503] [cursor=pointer]
+                - button "Delete" [ref=e504] [cursor=pointer]
+            - 'row "panel main bazar 2026-03-23 to 2026-03-27 Mon: 13041678 Tue: 19994239 Wed: 26080569 Thu: 47013148 Fri: 24626600 Sat: 2026 Edit Delete" [ref=e505]':
+              - cell "panel" [ref=e506]
+              - cell "main bazar" [ref=e507]
+              - cell "2026-03-23 to 2026-03-27" [ref=e508]
+              - 'cell "Mon: 13041678 Tue: 19994239 Wed: 26080569 Thu: 47013148 Fri: 24626600 Sat:" [ref=e509]':
+                - generic [ref=e510]:
+                  - generic [ref=e511]:
+                    - strong [ref=e512]: "Mon:"
+                    - text: "13041678"
+                  - generic [ref=e513]:
+                    - strong [ref=e514]: "Tue:"
+                    - text: "19994239"
+                  - generic [ref=e515]:
+                    - strong [ref=e516]: "Wed:"
+                    - text: "26080569"
+                  - generic [ref=e517]:
+                    - strong [ref=e518]: "Thu:"
+                    - text: "47013148"
+                  - generic [ref=e519]:
+                    - strong [ref=e520]: "Fri:"
+                    - text: "24626600"
+                  - strong [ref=e522]: "Sat:"
+              - cell "2026" [ref=e523]
+              - cell "Edit Delete" [ref=e524]:
+                - button "Edit" [ref=e525] [cursor=pointer]
+                - button "Delete" [ref=e526] [cursor=pointer]
+            - 'row "panel sridevi night 2026-03-23 to 2026-03-29 Mon: 49921290 Tue: 17972345 Wed: 27768233 Thu: 68049478 Fri: 44866790 Sat: 22485258 Sun: 17861236 2026 Edit Delete" [ref=e527]':
+              - cell "panel" [ref=e528]
+              - cell "sridevi night" [ref=e529]
+              - cell "2026-03-23 to 2026-03-29" [ref=e530]
+              - 'cell "Mon: 49921290 Tue: 17972345 Wed: 27768233 Thu: 68049478 Fri: 44866790 Sat: 22485258 Sun: 17861236" [ref=e531]':
+                - generic [ref=e532]:
+                  - generic [ref=e533]:
+                    - strong [ref=e534]: "Mon:"
+                    - text: "49921290"
+                  - generic [ref=e535]:
+                    - strong [ref=e536]: "Tue:"
+                    - text: "17972345"
+                  - generic [ref=e537]:
+                    - strong [ref=e538]: "Wed:"
+                    - text: "27768233"
+                  - generic [ref=e539]:
+                    - strong [ref=e540]: "Thu:"
+                    - text: "68049478"
+                  - generic [ref=e541]:
+                    - strong [ref=e542]: "Fri:"
+                    - text: "44866790"
+                  - generic [ref=e543]:
+                    - strong [ref=e544]: "Sat:"
+                    - text: "22485258"
+                  - generic [ref=e545]:
+                    - strong [ref=e546]: "Sun:"
+                    - text: "17861236"
+              - cell "2026" [ref=e547]
+              - cell "Edit Delete" [ref=e548]:
+                - button "Edit" [ref=e549] [cursor=pointer]
+                - button "Delete" [ref=e550] [cursor=pointer]
+            - 'row "jodi doller night 2026-03-23 to 2026-03-29 Mon: 56 Tue: 19 Wed: 65 Thu: 80 Fri: 24 Sat: 35 Sun: 2026 Edit Delete" [ref=e551]':
+              - cell "jodi" [ref=e552]
+              - cell "doller night" [ref=e553]
+              - cell "2026-03-23 to 2026-03-29" [ref=e554]
+              - 'cell "Mon: 56 Tue: 19 Wed: 65 Thu: 80 Fri: 24 Sat: 35 Sun:" [ref=e555]':
+                - generic [ref=e556]:
+                  - generic [ref=e557]:
+                    - strong [ref=e558]: "Mon:"
+                    - text: "56"
+                  - generic [ref=e559]:
+                    - strong [ref=e560]: "Tue:"
+                    - text: "19"
+                  - generic [ref=e561]:
+                    - strong [ref=e562]: "Wed:"
+                    - text: "65"
+                  - generic [ref=e563]:
+                    - strong [ref=e564]: "Thu:"
+                    - text: "80"
+                  - generic [ref=e565]:
+                    - strong [ref=e566]: "Fri:"
+                    - text: "24"
+                  - generic [ref=e567]:
+                    - strong [ref=e568]: "Sat:"
+                    - text: "35"
+                  - strong [ref=e570]: "Sun:"
+              - cell "2026" [ref=e571]
+              - cell "Edit Delete" [ref=e572]:
+                - button "Edit" [ref=e573] [cursor=pointer]
+                - button "Delete" [ref=e574] [cursor=pointer]
+            - 'row "panel Suraj Mukhi 2026-03-23 to 2026-03-28 Mon: 17080145 Tue: 14943599 Wed: 14056880 Thu: 26860235 Fri: 22045267 Sat: 16071669 2026 Edit Delete" [ref=e575]':
+              - cell "panel" [ref=e576]
+              - cell "Suraj Mukhi" [ref=e577]
+              - cell "2026-03-23 to 2026-03-28" [ref=e578]
+              - 'cell "Mon: 17080145 Tue: 14943599 Wed: 14056880 Thu: 26860235 Fri: 22045267 Sat: 16071669" [ref=e579]':
+                - generic [ref=e580]:
+                  - generic [ref=e581]:
+                    - strong [ref=e582]: "Mon:"
+                    - text: "17080145"
+                  - generic [ref=e583]:
+                    - strong [ref=e584]: "Tue:"
+                    - text: "14943599"
+                  - generic [ref=e585]:
+                    - strong [ref=e586]: "Wed:"
+                    - text: "14056880"
+                  - generic [ref=e587]:
+                    - strong [ref=e588]: "Thu:"
+                    - text: "26860235"
+                  - generic [ref=e589]:
+                    - strong [ref=e590]: "Fri:"
+                    - text: "22045267"
+                  - generic [ref=e591]:
+                    - strong [ref=e592]: "Sat:"
+                    - text: "16071669"
+              - cell "2026" [ref=e593]
+              - cell "Edit Delete" [ref=e594]:
+                - button "Edit" [ref=e595] [cursor=pointer]
+                - button "Delete" [ref=e596] [cursor=pointer]
+            - 'row "panel KBC 2026-03-23 to 2026-03-28 Mon: 26646123 Tue: 12479117 Wed: 58037223 Thu: 29019469 Fri: 12701579 Sat: 46007269 2026 Edit Delete" [ref=e597]':
+              - cell "panel" [ref=e598]
+              - cell "KBC" [ref=e599]
+              - cell "2026-03-23 to 2026-03-28" [ref=e600]
+              - 'cell "Mon: 26646123 Tue: 12479117 Wed: 58037223 Thu: 29019469 Fri: 12701579 Sat: 46007269" [ref=e601]':
+                - generic [ref=e602]:
+                  - generic [ref=e603]:
+                    - strong [ref=e604]: "Mon:"
+                    - text: "26646123"
+                  - generic [ref=e605]:
+                    - strong [ref=e606]: "Tue:"
+                    - text: "12479117"
+                  - generic [ref=e607]:
+                    - strong [ref=e608]: "Wed:"
+                    - text: "58037223"
+                  - generic [ref=e609]:
+                    - strong [ref=e610]: "Thu:"
+                    - text: "29019469"
+                  - generic [ref=e611]:
+                    - strong [ref=e612]: "Fri:"
+                    - text: "12701579"
+                  - generic [ref=e613]:
+                    - strong [ref=e614]: "Sat:"
+                    - text: "46007269"
+              - cell "2026" [ref=e615]
+              - cell "Edit Delete" [ref=e616]:
+                - button "Edit" [ref=e617] [cursor=pointer]
+                - button "Delete" [ref=e618] [cursor=pointer]
+            - 'row "panel doller 2026-03-23 to 2026-03-29 Mon: 34528288 Tue: 69058260 Wed: 67928666 Thu: 58924446 Fri: 55779270 Sat: 33400226 Sun: 14053238 2026 Edit Delete" [ref=e619]':
+              - cell "panel" [ref=e620]
+              - cell "doller" [ref=e621]
+              - cell "2026-03-23 to 2026-03-29" [ref=e622]
+              - 'cell "Mon: 34528288 Tue: 69058260 Wed: 67928666 Thu: 58924446 Fri: 55779270 Sat: 33400226 Sun: 14053238" [ref=e623]':
+                - generic [ref=e624]:
+                  - generic [ref=e625]:
+                    - strong [ref=e626]: "Mon:"
+                    - text: "34528288"
+                  - generic [ref=e627]:
+                    - strong [ref=e628]: "Tue:"
+                    - text: "69058260"
+                  - generic [ref=e629]:
+                    - strong [ref=e630]: "Wed:"
+                    - text: "67928666"
+                  - generic [ref=e631]:
+                    - strong [ref=e632]: "Thu:"
+                    - text: "58924446"
+                  - generic [ref=e633]:
+                    - strong [ref=e634]: "Fri:"
+                    - text: "55779270"
+                  - generic [ref=e635]:
+                    - strong [ref=e636]: "Sat:"
+                    - text: "33400226"
+                  - generic [ref=e637]:
+                    - strong [ref=e638]: "Sun:"
+                    - text: "14053238"
+              - cell "2026" [ref=e639]
+              - cell "Edit Delete" [ref=e640]:
+                - button "Edit" [ref=e641] [cursor=pointer]
+                - button "Delete" [ref=e642] [cursor=pointer]
+            - 'row "panel kalyan 2026-03-23 to 2026-03-28 Mon: 39917278 Tue: 35759577 Wed: 11242589 Thu: 88951678 Fri: 26977179 Sat: 23611579 2026 Edit Delete" [ref=e643]':
+              - cell "panel" [ref=e644]
+              - cell "kalyan" [ref=e645]
+              - cell "2026-03-23 to 2026-03-28" [ref=e646]
+              - 'cell "Mon: 39917278 Tue: 35759577 Wed: 11242589 Thu: 88951678 Fri: 26977179 Sat: 23611579" [ref=e647]':
+                - generic [ref=e648]:
+                  - generic [ref=e649]:
+                    - strong [ref=e650]: "Mon:"
+                    - text: "39917278"
+                  - generic [ref=e651]:
+                    - strong [ref=e652]: "Tue:"
+                    - text: "35759577"
+                  - generic [ref=e653]:
+                    - strong [ref=e654]: "Wed:"
+                    - text: "11242589"
+                  - generic [ref=e655]:
+                    - strong [ref=e656]: "Thu:"
+                    - text: "88951678"
+                  - generic [ref=e657]:
+                    - strong [ref=e658]: "Fri:"
+                    - text: "26977179"
+                  - generic [ref=e659]:
+                    - strong [ref=e660]: "Sat:"
+                    - text: "23611579"
+              - cell "2026" [ref=e661]
+              - cell "Edit Delete" [ref=e662]:
+                - button "Edit" [ref=e663] [cursor=pointer]
+                - button "Delete" [ref=e664] [cursor=pointer]
+            - 'row "panel main bazar 2026-03-16 to 2026-03-20 Mon: 57911669 Tue: 33625339 Wed: 25960370 Thu: 45543256 Fri: 11355258 Sat: 2026 Edit Delete" [ref=e665]':
+              - cell "panel" [ref=e666]
+              - cell "main bazar" [ref=e667]
+              - cell "2026-03-16 to 2026-03-20" [ref=e668]
+              - 'cell "Mon: 57911669 Tue: 33625339 Wed: 25960370 Thu: 45543256 Fri: 11355258 Sat:" [ref=e669]':
+                - generic [ref=e670]:
+                  - generic [ref=e671]:
+                    - strong [ref=e672]: "Mon:"
+                    - text: "57911669"
+                  - generic [ref=e673]:
+                    - strong [ref=e674]: "Tue:"
+                    - text: "33625339"
+                  - generic [ref=e675]:
+                    - strong [ref=e676]: "Wed:"
+                    - text: "25960370"
+                  - generic [ref=e677]:
+                    - strong [ref=e678]: "Thu:"
+                    - text: "45543256"
+                  - generic [ref=e679]:
+                    - strong [ref=e680]: "Fri:"
+                    - text: "11355258"
+                  - strong [ref=e682]: "Sat:"
+              - cell "2026" [ref=e683]
+              - cell "Edit Delete" [ref=e684]:
+                - button "Edit" [ref=e685] [cursor=pointer]
+                - button "Delete" [ref=e686] [cursor=pointer]
+            - 'row "panel sridevi night 2026-03-16 to 2026-03-22 Mon: 12258134 Tue: 44641119 Wed: 13601119 Thu: 33845799 Fri: 25859234 Sat: 34965267 Sun: 14946790 2026 Edit Delete" [ref=e687]':
+              - cell "panel" [ref=e688]
+              - cell "sridevi night" [ref=e689]
+              - cell "2026-03-16 to 2026-03-22" [ref=e690]
+              - 'cell "Mon: 12258134 Tue: 44641119 Wed: 13601119 Thu: 33845799 Fri: 25859234 Sat: 34965267 Sun: 14946790" [ref=e691]':
+                - generic [ref=e692]:
+                  - generic [ref=e693]:
+                    - strong [ref=e694]: "Mon:"
+                    - text: "12258134"
+                  - generic [ref=e695]:
+                    - strong [ref=e696]: "Tue:"
+                    - text: "44641119"
+                  - generic [ref=e697]:
+                    - strong [ref=e698]: "Wed:"
+                    - text: "13601119"
+                  - generic [ref=e699]:
+                    - strong [ref=e700]: "Thu:"
+                    - text: "33845799"
+                  - generic [ref=e701]:
+                    - strong [ref=e702]: "Fri:"
+                    - text: "25859234"
+                  - generic [ref=e703]:
+                    - strong [ref=e704]: "Sat:"
+                    - text: "34965267"
+                  - generic [ref=e705]:
+                    - strong [ref=e706]: "Sun:"
+                    - text: "14946790"
+              - cell "2026" [ref=e707]
+              - cell "Edit Delete" [ref=e708]:
+                - button "Edit" [ref=e709] [cursor=pointer]
+                - button "Delete" [ref=e710] [cursor=pointer]
+            - 'row "panel kalyan 2026-03-16 to 2026-03-21 Mon: 24958224 Tue: 58813256 Wed: 36872480 Thu: 58925177 Fri: 57806457 Sat: 18982156 2026 Edit Delete" [ref=e711]':
+              - cell "panel" [ref=e712]
+              - cell "kalyan" [ref=e713]
+              - cell "2026-03-16 to 2026-03-21" [ref=e714]
+              - 'cell "Mon: 24958224 Tue: 58813256 Wed: 36872480 Thu: 58925177 Fri: 57806457 Sat: 18982156" [ref=e715]':
+                - generic [ref=e716]:
+                  - generic [ref=e717]:
+                    - strong [ref=e718]: "Mon:"
+                    - text: "24958224"
+                  - generic [ref=e719]:
+                    - strong [ref=e720]: "Tue:"
+                    - text: "58813256"
+                  - generic [ref=e721]:
+                    - strong [ref=e722]: "Wed:"
+                    - text: "36872480"
+                  - generic [ref=e723]:
+                    - strong [ref=e724]: "Thu:"
+                    - text: "58925177"
+                  - generic [ref=e725]:
+                    - strong [ref=e726]: "Fri:"
+                    - text: "57806457"
+                  - generic [ref=e727]:
+                    - strong [ref=e728]: "Sat:"
+                    - text: "18982156"
+              - cell "2026" [ref=e729]
+              - cell "Edit Delete" [ref=e730]:
+                - button "Edit" [ref=e731] [cursor=pointer]
+                - button "Delete" [ref=e732] [cursor=pointer]
+            - 'row "panel KBC 2026-03-16 to 2026-03-21 Mon: 69059225 Tue: 78940677 Wed: 37996114 Thu: 16747557 Fri: 88063238 Sat: 22482110 2026 Edit Delete" [ref=e733]':
+              - cell "panel" [ref=e734]
+              - cell "KBC" [ref=e735]
+              - cell "2026-03-16 to 2026-03-21" [ref=e736]
+              - 'cell "Mon: 69059225 Tue: 78940677 Wed: 37996114 Thu: 16747557 Fri: 88063238 Sat: 22482110" [ref=e737]':
+                - generic [ref=e738]:
+                  - generic [ref=e739]:
+                    - strong [ref=e740]: "Mon:"
+                    - text: "69059225"
+                  - generic [ref=e741]:
+                    - strong [ref=e742]: "Tue:"
+                    - text: "78940677"
+                  - generic [ref=e743]:
+                    - strong [ref=e744]: "Wed:"
+                    - text: "37996114"
+                  - generic [ref=e745]:
+                    - strong [ref=e746]: "Thu:"
+                    - text: "16747557"
+                  - generic [ref=e747]:
+                    - strong [ref=e748]: "Fri:"
+                    - text: "88063238"
+                  - generic [ref=e749]:
+                    - strong [ref=e750]: "Sat:"
+                    - text: "22482110"
+              - cell "2026" [ref=e751]
+              - cell "Edit Delete" [ref=e752]:
+                - button "Edit" [ref=e753] [cursor=pointer]
+                - button "Delete" [ref=e754] [cursor=pointer]
+            - 'row "panel doller night 2026-03-16 to 2026-03-22 Mon: 14613599 Tue: 55666123 Wed: 11029180 Thu: 11684257 Fri: 33403689 Sat: 45098288 Sun: 29011470 2026 Edit Delete" [ref=e755]':
+              - cell "panel" [ref=e756]
+              - cell "doller night" [ref=e757]
+              - cell "2026-03-16 to 2026-03-22" [ref=e758]
+              - 'cell "Mon: 14613599 Tue: 55666123 Wed: 11029180 Thu: 11684257 Fri: 33403689 Sat: 45098288 Sun: 29011470" [ref=e759]':
+                - generic [ref=e760]:
+                  - generic [ref=e761]:
+                    - strong [ref=e762]: "Mon:"
+                    - text: "14613599"
+                  - generic [ref=e763]:
+                    - strong [ref=e764]: "Tue:"
+                    - text: "55666123"
+                  - generic [ref=e765]:
+                    - strong [ref=e766]: "Wed:"
+                    - text: "11029180"
+                  - generic [ref=e767]:
+                    - strong [ref=e768]: "Thu:"
+                    - text: "11684257"
+                  - generic [ref=e769]:
+                    - strong [ref=e770]: "Fri:"
+                    - text: "33403689"
+                  - generic [ref=e771]:
+                    - strong [ref=e772]: "Sat:"
+                    - text: "45098288"
+                  - generic [ref=e773]:
+                    - strong [ref=e774]: "Sun:"
+                    - text: "29011470"
+              - cell "2026" [ref=e775]
+              - cell "Edit Delete" [ref=e776]:
+                - button "Edit" [ref=e777] [cursor=pointer]
+                - button "Delete" [ref=e778] [cursor=pointer]
+            - 'row "jodi doller night 2026-03-16 to 2026-03-22 Mon: 13 Tue: 66 Wed: 29 Thu: 84 Fri: 03 Sat: 98 Sun: 11 2026 Edit Delete" [ref=e779]':
+              - cell "jodi" [ref=e780]
+              - cell "doller night" [ref=e781]
+              - cell "2026-03-16 to 2026-03-22" [ref=e782]
+              - 'cell "Mon: 13 Tue: 66 Wed: 29 Thu: 84 Fri: 03 Sat: 98 Sun: 11" [ref=e783]':
+                - generic [ref=e784]:
+                  - generic [ref=e785]:
+                    - strong [ref=e786]: "Mon:"
+                    - text: "13"
+                  - generic [ref=e787]:
+                    - strong [ref=e788]: "Tue:"
+                    - text: "66"
+                  - generic [ref=e789]:
+                    - strong [ref=e790]: "Wed:"
+                    - text: "29"
+                  - generic [ref=e791]:
+                    - strong [ref=e792]: "Thu:"
+                    - text: "84"
+                  - generic [ref=e793]:
+                    - strong [ref=e794]: "Fri:"
+                    - text: "03"
+                  - generic [ref=e795]:
+                    - strong [ref=e796]: "Sat:"
+                    - text: "98"
+                  - generic [ref=e797]:
+                    - strong [ref=e798]: "Sun:"
+                    - text: "11"
+              - cell "2026" [ref=e799]
+              - cell "Edit Delete" [ref=e800]:
+                - button "Edit" [ref=e801] [cursor=pointer]
+                - button "Delete" [ref=e802] [cursor=pointer]
+            - 'row "panel doller 2026-03-16 to 2026-03-22 Mon: 34528369 Tue: 68046222 Wed: 11911669 Thu: 68042237 Fri: 14941678 Sat: 58035177 Sun: 34855258 2026 Edit Delete" [ref=e803]':
+              - cell "panel" [ref=e804]
+              - cell "doller" [ref=e805]
+              - cell "2026-03-16 to 2026-03-22" [ref=e806]
+              - 'cell "Mon: 34528369 Tue: 68046222 Wed: 11911669 Thu: 68042237 Fri: 14941678 Sat: 58035177 Sun: 34855258" [ref=e807]':
+                - generic [ref=e808]:
+                  - generic [ref=e809]:
+                    - strong [ref=e810]: "Mon:"
+                    - text: "34528369"
+                  - generic [ref=e811]:
+                    - strong [ref=e812]: "Tue:"
+                    - text: "68046222"
+                  - generic [ref=e813]:
+                    - strong [ref=e814]: "Wed:"
+                    - text: "11911669"
+                  - generic [ref=e815]:
+                    - strong [ref=e816]: "Thu:"
+                    - text: "68042237"
+                  - generic [ref=e817]:
+                    - strong [ref=e818]: "Fri:"
+                    - text: "14941678"
+                  - generic [ref=e819]:
+                    - strong [ref=e820]: "Sat:"
+                    - text: "58035177"
+                  - generic [ref=e821]:
+                    - strong [ref=e822]: "Sun:"
+                    - text: "34855258"
+              - cell "2026" [ref=e823]
+              - cell "Edit Delete" [ref=e824]:
+                - button "Edit" [ref=e825] [cursor=pointer]
+                - button "Delete" [ref=e826] [cursor=pointer]
+            - 'row "panel Suraj Mukhi 2026-03-16 to 2026-03-21 Mon: 35976457 Tue: 13937278 Wed: 36760460 Thu: 56010334 Fri: 29012679 Sat: 16079667 2026 Edit Delete" [ref=e827]':
+              - cell "panel" [ref=e828]
+              - cell "Suraj Mukhi" [ref=e829]
+              - cell "2026-03-16 to 2026-03-21" [ref=e830]
+              - 'cell "Mon: 35976457 Tue: 13937278 Wed: 36760460 Thu: 56010334 Fri: 29012679 Sat: 16079667" [ref=e831]':
+                - generic [ref=e832]:
+                  - generic [ref=e833]:
+                    - strong [ref=e834]: "Mon:"
+                    - text: "35976457"
+                  - generic [ref=e835]:
+                    - strong [ref=e836]: "Tue:"
+                    - text: "13937278"
+                  - generic [ref=e837]:
+                    - strong [ref=e838]: "Wed:"
+                    - text: "36760460"
+                  - generic [ref=e839]:
+                    - strong [ref=e840]: "Thu:"
+                    - text: "56010334"
+                  - generic [ref=e841]:
+                    - strong [ref=e842]: "Fri:"
+                    - text: "29012679"
+                  - generic [ref=e843]:
+                    - strong [ref=e844]: "Sat:"
+                    - text: "16079667"
+              - cell "2026" [ref=e845]
+              - cell "Edit Delete" [ref=e846]:
+                - button "Edit" [ref=e847] [cursor=pointer]
+                - button "Delete" [ref=e848] [cursor=pointer]
+            - 'row "panel sridevi 2026-03-16 to 2026-03-22 Mon: 48023490 Tue: 15625267 Wed: 34856457 Thu: 78059568 Fri: 55771489 Sat: 57804266 Sun: 14509568 2026 Edit Delete" [ref=e849]':
+              - cell "panel" [ref=e850]
+              - cell "sridevi" [ref=e851]
+              - cell "2026-03-16 to 2026-03-22" [ref=e852]
+              - 'cell "Mon: 48023490 Tue: 15625267 Wed: 34856457 Thu: 78059568 Fri: 55771489 Sat: 57804266 Sun: 14509568" [ref=e853]':
+                - generic [ref=e854]:
+                  - generic [ref=e855]:
+                    - strong [ref=e856]: "Mon:"
+                    - text: "48023490"
+                  - generic [ref=e857]:
+                    - strong [ref=e858]: "Tue:"
+                    - text: "15625267"
+                  - generic [ref=e859]:
+                    - strong [ref=e860]: "Wed:"
+                    - text: "34856457"
+                  - generic [ref=e861]:
+                    - strong [ref=e862]: "Thu:"
+                    - text: "78059568"
+                  - generic [ref=e863]:
+                    - strong [ref=e864]: "Fri:"
+                    - text: "55771489"
+                  - generic [ref=e865]:
+                    - strong [ref=e866]: "Sat:"
+                    - text: "57804266"
+                  - generic [ref=e867]:
+                    - strong [ref=e868]: "Sun:"
+                    - text: "14509568"
+              - cell "2026" [ref=e869]
+              - cell "Edit Delete" [ref=e870]:
+                - button "Edit" [ref=e871] [cursor=pointer]
+                - button "Delete" [ref=e872] [cursor=pointer]
+            - 'row "panel main bazar 2026-03-09 to 2026-03-13 Mon: 27094356 Tue: 22820136 Wed: 49923670 Thu: 45879469 Fri: 45872156 Sat: 2026 Edit Delete" [ref=e873]':
+              - cell "panel" [ref=e874]
+              - cell "main bazar" [ref=e875]
+              - cell "2026-03-09 to 2026-03-13" [ref=e876]
+              - 'cell "Mon: 27094356 Tue: 22820136 Wed: 49923670 Thu: 45879469 Fri: 45872156 Sat:" [ref=e877]':
+                - generic [ref=e878]:
+                  - generic [ref=e879]:
+                    - strong [ref=e880]: "Mon:"
+                    - text: "27094356"
+                  - generic [ref=e881]:
+                    - strong [ref=e882]: "Tue:"
+                    - text: "22820136"
+                  - generic [ref=e883]:
+                    - strong [ref=e884]: "Wed:"
+                    - text: "49923670"
+                  - generic [ref=e885]:
+                    - strong [ref=e886]: "Thu:"
+                    - text: "45879469"
+                  - generic [ref=e887]:
+                    - strong [ref=e888]: "Fri:"
+                    - text: "45872156"
+                  - strong [ref=e890]: "Sat:"
+              - cell "2026" [ref=e891]
+              - cell "Edit Delete" [ref=e892]:
+                - button "Edit" [ref=e893] [cursor=pointer]
+                - button "Delete" [ref=e894] [cursor=pointer]
+            - 'row "panel KBC 2026-03-09 to 2026-03-14 Mon: 36098990 Tue: 57802688 Wed: 11248378 Thu: 13486358 Fri: 70079180 Sat: 23503247 2026 Edit Delete" [ref=e895]':
+              - cell "panel" [ref=e896]
+              - cell "KBC" [ref=e897]
+              - cell "2026-03-09 to 2026-03-14" [ref=e898]
+              - 'cell "Mon: 36098990 Tue: 57802688 Wed: 11248378 Thu: 13486358 Fri: 70079180 Sat: 23503247" [ref=e899]':
+                - generic [ref=e900]:
+                  - generic [ref=e901]:
+                    - strong [ref=e902]: "Mon:"
+                    - text: "36098990"
+                  - generic [ref=e903]:
+                    - strong [ref=e904]: "Tue:"
+                    - text: "57802688"
+                  - generic [ref=e905]:
+                    - strong [ref=e906]: "Wed:"
+                    - text: "11248378"
+                  - generic [ref=e907]:
+                    - strong [ref=e908]: "Thu:"
+                    - text: "13486358"
+                  - generic [ref=e909]:
+                    - strong [ref=e910]: "Fri:"
+                    - text: "70079180"
+                  - generic [ref=e911]:
+                    - strong [ref=e912]: "Sat:"
+                    - text: "23503247"
+              - cell "2026" [ref=e913]
+              - cell "Edit Delete" [ref=e914]:
+                - button "Edit" [ref=e915] [cursor=pointer]
+                - button "Delete" [ref=e916] [cursor=pointer]
+            - 'row "panel sridevi 2026-03-09 to 2026-03-15 Mon: 45760578 Tue: 18090389 Wed: 37889126 Thu: 13824167 Fri: 45988350 Sat: 27989450 Sun: 15062390 2026 Edit Delete" [ref=e917]':
+              - cell "panel" [ref=e918]
+              - cell "sridevi" [ref=e919]
+              - cell "2026-03-09 to 2026-03-15" [ref=e920]
+              - 'cell "Mon: 45760578 Tue: 18090389 Wed: 37889126 Thu: 13824167 Fri: 45988350 Sat: 27989450 Sun: 15062390" [ref=e921]':
+                - generic [ref=e922]:
+                  - generic [ref=e923]:
+                    - strong [ref=e924]: "Mon:"
+                    - text: "45760578"
+                  - generic [ref=e925]:
+                    - strong [ref=e926]: "Tue:"
+                    - text: "18090389"
+                  - generic [ref=e927]:
+                    - strong [ref=e928]: "Wed:"
+                    - text: "37889126"
+                  - generic [ref=e929]:
+                    - strong [ref=e930]: "Thu:"
+                    - text: "13824167"
+                  - generic [ref=e931]:
+                    - strong [ref=e932]: "Fri:"
+                    - text: "45988350"
+                  - generic [ref=e933]:
+                    - strong [ref=e934]: "Sat:"
+                    - text: "27989450"
+                  - generic [ref=e935]:
+                    - strong [ref=e936]: "Sun:"
+                    - text: "15062390"
+              - cell "2026" [ref=e937]
+              - cell "Edit Delete" [ref=e938]:
+                - button "Edit" [ref=e939] [cursor=pointer]
+                - button "Delete" [ref=e940] [cursor=pointer]
+            - 'row "panel Suraj Mukhi 2026-03-09 to 2026-03-14 Mon: 25639577 Tue: 12928468 Wed: 15063120 Thu: 45651236 Fri: 34962778 Sat: 38019199 2026 Edit Delete" [ref=e941]':
+              - cell "panel" [ref=e942]
+              - cell "Suraj Mukhi" [ref=e943]
+              - cell "2026-03-09 to 2026-03-14" [ref=e944]
+              - 'cell "Mon: 25639577 Tue: 12928468 Wed: 15063120 Thu: 45651236 Fri: 34962778 Sat: 38019199" [ref=e945]':
+                - generic [ref=e946]:
+                  - generic [ref=e947]:
+                    - strong [ref=e948]: "Mon:"
+                    - text: "25639577"
+                  - generic [ref=e949]:
+                    - strong [ref=e950]: "Tue:"
+                    - text: "12928468"
+                  - generic [ref=e951]:
+                    - strong [ref=e952]: "Wed:"
+                    - text: "15063120"
+                  - generic [ref=e953]:
+                    - strong [ref=e954]: "Thu:"
+                    - text: "45651236"
+                  - generic [ref=e955]:
+                    - strong [ref=e956]: "Fri:"
+                    - text: "34962778"
+                  - generic [ref=e957]:
+                    - strong [ref=e958]: "Sat:"
+                    - text: "38019199"
+              - cell "2026" [ref=e959]
+              - cell "Edit Delete" [ref=e960]:
+                - button "Edit" [ref=e961] [cursor=pointer]
+                - button "Delete" [ref=e962] [cursor=pointer]
+            - 'row "panel doller 2026-03-09 to 2026-03-15 Mon: 37990136 Tue: 10017700 Wed: 80085555 Thu: 22608567 Fri: 35753490 Sat: 33628233 Sun: 58034789 2026 Edit Delete" [ref=e963]':
+              - cell "panel" [ref=e964]
+              - cell "doller" [ref=e965]
+              - cell "2026-03-09 to 2026-03-15" [ref=e966]
+              - 'cell "Mon: 37990136 Tue: 10017700 Wed: 80085555 Thu: 22608567 Fri: 35753490 Sat: 33628233 Sun: 58034789" [ref=e967]':
+                - generic [ref=e968]:
+                  - generic [ref=e969]:
+                    - strong [ref=e970]: "Mon:"
+                    - text: "37990136"
+                  - generic [ref=e971]:
+                    - strong [ref=e972]: "Tue:"
+                    - text: "10017700"
+                  - generic [ref=e973]:
+                    - strong [ref=e974]: "Wed:"
+                    - text: "80085555"
+                  - generic [ref=e975]:
+                    - strong [ref=e976]: "Thu:"
+                    - text: "22608567"
+                  - generic [ref=e977]:
+                    - strong [ref=e978]: "Fri:"
+                    - text: "35753490"
+                  - generic [ref=e979]:
+                    - strong [ref=e980]: "Sat:"
+                    - text: "33628233"
+                  - generic [ref=e981]:
+                    - strong [ref=e982]: "Sun:"
+                    - text: "58034789"
+              - cell "2026" [ref=e983]
+              - cell "Edit Delete" [ref=e984]:
+                - button "Edit" [ref=e985] [cursor=pointer]
+                - button "Delete" [ref=e986] [cursor=pointer]
+            - 'row "panel kalyan 2026-03-09 to 2026-03-14 Mon: 89070127 Tue: 12921100 Wed: 44530370 Thu: 26088134 Fri: 33515230 Sat: 35754248 2026 Edit Delete" [ref=e987]':
+              - cell "panel" [ref=e988]
+              - cell "kalyan" [ref=e989]
+              - cell "2026-03-09 to 2026-03-14" [ref=e990]
+              - 'cell "Mon: 89070127 Tue: 12921100 Wed: 44530370 Thu: 26088134 Fri: 33515230 Sat: 35754248" [ref=e991]':
+                - generic [ref=e992]:
+                  - generic [ref=e993]:
+                    - strong [ref=e994]: "Mon:"
+                    - text: "89070127"
+                  - generic [ref=e995]:
+                    - strong [ref=e996]: "Tue:"
+                    - text: "12921100"
+                  - generic [ref=e997]:
+                    - strong [ref=e998]: "Wed:"
+                    - text: "44530370"
+                  - generic [ref=e999]:
+                    - strong [ref=e1000]: "Thu:"
+                    - text: "26088134"
+                  - generic [ref=e1001]:
+                    - strong [ref=e1002]: "Fri:"
+                    - text: "33515230"
+                  - generic [ref=e1003]:
+                    - strong [ref=e1004]: "Sat:"
+                    - text: "35754248"
+              - cell "2026" [ref=e1005]
+              - cell "Edit Delete" [ref=e1006]:
+                - button "Edit" [ref=e1007] [cursor=pointer]
+                - button "Delete" [ref=e1008] [cursor=pointer]
+            - 'row "jodi doller night 2026-03-09 to 2026-03-15 Mon: 41 Tue: 33 Wed: 40 Thu: 96 Fri: 53 Sat: 71 Sun: 85 2026 Edit Delete" [ref=e1009]':
+              - cell "jodi" [ref=e1010]
+              - cell "doller night" [ref=e1011]
+              - cell "2026-03-09 to 2026-03-15" [ref=e1012]
+              - 'cell "Mon: 41 Tue: 33 Wed: 40 Thu: 96 Fri: 53 Sat: 71 Sun: 85" [ref=e1013]':
+                - generic [ref=e1014]:
+                  - generic [ref=e1015]:
+                    - strong [ref=e1016]: "Mon:"
+                    - text: "41"
+                  - generic [ref=e1017]:
+                    - strong [ref=e1018]: "Tue:"
+                    - text: "33"
+                  - generic [ref=e1019]:
+                    - strong [ref=e1020]: "Wed:"
+                    - text: "40"
+                  - generic [ref=e1021]:
+                    - strong [ref=e1022]: "Thu:"
+                    - text: "96"
+                  - generic [ref=e1023]:
+                    - strong [ref=e1024]: "Fri:"
+                    - text: "53"
+                  - generic [ref=e1025]:
+                    - strong [ref=e1026]: "Sat:"
+                    - text: "71"
+                  - generic [ref=e1027]:
+                    - strong [ref=e1028]: "Sun:"
+                    - text: "85"
+              - cell "2026" [ref=e1029]
+              - cell "Edit Delete" [ref=e1030]:
+                - button "Edit" [ref=e1031] [cursor=pointer]
+                - button "Delete" [ref=e1032] [cursor=pointer]
+            - 'row "panel doller night 2026-03-09 to 2026-03-15 Mon: 34741669 Tue: 16633779 Wed: 78940488 Thu: 47896277 Fri: 69053139 Sat: 34071146 Sun: 55885122 2026 Edit Delete" [ref=e1033]':
+              - cell "panel" [ref=e1034]
+              - cell "doller night" [ref=e1035]
+              - cell "2026-03-09 to 2026-03-15" [ref=e1036]
+              - 'cell "Mon: 34741669 Tue: 16633779 Wed: 78940488 Thu: 47896277 Fri: 69053139 Sat: 34071146 Sun: 55885122" [ref=e1037]':
+                - generic [ref=e1038]:
+                  - generic [ref=e1039]:
+                    - strong [ref=e1040]: "Mon:"
+                    - text: "34741669"
+                  - generic [ref=e1041]:
+                    - strong [ref=e1042]: "Tue:"
+                    - text: "16633779"
+                  - generic [ref=e1043]:
+                    - strong [ref=e1044]: "Wed:"
+                    - text: "78940488"
+                  - generic [ref=e1045]:
+                    - strong [ref=e1046]: "Thu:"
+                    - text: "47896277"
+                  - generic [ref=e1047]:
+                    - strong [ref=e1048]: "Fri:"
+                    - text: "69053139"
+                  - generic [ref=e1049]:
+                    - strong [ref=e1050]: "Sat:"
+                    - text: "34071146"
+                  - generic [ref=e1051]:
+                    - strong [ref=e1052]: "Sun:"
+                    - text: "55885122"
+              - cell "2026" [ref=e1053]
+              - cell "Edit Delete" [ref=e1054]:
+                - button "Edit" [ref=e1055] [cursor=pointer]
+                - button "Delete" [ref=e1056] [cursor=pointer]
+            - 'row "panel sridevi night 2026-03-09 to 2026-03-15 Mon: 30033157 Tue: 27874158 Wed: 28007467 Thu: 56782129 Fri: 16075168 Sat: 23492138 Sun: 20024149 2026 Edit Delete" [ref=e1057]':
+              - cell "panel" [ref=e1058]
+              - cell "sridevi night" [ref=e1059]
+              - cell "2026-03-09 to 2026-03-15" [ref=e1060]
+              - 'cell "Mon: 30033157 Tue: 27874158 Wed: 28007467 Thu: 56782129 Fri: 16075168 Sat: 23492138 Sun: 20024149" [ref=e1061]':
+                - generic [ref=e1062]:
+                  - generic [ref=e1063]:
+                    - strong [ref=e1064]: "Mon:"
+                    - text: "30033157"
+                  - generic [ref=e1065]:
+                    - strong [ref=e1066]: "Tue:"
+                    - text: "27874158"
+                  - generic [ref=e1067]:
+                    - strong [ref=e1068]: "Wed:"
+                    - text: "28007467"
+                  - generic [ref=e1069]:
+                    - strong [ref=e1070]: "Thu:"
+                    - text: "56782129"
+                  - generic [ref=e1071]:
+                    - strong [ref=e1072]: "Fri:"
+                    - text: "16075168"
+                  - generic [ref=e1073]:
+                    - strong [ref=e1074]: "Sat:"
+                    - text: "23492138"
+                  - generic [ref=e1075]:
+                    - strong [ref=e1076]: "Sun:"
+                    - text: "20024149"
+              - cell "2026" [ref=e1077]
+              - cell "Edit Delete" [ref=e1078]:
+                - button "Edit" [ref=e1079] [cursor=pointer]
+                - button "Delete" [ref=e1080] [cursor=pointer]
+            - 'row "panel Suraj Mukhi 2026-03-02 to 2026-03-07 Mon: 24735258 Tue: 13042778 Wed: 16072129 Thu: 23721146 Fri: 27872390 Sat: 34522228 2026 Edit Delete" [ref=e1081]':
+              - cell "panel" [ref=e1082]
+              - cell "Suraj Mukhi" [ref=e1083]
+              - cell "2026-03-02 to 2026-03-07" [ref=e1084]
+              - 'cell "Mon: 24735258 Tue: 13042778 Wed: 16072129 Thu: 23721146 Fri: 27872390 Sat: 34522228" [ref=e1085]':
+                - generic [ref=e1086]:
+                  - generic [ref=e1087]:
+                    - strong [ref=e1088]: "Mon:"
+                    - text: "24735258"
+                  - generic [ref=e1089]:
+                    - strong [ref=e1090]: "Tue:"
+                    - text: "13042778"
+                  - generic [ref=e1091]:
+                    - strong [ref=e1092]: "Wed:"
+                    - text: "16072129"
+                  - generic [ref=e1093]:
+                    - strong [ref=e1094]: "Thu:"
+                    - text: "23721146"
+                  - generic [ref=e1095]:
+                    - strong [ref=e1096]: "Fri:"
+                    - text: "27872390"
+                  - generic [ref=e1097]:
+                    - strong [ref=e1098]: "Sat:"
+                    - text: "34522228"
+              - cell "2026" [ref=e1099]
+              - cell "Edit Delete" [ref=e1100]:
+                - button "Edit" [ref=e1101] [cursor=pointer]
+                - button "Delete" [ref=e1102] [cursor=pointer]
+            - 'row "jodi doller night 2026-03-02 to 2026-03-08 Mon: 76 Tue: 05 Wed: ** Thu: 23 Fri: 75 Sat: 31 Sun: 68 2026 Edit Delete" [ref=e1103]':
+              - cell "jodi" [ref=e1104]
+              - cell "doller night" [ref=e1105]
+              - cell "2026-03-02 to 2026-03-08" [ref=e1106]
+              - 'cell "Mon: 76 Tue: 05 Wed: ** Thu: 23 Fri: 75 Sat: 31 Sun: 68" [ref=e1107]':
+                - generic [ref=e1108]:
+                  - generic [ref=e1109]:
+                    - strong [ref=e1110]: "Mon:"
+                    - text: "76"
+                  - generic [ref=e1111]:
+                    - strong [ref=e1112]: "Tue:"
+                    - text: "05"
+                  - generic [ref=e1113]:
+                    - strong [ref=e1114]: "Wed:"
+                    - text: "**"
+                  - generic [ref=e1115]:
+                    - strong [ref=e1116]: "Thu:"
+                    - text: "23"
+                  - generic [ref=e1117]:
+                    - strong [ref=e1118]: "Fri:"
+                    - text: "75"
+                  - generic [ref=e1119]:
+                    - strong [ref=e1120]: "Sat:"
+                    - text: "31"
+                  - generic [ref=e1121]:
+                    - strong [ref=e1122]: "Sun:"
+                    - text: "68"
+              - cell "2026" [ref=e1123]
+              - cell "Edit Delete" [ref=e1124]:
+                - button "Edit" [ref=e1125] [cursor=pointer]
+                - button "Delete" [ref=e1126] [cursor=pointer]
+            - 'row "panel sridevi 2026-03-02 to 2026-03-08 Mon: 16749234 Tue: 12584770 Wed: ******** Thu: 15065168 Fri: 38014239 Sat: 16962156 Sun: 13042246 2026 Edit Delete" [ref=e1127]':
+              - cell "panel" [ref=e1128]
+              - cell "sridevi" [ref=e1129]
+              - cell "2026-03-02 to 2026-03-08" [ref=e1130]
+              - 'cell "Mon: 16749234 Tue: 12584770 Wed: ******** Thu: 15065168 Fri: 38014239 Sat: 16962156 Sun: 13042246" [ref=e1131]':
+                - generic [ref=e1132]:
+                  - generic [ref=e1133]:
+                    - strong [ref=e1134]: "Mon:"
+                    - text: "16749234"
+                  - generic [ref=e1135]:
+                    - strong [ref=e1136]: "Tue:"
+                    - text: "12584770"
+                  - generic [ref=e1137]:
+                    - strong [ref=e1138]: "Wed:"
+                    - text: "********"
+                  - generic [ref=e1139]:
+                    - strong [ref=e1140]: "Thu:"
+                    - text: "15065168"
+                  - generic [ref=e1141]:
+                    - strong [ref=e1142]: "Fri:"
+                    - text: "38014239"
+                  - generic [ref=e1143]:
+                    - strong [ref=e1144]: "Sat:"
+                    - text: "16962156"
+                  - generic [ref=e1145]:
+                    - strong [ref=e1146]: "Sun:"
+                    - text: "13042246"
+              - cell "2026" [ref=e1147]
+              - cell "Edit Delete" [ref=e1148]:
+                - button "Edit" [ref=e1149] [cursor=pointer]
+                - button "Delete" [ref=e1150] [cursor=pointer]
+            - 'row "panel sridevi night 2026-03-02 to 2026-03-08 Mon: 22487160 Tue: 14614347 Wed: ******** Thu: 47890127 Fri: 44861236 Sat: 44088189 Sun: 34858468 2026 Edit Delete" [ref=e1151]':
+              - cell "panel" [ref=e1152]
+              - cell "sridevi night" [ref=e1153]
+              - cell "2026-03-02 to 2026-03-08" [ref=e1154]
+              - 'cell "Mon: 22487160 Tue: 14614347 Wed: ******** Thu: 47890127 Fri: 44861236 Sat: 44088189 Sun: 34858468" [ref=e1155]':
+                - generic [ref=e1156]:
+                  - generic [ref=e1157]:
+                    - strong [ref=e1158]: "Mon:"
+                    - text: "22487160"
+                  - generic [ref=e1159]:
+                    - strong [ref=e1160]: "Tue:"
+                    - text: "14614347"
+                  - generic [ref=e1161]:
+                    - strong [ref=e1162]: "Wed:"
+                    - text: "********"
+                  - generic [ref=e1163]:
+                    - strong [ref=e1164]: "Thu:"
+                    - text: "47890127"
+                  - generic [ref=e1165]:
+                    - strong [ref=e1166]: "Fri:"
+                    - text: "44861236"
+                  - generic [ref=e1167]:
+                    - strong [ref=e1168]: "Sat:"
+                    - text: "44088189"
+                  - generic [ref=e1169]:
+                    - strong [ref=e1170]: "Sun:"
+                    - text: "34858468"
+              - cell "2026" [ref=e1171]
+              - cell "Edit Delete" [ref=e1172]:
+                - button "Edit" [ref=e1173] [cursor=pointer]
+                - button "Delete" [ref=e1174] [cursor=pointer]
+            - 'row "panel KBC 2026-03-02 to 2026-03-07 Mon: 14727223 Tue: 23386178 Wed: ** Thu: 27095267 Fri: 12818125 Sat: 23942688 2026 Edit Delete" [ref=e1175]':
+              - cell "panel" [ref=e1176]
+              - cell "KBC" [ref=e1177]
+              - cell "2026-03-02 to 2026-03-07" [ref=e1178]
+              - 'cell "Mon: 14727223 Tue: 23386178 Wed: ** Thu: 27095267 Fri: 12818125 Sat: 23942688" [ref=e1179]':
+                - generic [ref=e1180]:
+                  - generic [ref=e1181]:
+                    - strong [ref=e1182]: "Mon:"
+                    - text: "14727223"
+                  - generic [ref=e1183]:
+                    - strong [ref=e1184]: "Tue:"
+                    - text: "23386178"
+                  - generic [ref=e1185]:
+                    - strong [ref=e1186]: "Wed:"
+                    - text: "**"
+                  - generic [ref=e1187]:
+                    - strong [ref=e1188]: "Thu:"
+                    - text: "27095267"
+                  - generic [ref=e1189]:
+                    - strong [ref=e1190]: "Fri:"
+                    - text: "12818125"
+                  - generic [ref=e1191]:
+                    - strong [ref=e1192]: "Sat:"
+                    - text: "23942688"
+              - cell "2026" [ref=e1193]
+              - cell "Edit Delete" [ref=e1194]:
+                - button "Edit" [ref=e1195] [cursor=pointer]
+                - button "Delete" [ref=e1196] [cursor=pointer]
+            - 'row "panel doller 2026-03-02 to 2026-03-08 Mon: 23506790 Tue: 22939469 Wed: 12252147 Thu: 14614455 Fri: 15515159 Sat: 67701155 Sun: 14832147 2026 Edit Delete" [ref=e1197]':
+              - cell "panel" [ref=e1198]
+              - cell "doller" [ref=e1199]
+              - cell "2026-03-02 to 2026-03-08" [ref=e1200]
+              - 'cell "Mon: 23506790 Tue: 22939469 Wed: 12252147 Thu: 14614455 Fri: 15515159 Sat: 67701155 Sun: 14832147" [ref=e1201]':
+                - generic [ref=e1202]:
+                  - generic [ref=e1203]:
+                    - strong [ref=e1204]: "Mon:"
+                    - text: "23506790"
+                  - generic [ref=e1205]:
+                    - strong [ref=e1206]: "Tue:"
+                    - text: "22939469"
+                  - generic [ref=e1207]:
+                    - strong [ref=e1208]: "Wed:"
+                    - text: "12252147"
+                  - generic [ref=e1209]:
+                    - strong [ref=e1210]: "Thu:"
+                    - text: "14614455"
+                  - generic [ref=e1211]:
+                    - strong [ref=e1212]: "Fri:"
+                    - text: "15515159"
+                  - generic [ref=e1213]:
+                    - strong [ref=e1214]: "Sat:"
+                    - text: "67701155"
+                  - generic [ref=e1215]:
+                    - strong [ref=e1216]: "Sun:"
+                    - text: "14832147"
+              - cell "2026" [ref=e1217]
+              - cell "Edit Delete" [ref=e1218]:
+                - button "Edit" [ref=e1219] [cursor=pointer]
+                - button "Delete" [ref=e1220] [cursor=pointer]
+            - 'row "panel kalyan 2026-03-02 to 2026-03-07 Mon: 13713148 Tue: 28994680 Wed: ** Thu: 23490578 Fri: 14056123 Sat: 15063670 2026 Edit Delete" [ref=e1221]':
+              - cell "panel" [ref=e1222]
+              - cell "kalyan" [ref=e1223]
+              - cell "2026-03-02 to 2026-03-07" [ref=e1224]
+              - 'cell "Mon: 13713148 Tue: 28994680 Wed: ** Thu: 23490578 Fri: 14056123 Sat: 15063670" [ref=e1225]':
+                - generic [ref=e1226]:
+                  - generic [ref=e1227]:
+                    - strong [ref=e1228]: "Mon:"
+                    - text: "13713148"
+                  - generic [ref=e1229]:
+                    - strong [ref=e1230]: "Tue:"
+                    - text: "28994680"
+                  - generic [ref=e1231]:
+                    - strong [ref=e1232]: "Wed:"
+                    - text: "**"
+                  - generic [ref=e1233]:
+                    - strong [ref=e1234]: "Thu:"
+                    - text: "23490578"
+                  - generic [ref=e1235]:
+                    - strong [ref=e1236]: "Fri:"
+                    - text: "14056123"
+                  - generic [ref=e1237]:
+                    - strong [ref=e1238]: "Sat:"
+                    - text: "15063670"
+              - cell "2026" [ref=e1239]
+              - cell "Edit Delete" [ref=e1240]:
+                - button "Edit" [ref=e1241] [cursor=pointer]
+                - button "Delete" [ref=e1242] [cursor=pointer]
+            - 'row "panel main bazar 2026-03-02 to 2026-03-06 Mon: 11799469 Tue: 15843229 Wed: ** Thu: 14949289 Fri: 23059360 Sat: 2026 Edit Delete" [ref=e1243]':
+              - cell "panel" [ref=e1244]
+              - cell "main bazar" [ref=e1245]
+              - cell "2026-03-02 to 2026-03-06" [ref=e1246]
+              - 'cell "Mon: 11799469 Tue: 15843229 Wed: ** Thu: 14949289 Fri: 23059360 Sat:" [ref=e1247]':
+                - generic [ref=e1248]:
+                  - generic [ref=e1249]:
+                    - strong [ref=e1250]: "Mon:"
+                    - text: "11799469"
+                  - generic [ref=e1251]:
+                    - strong [ref=e1252]: "Tue:"
+                    - text: "15843229"
+                  - generic [ref=e1253]:
+                    - strong [ref=e1254]: "Wed:"
+                    - text: "**"
+                  - generic [ref=e1255]:
+                    - strong [ref=e1256]: "Thu:"
+                    - text: "14949289"
+                  - generic [ref=e1257]:
+                    - strong [ref=e1258]: "Fri:"
+                    - text: "23059360"
+                  - strong [ref=e1260]: "Sat:"
+              - cell "2026" [ref=e1261]
+              - cell "Edit Delete" [ref=e1262]:
+                - button "Edit" [ref=e1263] [cursor=pointer]
+                - button "Delete" [ref=e1264] [cursor=pointer]
+            - 'row "panel doller night 2026-03-02 to 2026-03-08 Mon: 12476358 Tue: 12705258 Wed: ** Thu: 12923580 Fri: 45875168 Sat: 34631137 Sun: 79068189 2026 Edit Delete" [ref=e1265]':
+              - cell "panel" [ref=e1266]
+              - cell "doller night" [ref=e1267]
+              - cell "2026-03-02 to 2026-03-08" [ref=e1268]
+              - 'cell "Mon: 12476358 Tue: 12705258 Wed: ** Thu: 12923580 Fri: 45875168 Sat: 34631137 Sun: 79068189" [ref=e1269]':
+                - generic [ref=e1270]:
+                  - generic [ref=e1271]:
+                    - strong [ref=e1272]: "Mon:"
+                    - text: "12476358"
+                  - generic [ref=e1273]:
+                    - strong [ref=e1274]: "Tue:"
+                    - text: "12705258"
+                  - generic [ref=e1275]:
+                    - strong [ref=e1276]: "Wed:"
+                    - text: "**"
+                  - generic [ref=e1277]:
+                    - strong [ref=e1278]: "Thu:"
+                    - text: "12923580"
+                  - generic [ref=e1279]:
+                    - strong [ref=e1280]: "Fri:"
+                    - text: "45875168"
+                  - generic [ref=e1281]:
+                    - strong [ref=e1282]: "Sat:"
+                    - text: "34631137"
+                  - generic [ref=e1283]:
+                    - strong [ref=e1284]: "Sun:"
+                    - text: "79068189"
+              - cell "2026" [ref=e1285]
+              - cell "Edit Delete" [ref=e1286]:
+                - button "Edit" [ref=e1287] [cursor=pointer]
+                - button "Delete" [ref=e1288] [cursor=pointer]
+            - 'row "panel sridevi 2026-02-23 to 2026-03-01 Mon: 35972679 Tue: 14613256 Wed: 38904680 Thu: 25858170 Fri: 18099360 Sat: 14507160 Sun: 23056349 2026 Edit Delete" [ref=e1289]':
+              - cell "panel" [ref=e1290]
+              - cell "sridevi" [ref=e1291]
+              - cell "2026-02-23 to 2026-03-01" [ref=e1292]
+              - 'cell "Mon: 35972679 Tue: 14613256 Wed: 38904680 Thu: 25858170 Fri: 18099360 Sat: 14507160 Sun: 23056349" [ref=e1293]':
+                - generic [ref=e1294]:
+                  - generic [ref=e1295]:
+                    - strong [ref=e1296]: "Mon:"
+                    - text: "35972679"
+                  - generic [ref=e1297]:
+                    - strong [ref=e1298]: "Tue:"
+                    - text: "14613256"
+                  - generic [ref=e1299]:
+                    - strong [ref=e1300]: "Wed:"
+                    - text: "38904680"
+                  - generic [ref=e1301]:
+                    - strong [ref=e1302]: "Thu:"
+                    - text: "25858170"
+                  - generic [ref=e1303]:
+                    - strong [ref=e1304]: "Fri:"
+                    - text: "18099360"
+                  - generic [ref=e1305]:
+                    - strong [ref=e1306]: "Sat:"
+                    - text: "14507160"
+                  - generic [ref=e1307]:
+                    - strong [ref=e1308]: "Sun:"
+                    - text: "23056349"
+              - cell "2026" [ref=e1309]
+              - cell "Edit Delete" [ref=e1310]:
+                - button "Edit" [ref=e1311] [cursor=pointer]
+                - button "Delete" [ref=e1312] [cursor=pointer]
+            - 'row "panel doller night 2026-02-23 to 2026-03-01 Mon: 88952589 Tue: 44864338 Wed: 25076880 Thu: 38017133 Fri: 33401470 Sat: 26868459 Sun: 34743139 2026 Edit Delete" [ref=e1313]':
+              - cell "panel" [ref=e1314]
+              - cell "doller night" [ref=e1315]
+              - cell "2026-02-23 to 2026-03-01" [ref=e1316]
+              - 'cell "Mon: 88952589 Tue: 44864338 Wed: 25076880 Thu: 38017133 Fri: 33401470 Sat: 26868459 Sun: 34743139" [ref=e1317]':
+                - generic [ref=e1318]:
+                  - generic [ref=e1319]:
+                    - strong [ref=e1320]: "Mon:"
+                    - text: "88952589"
+                  - generic [ref=e1321]:
+                    - strong [ref=e1322]: "Tue:"
+                    - text: "44864338"
+                  - generic [ref=e1323]:
+                    - strong [ref=e1324]: "Wed:"
+                    - text: "25076880"
+                  - generic [ref=e1325]:
+                    - strong [ref=e1326]: "Thu:"
+                    - text: "38017133"
+                  - generic [ref=e1327]:
+                    - strong [ref=e1328]: "Fri:"
+                    - text: "33401470"
+                  - generic [ref=e1329]:
+                    - strong [ref=e1330]: "Sat:"
+                    - text: "26868459"
+                  - generic [ref=e1331]:
+                    - strong [ref=e1332]: "Sun:"
+                    - text: "34743139"
+              - cell "2026" [ref=e1333]
+              - cell "Edit Delete" [ref=e1334]:
+                - button "Edit" [ref=e1335] [cursor=pointer]
+                - button "Delete" [ref=e1336] [cursor=pointer]
+            - 'row "panel Suraj Mukhi 2026-02-23 to 2026-02-28 Mon: 29017124 Tue: 15620677 Wed: 17869469 Thu: 23053238 Fri: 16740235 Sat: 34072255 2026 Edit Delete" [ref=e1337]':
+              - cell "panel" [ref=e1338]
+              - cell "Suraj Mukhi" [ref=e1339]
+              - cell "2026-02-23 to 2026-02-28" [ref=e1340]
+              - 'cell "Mon: 29017124 Tue: 15620677 Wed: 17869469 Thu: 23053238 Fri: 16740235 Sat: 34072255" [ref=e1341]':
+                - generic [ref=e1342]:
+                  - generic [ref=e1343]:
+                    - strong [ref=e1344]: "Mon:"
+                    - text: "29017124"
+                  - generic [ref=e1345]:
+                    - strong [ref=e1346]: "Tue:"
+                    - text: "15620677"
+                  - generic [ref=e1347]:
+                    - strong [ref=e1348]: "Wed:"
+                    - text: "17869469"
+                  - generic [ref=e1349]:
+                    - strong [ref=e1350]: "Thu:"
+                    - text: "23053238"
+                  - generic [ref=e1351]:
+                    - strong [ref=e1352]: "Fri:"
+                    - text: "16740235"
+                  - generic [ref=e1353]:
+                    - strong [ref=e1354]: "Sat:"
+                    - text: "34072255"
+              - cell "2026" [ref=e1355]
+              - cell "Edit Delete" [ref=e1356]:
+                - button "Edit" [ref=e1357] [cursor=pointer]
+                - button "Delete" [ref=e1358] [cursor=pointer]
+            - 'row "panel main bazar 2026-02-23 to 2026-02-27 Mon: 44532147 Tue: 99082246 Wed: 77932778 Thu: 15064590 Fri: 22376448 Sat: 2026 Edit Delete" [ref=e1359]':
+              - cell "panel" [ref=e1360]
+              - cell "main bazar" [ref=e1361]
+              - cell "2026-02-23 to 2026-02-27" [ref=e1362]
+              - 'cell "Mon: 44532147 Tue: 99082246 Wed: 77932778 Thu: 15064590 Fri: 22376448 Sat:" [ref=e1363]':
+                - generic [ref=e1364]:
+                  - generic [ref=e1365]:
+                    - strong [ref=e1366]: "Mon:"
+                    - text: "44532147"
+                  - generic [ref=e1367]:
+                    - strong [ref=e1368]: "Tue:"
+                    - text: "99082246"
+                  - generic [ref=e1369]:
+                    - strong [ref=e1370]: "Wed:"
+                    - text: "77932778"
+                  - generic [ref=e1371]:
+                    - strong [ref=e1372]: "Thu:"
+                    - text: "15064590"
+                  - generic [ref=e1373]:
+                    - strong [ref=e1374]: "Fri:"
+                    - text: "22376448"
+                  - strong [ref=e1376]: "Sat:"
+              - cell "2026" [ref=e1377]
+              - cell "Edit Delete" [ref=e1378]:
+                - button "Edit" [ref=e1379] [cursor=pointer]
+                - button "Delete" [ref=e1380] [cursor=pointer]
+            - 'row "panel sridevi night 2026-02-23 to 2026-03-01 Mon: 56902228 Tue: 14720145 Wed: 24737359 Thu: 16743346 Fri: 16962138 Sat: 23508369 Sun: 13606178 2026 Edit Delete" [ref=e1381]':
+              - cell "panel" [ref=e1382]
+              - cell "sridevi night" [ref=e1383]
+              - cell "2026-02-23 to 2026-03-01" [ref=e1384]
+              - 'cell "Mon: 56902228 Tue: 14720145 Wed: 24737359 Thu: 16743346 Fri: 16962138 Sat: 23508369 Sun: 13606178" [ref=e1385]':
+                - generic [ref=e1386]:
+                  - generic [ref=e1387]:
+                    - strong [ref=e1388]: "Mon:"
+                    - text: "56902228"
+                  - generic [ref=e1389]:
+                    - strong [ref=e1390]: "Tue:"
+                    - text: "14720145"
+                  - generic [ref=e1391]:
+                    - strong [ref=e1392]: "Wed:"
+                    - text: "24737359"
+                  - generic [ref=e1393]:
+                    - strong [ref=e1394]: "Thu:"
+                    - text: "16743346"
+                  - generic [ref=e1395]:
+                    - strong [ref=e1396]: "Fri:"
+                    - text: "16962138"
+                  - generic [ref=e1397]:
+                    - strong [ref=e1398]: "Sat:"
+                    - text: "23508369"
+                  - generic [ref=e1399]:
+                    - strong [ref=e1400]: "Sun:"
+                    - text: "13606178"
+              - cell "2026" [ref=e1401]
+              - cell "Edit Delete" [ref=e1402]:
+                - button "Edit" [ref=e1403] [cursor=pointer]
+                - button "Delete" [ref=e1404] [cursor=pointer]
+            - 'row "panel KBC 2026-02-23 to 2026-02-28 Mon: 14504770 Tue: 67927160 Wed: 12692138 Thu: 25635366 Fri: 68930190 Sat: 46993166 2026 Edit Delete" [ref=e1405]':
+              - cell "panel" [ref=e1406]
+              - cell "KBC" [ref=e1407]
+              - cell "2026-02-23 to 2026-02-28" [ref=e1408]
+              - 'cell "Mon: 14504770 Tue: 67927160 Wed: 12692138 Thu: 25635366 Fri: 68930190 Sat: 46993166" [ref=e1409]':
+                - generic [ref=e1410]:
+                  - generic [ref=e1411]:
+                    - strong [ref=e1412]: "Mon:"
+                    - text: "14504770"
+                  - generic [ref=e1413]:
+                    - strong [ref=e1414]: "Tue:"
+                    - text: "67927160"
+                  - generic [ref=e1415]:
+                    - strong [ref=e1416]: "Wed:"
+                    - text: "12692138"
+                  - generic [ref=e1417]:
+                    - strong [ref=e1418]: "Thu:"
+                    - text: "25635366"
+                  - generic [ref=e1419]:
+                    - strong [ref=e1420]: "Fri:"
+                    - text: "68930190"
+                  - generic [ref=e1421]:
+                    - strong [ref=e1422]: "Sat:"
+                    - text: "46993166"
+              - cell "2026" [ref=e1423]
+              - cell "Edit Delete" [ref=e1424]:
+                - button "Edit" [ref=e1425] [cursor=pointer]
+                - button "Delete" [ref=e1426] [cursor=pointer]
+            - 'row "jodi doller night 2026-02-23 to 2026-03-01 Mon: 52 Tue: 64 Wed: 76 Thu: 17 Fri: 01 Sat: 68 Sun: 43 2026 Edit Delete" [ref=e1427]':
+              - cell "jodi" [ref=e1428]
+              - cell "doller night" [ref=e1429]
+              - cell "2026-02-23 to 2026-03-01" [ref=e1430]
+              - 'cell "Mon: 52 Tue: 64 Wed: 76 Thu: 17 Fri: 01 Sat: 68 Sun: 43" [ref=e1431]':
+                - generic [ref=e1432]:
+                  - generic [ref=e1433]:
+                    - strong [ref=e1434]: "Mon:"
+                    - text: "52"
+                  - generic [ref=e1435]:
+                    - strong [ref=e1436]: "Tue:"
+                    - text: "64"
+                  - generic [ref=e1437]:
+                    - strong [ref=e1438]: "Wed:"
+                    - text: "76"
+                  - generic [ref=e1439]:
+                    - strong [ref=e1440]: "Thu:"
+                    - text: "17"
+                  - generic [ref=e1441]:
+                    - strong [ref=e1442]: "Fri:"
+                    - text: "01"
+                  - generic [ref=e1443]:
+                    - strong [ref=e1444]: "Sat:"
+                    - text: "68"
+                  - generic [ref=e1445]:
+                    - strong [ref=e1446]: "Sun:"
+                    - text: "43"
+              - cell "2026" [ref=e1447]
+              - cell "Edit Delete" [ref=e1448]:
+                - button "Edit" [ref=e1449] [cursor=pointer]
+                - button "Delete" [ref=e1450] [cursor=pointer]
+            - 'row "panel kalyan 2026-02-23 to 2026-02-28 Mon: 57797700 Tue: 69949469 Wed: 25071489 Thu: 14617223 Fri: 58812589 Sat: 14833689 2026 Edit Delete" [ref=e1451]':
+              - cell "panel" [ref=e1452]
+              - cell "kalyan" [ref=e1453]
+              - cell "2026-02-23 to 2026-02-28" [ref=e1454]
+              - 'cell "Mon: 57797700 Tue: 69949469 Wed: 25071489 Thu: 14617223 Fri: 58812589 Sat: 14833689" [ref=e1455]':
+                - generic [ref=e1456]:
+                  - generic [ref=e1457]:
+                    - strong [ref=e1458]: "Mon:"
+                    - text: "57797700"
+                  - generic [ref=e1459]:
+                    - strong [ref=e1460]: "Tue:"
+                    - text: "69949469"
+                  - generic [ref=e1461]:
+                    - strong [ref=e1462]: "Wed:"
+                    - text: "25071489"
+                  - generic [ref=e1463]:
+                    - strong [ref=e1464]: "Thu:"
+                    - text: "14617223"
+                  - generic [ref=e1465]:
+                    - strong [ref=e1466]: "Fri:"
+                    - text: "58812589"
+                  - generic [ref=e1467]:
+                    - strong [ref=e1468]: "Sat:"
+                    - text: "14833689"
+              - cell "2026" [ref=e1469]
+              - cell "Edit Delete" [ref=e1470]:
+                - button "Edit" [ref=e1471] [cursor=pointer]
+                - button "Delete" [ref=e1472] [cursor=pointer]
+            - 'row "panel doller 2026-02-23 to 2026-03-01 Mon: 11579234 Tue: 44972255 Wed: 27878477 Thu: 78054266 Fri: 37773157 Sat: 23832660 Sun: 36768288 2026 Edit Delete" [ref=e1473]':
+              - cell "panel" [ref=e1474]
+              - cell "doller" [ref=e1475]
+              - cell "2026-02-23 to 2026-03-01" [ref=e1476]
+              - 'cell "Mon: 11579234 Tue: 44972255 Wed: 27878477 Thu: 78054266 Fri: 37773157 Sat: 23832660 Sun: 36768288" [ref=e1477]':
+                - generic [ref=e1478]:
+                  - generic [ref=e1479]:
+                    - strong [ref=e1480]: "Mon:"
+                    - text: "11579234"
+                  - generic [ref=e1481]:
+                    - strong [ref=e1482]: "Tue:"
+                    - text: "44972255"
+                  - generic [ref=e1483]:
+                    - strong [ref=e1484]: "Wed:"
+                    - text: "27878477"
+                  - generic [ref=e1485]:
+                    - strong [ref=e1486]: "Thu:"
+                    - text: "78054266"
+                  - generic [ref=e1487]:
+                    - strong [ref=e1488]: "Fri:"
+                    - text: "37773157"
+                  - generic [ref=e1489]:
+                    - strong [ref=e1490]: "Sat:"
+                    - text: "23832660"
+                  - generic [ref=e1491]:
+                    - strong [ref=e1492]: "Sun:"
+                    - text: "36768288"
+              - cell "2026" [ref=e1493]
+              - cell "Edit Delete" [ref=e1494]:
+                - button "Edit" [ref=e1495] [cursor=pointer]
+                - button "Delete" [ref=e1496] [cursor=pointer]
+            - 'row "panel KBC 2026-02-16 to 2026-02-21 Mon: 29013689 Tue: 27769568 Wed: 46994446 Thu: 45767467 Fri: 68821155 Sat: 11354257 2026 Edit Delete" [ref=e1497]':
+              - cell "panel" [ref=e1498]
+              - cell "KBC" [ref=e1499]
+              - cell "2026-02-16 to 2026-02-21" [ref=e1500]
+              - 'cell "Mon: 29013689 Tue: 27769568 Wed: 46994446 Thu: 45767467 Fri: 68821155 Sat: 11354257" [ref=e1501]':
+                - generic [ref=e1502]:
+                  - generic [ref=e1503]:
+                    - strong [ref=e1504]: "Mon:"
+                    - text: "29013689"
+                  - generic [ref=e1505]:
+                    - strong [ref=e1506]: "Tue:"
+                    - text: "27769568"
+                  - generic [ref=e1507]:
+                    - strong [ref=e1508]: "Wed:"
+                    - text: "46994446"
+                  - generic [ref=e1509]:
+                    - strong [ref=e1510]: "Thu:"
+                    - text: "45767467"
+                  - generic [ref=e1511]:
+                    - strong [ref=e1512]: "Fri:"
+                    - text: "68821155"
+                  - generic [ref=e1513]:
+                    - strong [ref=e1514]: "Sat:"
+                    - text: "11354257"
+              - cell "2026" [ref=e1515]
+              - cell "Edit Delete" [ref=e1516]:
+                - button "Edit" [ref=e1517] [cursor=pointer]
+                - button "Delete" [ref=e1518] [cursor=pointer]
+            - 'row "panel main bazar 2026-02-16 to 2026-02-20 Mon: 12585168 Tue: 37885249 Wed: 45654266 Thu: 25968260 Fri: 13939117 Sat: 2026 Edit Delete" [ref=e1519]':
+              - cell "panel" [ref=e1520]
+              - cell "main bazar" [ref=e1521]
+              - cell "2026-02-16 to 2026-02-20" [ref=e1522]
+              - 'cell "Mon: 12585168 Tue: 37885249 Wed: 45654266 Thu: 25968260 Fri: 13939117 Sat:" [ref=e1523]':
+                - generic [ref=e1524]:
+                  - generic [ref=e1525]:
+                    - strong [ref=e1526]: "Mon:"
+                    - text: "12585168"
+                  - generic [ref=e1527]:
+                    - strong [ref=e1528]: "Tue:"
+                    - text: "37885249"
+                  - generic [ref=e1529]:
+                    - strong [ref=e1530]: "Wed:"
+                    - text: "45654266"
+                  - generic [ref=e1531]:
+                    - strong [ref=e1532]: "Thu:"
+                    - text: "25968260"
+                  - generic [ref=e1533]:
+                    - strong [ref=e1534]: "Fri:"
+                    - text: "13939117"
+                  - strong [ref=e1536]: "Sat:"
+              - cell "2026" [ref=e1537]
+              - cell "Edit Delete" [ref=e1538]:
+                - button "Edit" [ref=e1539] [cursor=pointer]
+                - button "Delete" [ref=e1540] [cursor=pointer]
+            - 'row "panel sridevi 2026-02-16 to 2026-02-22 Mon: 34074455 Tue: 66807133 Wed: 56909577 Thu: 66025690 Fri: 47892679 Sat: 55887458 Sun: 35642129 2026 Edit Delete" [ref=e1541]':
+              - cell "panel" [ref=e1542]
+              - cell "sridevi" [ref=e1543]
+              - cell "2026-02-16 to 2026-02-22" [ref=e1544]
+              - 'cell "Mon: 34074455 Tue: 66807133 Wed: 56909577 Thu: 66025690 Fri: 47892679 Sat: 55887458 Sun: 35642129" [ref=e1545]':
+                - generic [ref=e1546]:
+                  - generic [ref=e1547]:
+                    - strong [ref=e1548]: "Mon:"
+                    - text: "34074455"
+                  - generic [ref=e1549]:
+                    - strong [ref=e1550]: "Tue:"
+                    - text: "66807133"
+                  - generic [ref=e1551]:
+                    - strong [ref=e1552]: "Wed:"
+                    - text: "56909577"
+                  - generic [ref=e1553]:
+                    - strong [ref=e1554]: "Thu:"
+                    - text: "66025690"
+                  - generic [ref=e1555]:
+                    - strong [ref=e1556]: "Fri:"
+                    - text: "47892679"
+                  - generic [ref=e1557]:
+                    - strong [ref=e1558]: "Sat:"
+                    - text: "55887458"
+                  - generic [ref=e1559]:
+                    - strong [ref=e1560]: "Sun:"
+                    - text: "35642129"
+              - cell "2026" [ref=e1561]
+              - cell "Edit Delete" [ref=e1562]:
+                - button "Edit" [ref=e1563] [cursor=pointer]
+                - button "Delete" [ref=e1564] [cursor=pointer]
+            - 'row "panel kalyan 2026-02-16 to 2026-02-21 Mon: 27094789 Tue: 67031380 Wed: 23055690 Thu: 13049199 Fri: 67818350 Sat: 14615357 2026 Edit Delete" [ref=e1565]':
+              - cell "panel" [ref=e1566]
+              - cell "kalyan" [ref=e1567]
+              - cell "2026-02-16 to 2026-02-21" [ref=e1568]
+              - 'cell "Mon: 27094789 Tue: 67031380 Wed: 23055690 Thu: 13049199 Fri: 67818350 Sat: 14615357" [ref=e1569]':
+                - generic [ref=e1570]:
+                  - generic [ref=e1571]:
+                    - strong [ref=e1572]: "Mon:"
+                    - text: "27094789"
+                  - generic [ref=e1573]:
+                    - strong [ref=e1574]: "Tue:"
+                    - text: "67031380"
+                  - generic [ref=e1575]:
+                    - strong [ref=e1576]: "Wed:"
+                    - text: "23055690"
+                  - generic [ref=e1577]:
+                    - strong [ref=e1578]: "Thu:"
+                    - text: "13049199"
+                  - generic [ref=e1579]:
+                    - strong [ref=e1580]: "Fri:"
+                    - text: "67818350"
+                  - generic [ref=e1581]:
+                    - strong [ref=e1582]: "Sat:"
+                    - text: "14615357"
+              - cell "2026" [ref=e1583]
+              - cell "Edit Delete" [ref=e1584]:
+                - button "Edit" [ref=e1585] [cursor=pointer]
+                - button "Delete" [ref=e1586] [cursor=pointer]
+            - 'row "panel doller 2026-02-16 to 2026-02-22 Mon: 38890000 Tue: 44644239 Wed: 56013238 Thu: 57792336 Fri: 30036790 Sat: 69051146 Sun: 15955456 2026 Edit Delete" [ref=e1587]':
+              - cell "panel" [ref=e1588]
+              - cell "doller" [ref=e1589]
+              - cell "2026-02-16 to 2026-02-22" [ref=e1590]
+              - 'cell "Mon: 38890000 Tue: 44644239 Wed: 56013238 Thu: 57792336 Fri: 30036790 Sat: 69051146 Sun: 15955456" [ref=e1591]':
+                - generic [ref=e1592]:
+                  - generic [ref=e1593]:
+                    - strong [ref=e1594]: "Mon:"
+                    - text: "38890000"
+                  - generic [ref=e1595]:
+                    - strong [ref=e1596]: "Tue:"
+                    - text: "44644239"
+                  - generic [ref=e1597]:
+                    - strong [ref=e1598]: "Wed:"
+                    - text: "56013238"
+                  - generic [ref=e1599]:
+                    - strong [ref=e1600]: "Thu:"
+                    - text: "57792336"
+                  - generic [ref=e1601]:
+                    - strong [ref=e1602]: "Fri:"
+                    - text: "30036790"
+                  - generic [ref=e1603]:
+                    - strong [ref=e1604]: "Sat:"
+                    - text: "69051146"
+                  - generic [ref=e1605]:
+                    - strong [ref=e1606]: "Sun:"
+                    - text: "15955456"
+              - cell "2026" [ref=e1607]
+              - cell "Edit Delete" [ref=e1608]:
+                - button "Edit" [ref=e1609] [cursor=pointer]
+                - button "Delete" [ref=e1610] [cursor=pointer]
+            - 'row "panel doller night 2026-02-16 to 2026-02-22 Mon: 78834789 Tue: 13715500 Wed: 12923599 Thu: 28001678 Fri: 37888459 Sat: 34856457 Sun: 12039379 2026 Edit Delete" [ref=e1611]':
+              - cell "panel" [ref=e1612]
+              - cell "doller night" [ref=e1613]
+              - cell "2026-02-16 to 2026-02-22" [ref=e1614]
+              - 'cell "Mon: 78834789 Tue: 13715500 Wed: 12923599 Thu: 28001678 Fri: 37888459 Sat: 34856457 Sun: 12039379" [ref=e1615]':
+                - generic [ref=e1616]:
+                  - generic [ref=e1617]:
+                    - strong [ref=e1618]: "Mon:"
+                    - text: "78834789"
+                  - generic [ref=e1619]:
+                    - strong [ref=e1620]: "Tue:"
+                    - text: "13715500"
+                  - generic [ref=e1621]:
+                    - strong [ref=e1622]: "Wed:"
+                    - text: "12923599"
+                  - generic [ref=e1623]:
+                    - strong [ref=e1624]: "Thu:"
+                    - text: "28001678"
+                  - generic [ref=e1625]:
+                    - strong [ref=e1626]: "Fri:"
+                    - text: "37888459"
+                  - generic [ref=e1627]:
+                    - strong [ref=e1628]: "Sat:"
+                    - text: "34856457"
+                  - generic [ref=e1629]:
+                    - strong [ref=e1630]: "Sun:"
+                    - text: "12039379"
+              - cell "2026" [ref=e1631]
+              - cell "Edit Delete" [ref=e1632]:
+                - button "Edit" [ref=e1633] [cursor=pointer]
+                - button "Delete" [ref=e1634] [cursor=pointer]
+            - 'row "panel sridevi night 2026-02-16 to 2026-02-22 Mon: 47010389 Tue: 13590668 Wed: 15845249 Thu: 28009270 Fri: 56892138 Sat: 14057467 Sun: 68043300 2026 Edit Delete" [ref=e1635]':
+              - cell "panel" [ref=e1636]
+              - cell "sridevi night" [ref=e1637]
+              - cell "2026-02-16 to 2026-02-22" [ref=e1638]
+              - 'cell "Mon: 47010389 Tue: 13590668 Wed: 15845249 Thu: 28009270 Fri: 56892138 Sat: 14057467 Sun: 68043300" [ref=e1639]':
+                - generic [ref=e1640]:
+                  - generic [ref=e1641]:
+                    - strong [ref=e1642]: "Mon:"
+                    - text: "47010389"
+                  - generic [ref=e1643]:
+                    - strong [ref=e1644]: "Tue:"
+                    - text: "13590668"
+                  - generic [ref=e1645]:
+                    - strong [ref=e1646]: "Wed:"
+                    - text: "15845249"
+                  - generic [ref=e1647]:
+                    - strong [ref=e1648]: "Thu:"
+                    - text: "28009270"
+                  - generic [ref=e1649]:
+                    - strong [ref=e1650]: "Fri:"
+                    - text: "56892138"
+                  - generic [ref=e1651]:
+                    - strong [ref=e1652]: "Sat:"
+                    - text: "14057467"
+                  - generic [ref=e1653]:
+                    - strong [ref=e1654]: "Sun:"
+                    - text: "68043300"
+              - cell "2026" [ref=e1655]
+              - cell "Edit Delete" [ref=e1656]:
+                - button "Edit" [ref=e1657] [cursor=pointer]
+                - button "Delete" [ref=e1658] [cursor=pointer]
+            - 'row "panel Suraj Mukhi 2026-02-16 to 2026-02-21 Mon: 19005230 Tue: 58926268 Wed: 35084455 Thu: 49030460 Fri: 39024699 Sat: 68933779 2026 Edit Delete" [ref=e1659]':
+              - cell "panel" [ref=e1660]
+              - cell "Suraj Mukhi" [ref=e1661]
+              - cell "2026-02-16 to 2026-02-21" [ref=e1662]
+              - 'cell "Mon: 19005230 Tue: 58926268 Wed: 35084455 Thu: 49030460 Fri: 39024699 Sat: 68933779" [ref=e1663]':
+                - generic [ref=e1664]:
+                  - generic [ref=e1665]:
+                    - strong [ref=e1666]: "Mon:"
+                    - text: "19005230"
+                  - generic [ref=e1667]:
+                    - strong [ref=e1668]: "Tue:"
+                    - text: "58926268"
+                  - generic [ref=e1669]:
+                    - strong [ref=e1670]: "Wed:"
+                    - text: "35084455"
+                  - generic [ref=e1671]:
+                    - strong [ref=e1672]: "Thu:"
+                    - text: "49030460"
+                  - generic [ref=e1673]:
+                    - strong [ref=e1674]: "Fri:"
+                    - text: "39024699"
+                  - generic [ref=e1675]:
+                    - strong [ref=e1676]: "Sat:"
+                    - text: "68933779"
+              - cell "2026" [ref=e1677]
+              - cell "Edit Delete" [ref=e1678]:
+                - button "Edit" [ref=e1679] [cursor=pointer]
+                - button "Delete" [ref=e1680] [cursor=pointer]
+            - 'row "jodi doller night 2026-02-16 to 2026-02-22 Mon: 34 Tue: 15 Wed: 23 Thu: 01 Fri: 88 Sat: 56 Sun: 39 2026 Edit Delete" [ref=e1681]':
+              - cell "jodi" [ref=e1682]
+              - cell "doller night" [ref=e1683]
+              - cell "2026-02-16 to 2026-02-22" [ref=e1684]
+              - 'cell "Mon: 34 Tue: 15 Wed: 23 Thu: 01 Fri: 88 Sat: 56 Sun: 39" [ref=e1685]':
+                - generic [ref=e1686]:
+                  - generic [ref=e1687]:
+                    - strong [ref=e1688]: "Mon:"
+                    - text: "34"
+                  - generic [ref=e1689]:
+                    - strong [ref=e1690]: "Tue:"
+                    - text: "15"
+                  - generic [ref=e1691]:
+                    - strong [ref=e1692]: "Wed:"
+                    - text: "23"
+                  - generic [ref=e1693]:
+                    - strong [ref=e1694]: "Thu:"
+                    - text: "01"
+                  - generic [ref=e1695]:
+                    - strong [ref=e1696]: "Fri:"
+                    - text: "88"
+                  - generic [ref=e1697]:
+                    - strong [ref=e1698]: "Sat:"
+                    - text: "56"
+                  - generic [ref=e1699]:
+                    - strong [ref=e1700]: "Sun:"
+                    - text: "39"
+              - cell "2026" [ref=e1701]
+              - cell "Edit Delete" [ref=e1702]:
+                - button "Edit" [ref=e1703] [cursor=pointer]
+                - button "Delete" [ref=e1704] [cursor=pointer]
+            - 'row "panel KBC 2026-02-09 to 2026-02-14 Mon: 17867188 Tue: 39918558 Wed: 26085339 Thu: 26860136 Fri: 22481344 Sat: 23949289 2026 Edit Delete" [ref=e1705]':
+              - cell "panel" [ref=e1706]
+              - cell "KBC" [ref=e1707]
+              - cell "2026-02-09 to 2026-02-14" [ref=e1708]
+              - 'cell "Mon: 17867188 Tue: 39918558 Wed: 26085339 Thu: 26860136 Fri: 22481344 Sat: 23949289" [ref=e1709]':
+                - generic [ref=e1710]:
+                  - generic [ref=e1711]:
+                    - strong [ref=e1712]: "Mon:"
+                    - text: "17867188"
+                  - generic [ref=e1713]:
+                    - strong [ref=e1714]: "Tue:"
+                    - text: "39918558"
+                  - generic [ref=e1715]:
+                    - strong [ref=e1716]: "Wed:"
+                    - text: "26085339"
+                  - generic [ref=e1717]:
+                    - strong [ref=e1718]: "Thu:"
+                    - text: "26860136"
+                  - generic [ref=e1719]:
+                    - strong [ref=e1720]: "Fri:"
+                    - text: "22481344"
+                  - generic [ref=e1721]:
+                    - strong [ref=e1722]: "Sat:"
+                    - text: "23949289"
+              - cell "2026" [ref=e1723]
+              - cell "Edit Delete" [ref=e1724]:
+                - button "Edit" [ref=e1725] [cursor=pointer]
+                - button "Delete" [ref=e1726] [cursor=pointer]
+            - 'row "jodi doller night 2026-02-09 to 2026-02-15 Mon: 48 Tue: 06 Wed: 86 Thu: 12 Fri: 14 Sat: 03 Sun: 22 2026 Edit Delete" [ref=e1727]':
+              - cell "jodi" [ref=e1728]
+              - cell "doller night" [ref=e1729]
+              - cell "2026-02-09 to 2026-02-15" [ref=e1730]
+              - 'cell "Mon: 48 Tue: 06 Wed: 86 Thu: 12 Fri: 14 Sat: 03 Sun: 22" [ref=e1731]':
+                - generic [ref=e1732]:
+                  - generic [ref=e1733]:
+                    - strong [ref=e1734]: "Mon:"
+                    - text: "48"
+                  - generic [ref=e1735]:
+                    - strong [ref=e1736]: "Tue:"
+                    - text: "06"
+                  - generic [ref=e1737]:
+                    - strong [ref=e1738]: "Wed:"
+                    - text: "86"
+                  - generic [ref=e1739]:
+                    - strong [ref=e1740]: "Thu:"
+                    - text: "12"
+                  - generic [ref=e1741]:
+                    - strong [ref=e1742]: "Fri:"
+                    - text: "14"
+                  - generic [ref=e1743]:
+                    - strong [ref=e1744]: "Sat:"
+                    - text: "03"
+                  - generic [ref=e1745]:
+                    - strong [ref=e1746]: "Sun:"
+                    - text: "22"
+              - cell "2026" [ref=e1747]
+              - cell "Edit Delete" [ref=e1748]:
+                - button "Edit" [ref=e1749] [cursor=pointer]
+                - button "Delete" [ref=e1750] [cursor=pointer]
+            - 'row "panel kalyan 2026-02-09 to 2026-02-14 Mon: 45877250 Tue: 47900244 Wed: 78836457 Thu: 14725113 Fri: 26088378 Sat: 15627269 2026 Edit Delete" [ref=e1751]':
+              - cell "panel" [ref=e1752]
+              - cell "kalyan" [ref=e1753]
+              - cell "2026-02-09 to 2026-02-14" [ref=e1754]
+              - 'cell "Mon: 45877250 Tue: 47900244 Wed: 78836457 Thu: 14725113 Fri: 26088378 Sat: 15627269" [ref=e1755]':
+                - generic [ref=e1756]:
+                  - generic [ref=e1757]:
+                    - strong [ref=e1758]: "Mon:"
+                    - text: "45877250"
+                  - generic [ref=e1759]:
+                    - strong [ref=e1760]: "Tue:"
+                    - text: "47900244"
+                  - generic [ref=e1761]:
+                    - strong [ref=e1762]: "Wed:"
+                    - text: "78836457"
+                  - generic [ref=e1763]:
+                    - strong [ref=e1764]: "Thu:"
+                    - text: "14725113"
+                  - generic [ref=e1765]:
+                    - strong [ref=e1766]: "Fri:"
+                    - text: "26088378"
+                  - generic [ref=e1767]:
+                    - strong [ref=e1768]: "Sat:"
+                    - text: "15627269"
+              - cell "2026" [ref=e1769]
+              - cell "Edit Delete" [ref=e1770]:
+                - button "Edit" [ref=e1771] [cursor=pointer]
+                - button "Delete" [ref=e1772] [cursor=pointer]
+            - 'row "panel sridevi night 2026-02-09 to 2026-02-15 Mon: 88066349 Tue: 29015258 Wed: 88062336 Thu: 23057890 Fri: 28994239 Sat: 27764130 Sun: 14727359 2026 Edit Delete" [ref=e1773]':
+              - cell "panel" [ref=e1774]
+              - cell "sridevi night" [ref=e1775]
+              - cell "2026-02-09 to 2026-02-15" [ref=e1776]
+              - 'cell "Mon: 88066349 Tue: 29015258 Wed: 88062336 Thu: 23057890 Fri: 28994239 Sat: 27764130 Sun: 14727359" [ref=e1777]':
+                - generic [ref=e1778]:
+                  - generic [ref=e1779]:
+                    - strong [ref=e1780]: "Mon:"
+                    - text: "88066349"
+                  - generic [ref=e1781]:
+                    - strong [ref=e1782]: "Tue:"
+                    - text: "29015258"
+                  - generic [ref=e1783]:
+                    - strong [ref=e1784]: "Wed:"
+                    - text: "88062336"
+                  - generic [ref=e1785]:
+                    - strong [ref=e1786]: "Thu:"
+                    - text: "23057890"
+                  - generic [ref=e1787]:
+                    - strong [ref=e1788]: "Fri:"
+                    - text: "28994239"
+                  - generic [ref=e1789]:
+                    - strong [ref=e1790]: "Sat:"
+                    - text: "27764130"
+                  - generic [ref=e1791]:
+                    - strong [ref=e1792]: "Sun:"
+                    - text: "14727359"
+              - cell "2026" [ref=e1793]
+              - cell "Edit Delete" [ref=e1794]:
+                - button "Edit" [ref=e1795] [cursor=pointer]
+                - button "Delete" [ref=e1796] [cursor=pointer]
+            - 'row "panel sridevi 2026-02-09 to 2026-02-15 Mon: 89963157 Tue: 38014400 Wed: 18873670 Thu: 77821155 Fri: 38891335 Sat: 68821380 Sun: 34858378 2026 Edit Delete" [ref=e1797]':
+              - cell "panel" [ref=e1798]
+              - cell "sridevi" [ref=e1799]
+              - cell "2026-02-09 to 2026-02-15" [ref=e1800]
+              - 'cell "Mon: 89963157 Tue: 38014400 Wed: 18873670 Thu: 77821155 Fri: 38891335 Sat: 68821380 Sun: 34858378" [ref=e1801]':
+                - generic [ref=e1802]:
+                  - generic [ref=e1803]:
+                    - strong [ref=e1804]: "Mon:"
+                    - text: "89963157"
+                  - generic [ref=e1805]:
+                    - strong [ref=e1806]: "Tue:"
+                    - text: "38014400"
+                  - generic [ref=e1807]:
+                    - strong [ref=e1808]: "Wed:"
+                    - text: "18873670"
+                  - generic [ref=e1809]:
+                    - strong [ref=e1810]: "Thu:"
+                    - text: "77821155"
+                  - generic [ref=e1811]:
+                    - strong [ref=e1812]: "Fri:"
+                    - text: "38891335"
+                  - generic [ref=e1813]:
+                    - strong [ref=e1814]: "Sat:"
+                    - text: "68821380"
+                  - generic [ref=e1815]:
+                    - strong [ref=e1816]: "Sun:"
+                    - text: "34858378"
+              - cell "2026" [ref=e1817]
+              - cell "Edit Delete" [ref=e1818]:
+                - button "Edit" [ref=e1819] [cursor=pointer]
+                - button "Delete" [ref=e1820] [cursor=pointer]
+            - 'row "panel doller night 2026-02-09 to 2026-02-15 Mon: 69948189 Tue: 66806899 Wed: 99086150 Thu: 56012480 Fri: 14614220 Sat: 38903157 Sun: 67922480 2026 Edit Delete" [ref=e1821]':
+              - cell "panel" [ref=e1822]
+              - cell "doller night" [ref=e1823]
+              - cell "2026-02-09 to 2026-02-15" [ref=e1824]
+              - 'cell "Mon: 69948189 Tue: 66806899 Wed: 99086150 Thu: 56012480 Fri: 14614220 Sat: 38903157 Sun: 67922480" [ref=e1825]':
+                - generic [ref=e1826]:
+                  - generic [ref=e1827]:
+                    - strong [ref=e1828]: "Mon:"
+                    - text: "69948189"
+                  - generic [ref=e1829]:
+                    - strong [ref=e1830]: "Tue:"
+                    - text: "66806899"
+                  - generic [ref=e1831]:
+                    - strong [ref=e1832]: "Wed:"
+                    - text: "99086150"
+                  - generic [ref=e1833]:
+                    - strong [ref=e1834]: "Thu:"
+                    - text: "56012480"
+                  - generic [ref=e1835]:
+                    - strong [ref=e1836]: "Fri:"
+                    - text: "14614220"
+                  - generic [ref=e1837]:
+                    - strong [ref=e1838]: "Sat:"
+                    - text: "38903157"
+                  - generic [ref=e1839]:
+                    - strong [ref=e1840]: "Sun:"
+                    - text: "67922480"
+              - cell "2026" [ref=e1841]
+              - cell "Edit Delete" [ref=e1842]:
+                - button "Edit" [ref=e1843] [cursor=pointer]
+                - button "Delete" [ref=e1844] [cursor=pointer]
+            - 'row "panel doller 2026-02-09 to 2026-02-15 Mon: 56011128 Tue: 22714789 Wed: 13483229 Thu: 12702778 Fri: 44758350 Sat: 23949568 Sun: 39023120 2026 Edit Delete" [ref=e1845]':
+              - cell "panel" [ref=e1846]
+              - cell "doller" [ref=e1847]
+              - cell "2026-02-09 to 2026-02-15" [ref=e1848]
+              - 'cell "Mon: 56011128 Tue: 22714789 Wed: 13483229 Thu: 12702778 Fri: 44758350 Sat: 23949568 Sun: 39023120" [ref=e1849]':
+                - generic [ref=e1850]:
+                  - generic [ref=e1851]:
+                    - strong [ref=e1852]: "Mon:"
+                    - text: "56011128"
+                  - generic [ref=e1853]:
+                    - strong [ref=e1854]: "Tue:"
+                    - text: "22714789"
+                  - generic [ref=e1855]:
+                    - strong [ref=e1856]: "Wed:"
+                    - text: "13483229"
+                  - generic [ref=e1857]:
+                    - strong [ref=e1858]: "Thu:"
+                    - text: "12702778"
+                  - generic [ref=e1859]:
+                    - strong [ref=e1860]: "Fri:"
+                    - text: "44758350"
+                  - generic [ref=e1861]:
+                    - strong [ref=e1862]: "Sat:"
+                    - text: "23949568"
+                  - generic [ref=e1863]:
+                    - strong [ref=e1864]: "Sun:"
+                    - text: "39023120"
+              - cell "2026" [ref=e1865]
+              - cell "Edit Delete" [ref=e1866]:
+                - button "Edit" [ref=e1867] [cursor=pointer]
+                - button "Delete" [ref=e1868] [cursor=pointer]
+            - 'row "panel Suraj Mukhi 2026-02-09 to 2026-02-14 Mon: 44751579 Tue: 24846123 Wed: 24734347 Thu: 24623445 Fri: 37005889 Sat: 12924770 2026 Edit Delete" [ref=e1869]':
+              - cell "panel" [ref=e1870]
+              - cell "Suraj Mukhi" [ref=e1871]
+              - cell "2026-02-09 to 2026-02-14" [ref=e1872]
+              - 'cell "Mon: 44751579 Tue: 24846123 Wed: 24734347 Thu: 24623445 Fri: 37005889 Sat: 12924770" [ref=e1873]':
+                - generic [ref=e1874]:
+                  - generic [ref=e1875]:
+                    - strong [ref=e1876]: "Mon:"
+                    - text: "44751579"
+                  - generic [ref=e1877]:
+                    - strong [ref=e1878]: "Tue:"
+                    - text: "24846123"
+                  - generic [ref=e1879]:
+                    - strong [ref=e1880]: "Wed:"
+                    - text: "24734347"
+                  - generic [ref=e1881]:
+                    - strong [ref=e1882]: "Thu:"
+                    - text: "24623445"
+                  - generic [ref=e1883]:
+                    - strong [ref=e1884]: "Fri:"
+                    - text: "37005889"
+                  - generic [ref=e1885]:
+                    - strong [ref=e1886]: "Sat:"
+                    - text: "12924770"
+              - cell "2026" [ref=e1887]
+              - cell "Edit Delete" [ref=e1888]:
+                - button "Edit" [ref=e1889] [cursor=pointer]
+                - button "Delete" [ref=e1890] [cursor=pointer]
+            - 'row "panel main bazar 2026-02-09 to 2026-02-13 Mon: 13599360 Tue: 13480389 Wed: 38896457 Thu: 46886349 Fri: 13480677 Sat: 2026 Edit Delete" [ref=e1891]':
+              - cell "panel" [ref=e1892]
+              - cell "main bazar" [ref=e1893]
+              - cell "2026-02-09 to 2026-02-13" [ref=e1894]
+              - 'cell "Mon: 13599360 Tue: 13480389 Wed: 38896457 Thu: 46886349 Fri: 13480677 Sat:" [ref=e1895]':
+                - generic [ref=e1896]:
+                  - generic [ref=e1897]:
+                    - strong [ref=e1898]: "Mon:"
+                    - text: "13599360"
+                  - generic [ref=e1899]:
+                    - strong [ref=e1900]: "Tue:"
+                    - text: "13480389"
+                  - generic [ref=e1901]:
+                    - strong [ref=e1902]: "Wed:"
+                    - text: "38896457"
+                  - generic [ref=e1903]:
+                    - strong [ref=e1904]: "Thu:"
+                    - text: "46886349"
+                  - generic [ref=e1905]:
+                    - strong [ref=e1906]: "Fri:"
+                    - text: "13480677"
+                  - strong [ref=e1908]: "Sat:"
+              - cell "2026" [ref=e1909]
+              - cell "Edit Delete" [ref=e1910]:
+                - button "Edit" [ref=e1911] [cursor=pointer]
+                - button "Delete" [ref=e1912] [cursor=pointer]
+            - 'row "panel doller night 2026-02-02 to 2026-02-08 Mon: 48806600 Tue: 47899667 Wed: 34858567 Thu: 56909289 Fri: 44647179 Sat: 12037467 Sun: 26861489 2026 Edit Delete" [ref=e1913]':
+              - cell "panel" [ref=e1914]
+              - cell "doller night" [ref=e1915]
+              - cell "2026-02-02 to 2026-02-08" [ref=e1916]
+              - 'cell "Mon: 48806600 Tue: 47899667 Wed: 34858567 Thu: 56909289 Fri: 44647179 Sat: 12037467 Sun: 26861489" [ref=e1917]':
+                - generic [ref=e1918]:
+                  - generic [ref=e1919]:
+                    - strong [ref=e1920]: "Mon:"
+                    - text: "48806600"
+                  - generic [ref=e1921]:
+                    - strong [ref=e1922]: "Tue:"
+                    - text: "47899667"
+                  - generic [ref=e1923]:
+                    - strong [ref=e1924]: "Wed:"
+                    - text: "34858567"
+                  - generic [ref=e1925]:
+                    - strong [ref=e1926]: "Thu:"
+                    - text: "56909289"
+                  - generic [ref=e1927]:
+                    - strong [ref=e1928]: "Fri:"
+                    - text: "44647179"
+                  - generic [ref=e1929]:
+                    - strong [ref=e1930]: "Sat:"
+                    - text: "12037467"
+                  - generic [ref=e1931]:
+                    - strong [ref=e1932]: "Sun:"
+                    - text: "26861489"
+              - cell "2026" [ref=e1933]
+              - cell "Edit Delete" [ref=e1934]:
+                - button "Edit" [ref=e1935] [cursor=pointer]
+                - button "Delete" [ref=e1936] [cursor=pointer]
+            - 'row "panel main bazar 2026-02-02 to 2026-02-06 Mon: 37997340 Tue: 14721579 Wed: 89961579 Thu: 46667359 Fri: 27980569 Sat: 2026 Edit Delete" [ref=e1937]':
+              - cell "panel" [ref=e1938]
+              - cell "main bazar" [ref=e1939]
+              - cell "2026-02-02 to 2026-02-06" [ref=e1940]
+              - 'cell "Mon: 37997340 Tue: 14721579 Wed: 89961579 Thu: 46667359 Fri: 27980569 Sat:" [ref=e1941]':
+                - generic [ref=e1942]:
+                  - generic [ref=e1943]:
+                    - strong [ref=e1944]: "Mon:"
+                    - text: "37997340"
+                  - generic [ref=e1945]:
+                    - strong [ref=e1946]: "Tue:"
+                    - text: "14721579"
+                  - generic [ref=e1947]:
+                    - strong [ref=e1948]: "Wed:"
+                    - text: "89961579"
+                  - generic [ref=e1949]:
+                    - strong [ref=e1950]: "Thu:"
+                    - text: "46667359"
+                  - generic [ref=e1951]:
+                    - strong [ref=e1952]: "Fri:"
+                    - text: "27980569"
+                  - strong [ref=e1954]: "Sat:"
+              - cell "2026" [ref=e1955]
+              - cell "Edit Delete" [ref=e1956]:
+                - button "Edit" [ref=e1957] [cursor=pointer]
+                - button "Delete" [ref=e1958] [cursor=pointer]
+            - 'row "jodi doller night 2026-02-02 to 2026-02-08 Mon: 06 Tue: 99 Wed: 58 Thu: 09 Fri: 47 Sat: 37 Sun: 61 2026 Edit Delete" [ref=e1959]':
+              - cell "jodi" [ref=e1960]
+              - cell "doller night" [ref=e1961]
+              - cell "2026-02-02 to 2026-02-08" [ref=e1962]
+              - 'cell "Mon: 06 Tue: 99 Wed: 58 Thu: 09 Fri: 47 Sat: 37 Sun: 61" [ref=e1963]':
+                - generic [ref=e1964]:
+                  - generic [ref=e1965]:
+                    - strong [ref=e1966]: "Mon:"
+                    - text: "06"
+                  - generic [ref=e1967]:
+                    - strong [ref=e1968]: "Tue:"
+                    - text: "99"
+                  - generic [ref=e1969]:
+                    - strong [ref=e1970]: "Wed:"
+                    - text: "58"
+                  - generic [ref=e1971]:
+                    - strong [ref=e1972]: "Thu:"
+                    - text: "09"
+                  - generic [ref=e1973]:
+                    - strong [ref=e1974]: "Fri:"
+                    - text: "47"
+                  - generic [ref=e1975]:
+                    - strong [ref=e1976]: "Sat:"
+                    - text: "37"
+                  - generic [ref=e1977]:
+                    - strong [ref=e1978]: "Sun:"
+                    - text: "61"
+              - cell "2026" [ref=e1979]
+              - cell "Edit Delete" [ref=e1980]:
+                - button "Edit" [ref=e1981] [cursor=pointer]
+                - button "Delete" [ref=e1982] [cursor=pointer]
+            - 'row "panel sridevi 2026-02-02 to 2026-02-08 Mon: 44088567 Tue: 35645140 Wed: 34944123 Thu: 38890280 Fri: 14941489 Sat: 13483247 Sun: 26863670 2026 Edit Delete" [ref=e1983]':
+              - cell "panel" [ref=e1984]
+              - cell "sridevi" [ref=e1985]
+              - cell "2026-02-02 to 2026-02-08" [ref=e1986]
+              - 'cell "Mon: 44088567 Tue: 35645140 Wed: 34944123 Thu: 38890280 Fri: 14941489 Sat: 13483247 Sun: 26863670" [ref=e1987]':
+                - generic [ref=e1988]:
+                  - generic [ref=e1989]:
+                    - strong [ref=e1990]: "Mon:"
+                    - text: "44088567"
+                  - generic [ref=e1991]:
+                    - strong [ref=e1992]: "Tue:"
+                    - text: "35645140"
+                  - generic [ref=e1993]:
+                    - strong [ref=e1994]: "Wed:"
+                    - text: "34944123"
+                  - generic [ref=e1995]:
+                    - strong [ref=e1996]: "Thu:"
+                    - text: "38890280"
+                  - generic [ref=e1997]:
+                    - strong [ref=e1998]: "Fri:"
+                    - text: "14941489"
+                  - generic [ref=e1999]:
+                    - strong [ref=e2000]: "Sat:"
+                    - text: "13483247"
+                  - generic [ref=e2001]:
+                    - strong [ref=e2002]: "Sun:"
+                    - text: "26863670"
+              - cell "2026" [ref=e2003]
+              - cell "Edit Delete" [ref=e2004]:
+                - button "Edit" [ref=e2005] [cursor=pointer]
+                - button "Delete" [ref=e2006] [cursor=pointer]
+            - 'row "panel sridevi night 2026-02-02 to 2026-02-08 Mon: 67924158 Tue: 89071155 Wed: 11359568 Thu: 36098378 Fri: 20027467 Sat: 77821335 Sun: 15061560 2026 Edit Delete" [ref=e2007]':
+              - cell "panel" [ref=e2008]
+              - cell "sridevi night" [ref=e2009]
+              - cell "2026-02-02 to 2026-02-08" [ref=e2010]
+              - 'cell "Mon: 67924158 Tue: 89071155 Wed: 11359568 Thu: 36098378 Fri: 20027467 Sat: 77821335 Sun: 15061560" [ref=e2011]':
+                - generic [ref=e2012]:
+                  - generic [ref=e2013]:
+                    - strong [ref=e2014]: "Mon:"
+                    - text: "67924158"
+                  - generic [ref=e2015]:
+                    - strong [ref=e2016]: "Tue:"
+                    - text: "89071155"
+                  - generic [ref=e2017]:
+                    - strong [ref=e2018]: "Wed:"
+                    - text: "11359568"
+                  - generic [ref=e2019]:
+                    - strong [ref=e2020]: "Thu:"
+                    - text: "36098378"
+                  - generic [ref=e2021]:
+                    - strong [ref=e2022]: "Fri:"
+                    - text: "20027467"
+                  - generic [ref=e2023]:
+                    - strong [ref=e2024]: "Sat:"
+                    - text: "77821335"
+                  - generic [ref=e2025]:
+                    - strong [ref=e2026]: "Sun:"
+                    - text: "15061560"
+              - cell "2026" [ref=e2027]
+              - cell "Edit Delete" [ref=e2028]:
+                - button "Edit" [ref=e2029] [cursor=pointer]
+                - button "Delete" [ref=e2030] [cursor=pointer]
+            - 'row "panel doller 2026-02-02 to 2026-02-08 Mon: 77716358 Tue: 45982444 Wed: 19002390 Thu: 56897359 Fri: 13606448 Sat: 14504400 Sun: 23504770 2026 Edit Delete" [ref=e2031]':
+              - cell "panel" [ref=e2032]
+              - cell "doller" [ref=e2033]
+              - cell "2026-02-02 to 2026-02-08" [ref=e2034]
+              - 'cell "Mon: 77716358 Tue: 45982444 Wed: 19002390 Thu: 56897359 Fri: 13606448 Sat: 14504400 Sun: 23504770" [ref=e2035]':
+                - generic [ref=e2036]:
+                  - generic [ref=e2037]:
+                    - strong [ref=e2038]: "Mon:"
+                    - text: "77716358"
+                  - generic [ref=e2039]:
+                    - strong [ref=e2040]: "Tue:"
+                    - text: "45982444"
+                  - generic [ref=e2041]:
+                    - strong [ref=e2042]: "Wed:"
+                    - text: "19002390"
+                  - generic [ref=e2043]:
+                    - strong [ref=e2044]: "Thu:"
+                    - text: "56897359"
+                  - generic [ref=e2045]:
+                    - strong [ref=e2046]: "Fri:"
+                    - text: "13606448"
+                  - generic [ref=e2047]:
+                    - strong [ref=e2048]: "Sat:"
+                    - text: "14504400"
+                  - generic [ref=e2049]:
+                    - strong [ref=e2050]: "Sun:"
+                    - text: "23504770"
+              - cell "2026" [ref=e2051]
+              - cell "Edit Delete" [ref=e2052]:
+                - button "Edit" [ref=e2053] [cursor=pointer]
+                - button "Delete" [ref=e2054] [cursor=pointer]
+            - 'row "panel KBC 2026-02-02 to 2026-02-07 Mon: 11797467 Tue: 33954590 Wed: 24731245 Thu: 69050370 Fri: 33064347 Sat: 45875258 2026 Edit Delete" [ref=e2055]':
+              - cell "panel" [ref=e2056]
+              - cell "KBC" [ref=e2057]
+              - cell "2026-02-02 to 2026-02-07" [ref=e2058]
+              - 'cell "Mon: 11797467 Tue: 33954590 Wed: 24731245 Thu: 69050370 Fri: 33064347 Sat: 45875258" [ref=e2059]':
+                - generic [ref=e2060]:
+                  - generic [ref=e2061]:
+                    - strong [ref=e2062]: "Mon:"
+                    - text: "11797467"
+                  - generic [ref=e2063]:
+                    - strong [ref=e2064]: "Tue:"
+                    - text: "33954590"
+                  - generic [ref=e2065]:
+                    - strong [ref=e2066]: "Wed:"
+                    - text: "24731245"
+                  - generic [ref=e2067]:
+                    - strong [ref=e2068]: "Thu:"
+                    - text: "69050370"
+                  - generic [ref=e2069]:
+                    - strong [ref=e2070]: "Fri:"
+                    - text: "33064347"
+                  - generic [ref=e2071]:
+                    - strong [ref=e2072]: "Sat:"
+                    - text: "45875258"
+              - cell "2026" [ref=e2073]
+              - cell "Edit Delete" [ref=e2074]:
+                - button "Edit" [ref=e2075] [cursor=pointer]
+                - button "Delete" [ref=e2076] [cursor=pointer]
+            - 'row "panel Suraj Mukhi 2026-02-02 to 2026-02-07 Mon: 24512147 Tue: 15958288 Wed: 56780127 Thu: 78053490 Fri: 12693166 Sat: 36659900 2026 Edit Delete" [ref=e2077]':
+              - cell "panel" [ref=e2078]
+              - cell "Suraj Mukhi" [ref=e2079]
+              - cell "2026-02-02 to 2026-02-07" [ref=e2080]
+              - 'cell "Mon: 24512147 Tue: 15958288 Wed: 56780127 Thu: 78053490 Fri: 12693166 Sat: 36659900" [ref=e2081]':
+                - generic [ref=e2082]:
+                  - generic [ref=e2083]:
+                    - strong [ref=e2084]: "Mon:"
+                    - text: "24512147"
+                  - generic [ref=e2085]:
+                    - strong [ref=e2086]: "Tue:"
+                    - text: "15958288"
+                  - generic [ref=e2087]:
+                    - strong [ref=e2088]: "Wed:"
+                    - text: "56780127"
+                  - generic [ref=e2089]:
+                    - strong [ref=e2090]: "Thu:"
+                    - text: "78053490"
+                  - generic [ref=e2091]:
+                    - strong [ref=e2092]: "Fri:"
+                    - text: "12693166"
+                  - generic [ref=e2093]:
+                    - strong [ref=e2094]: "Sat:"
+                    - text: "36659900"
+              - cell "2026" [ref=e2095]
+              - cell "Edit Delete" [ref=e2096]:
+                - button "Edit" [ref=e2097] [cursor=pointer]
+                - button "Delete" [ref=e2098] [cursor=pointer]
+            - 'row "panel kalyan 2026-02-02 to 2026-02-07 Mon: 37991489 Tue: 18878378 Wed: 27982138 Thu: 14720145 Fri: 45654789 Sat: 25965267 2026 Edit Delete" [ref=e2099]':
+              - cell "panel" [ref=e2100]
+              - cell "kalyan" [ref=e2101]
+              - cell "2026-02-02 to 2026-02-07" [ref=e2102]
+              - 'cell "Mon: 37991489 Tue: 18878378 Wed: 27982138 Thu: 14720145 Fri: 45654789 Sat: 25965267" [ref=e2103]':
+                - generic [ref=e2104]:
+                  - generic [ref=e2105]:
+                    - strong [ref=e2106]: "Mon:"
+                    - text: "37991489"
+                  - generic [ref=e2107]:
+                    - strong [ref=e2108]: "Tue:"
+                    - text: "18878378"
+                  - generic [ref=e2109]:
+                    - strong [ref=e2110]: "Wed:"
+                    - text: "27982138"
+                  - generic [ref=e2111]:
+                    - strong [ref=e2112]: "Thu:"
+                    - text: "14720145"
+                  - generic [ref=e2113]:
+                    - strong [ref=e2114]: "Fri:"
+                    - text: "45654789"
+                  - generic [ref=e2115]:
+                    - strong [ref=e2116]: "Sat:"
+                    - text: "25965267"
+              - cell "2026" [ref=e2117]
+              - cell "Edit Delete" [ref=e2118]:
+                - button "Edit" [ref=e2119] [cursor=pointer]
+                - button "Delete" [ref=e2120] [cursor=pointer]
+            - 'row "panel doller 2026-01-26 to 2026-02-01 Mon: 36766457 Tue: 22607124 Wed: 34630479 Thu: 14492255 Fri: 38014338 Sat: 66797223 Sun: 48021579 2026 Edit Delete" [ref=e2121]':
+              - cell "panel" [ref=e2122]
+              - cell "doller" [ref=e2123]
+              - cell "2026-01-26 to 2026-02-01" [ref=e2124]
+              - 'cell "Mon: 36766457 Tue: 22607124 Wed: 34630479 Thu: 14492255 Fri: 38014338 Sat: 66797223 Sun: 48021579" [ref=e2125]':
+                - generic [ref=e2126]:
+                  - generic [ref=e2127]:
+                    - strong [ref=e2128]: "Mon:"
+                    - text: "36766457"
+                  - generic [ref=e2129]:
+                    - strong [ref=e2130]: "Tue:"
+                    - text: "22607124"
+                  - generic [ref=e2131]:
+                    - strong [ref=e2132]: "Wed:"
+                    - text: "34630479"
+                  - generic [ref=e2133]:
+                    - strong [ref=e2134]: "Thu:"
+                    - text: "14492255"
+                  - generic [ref=e2135]:
+                    - strong [ref=e2136]: "Fri:"
+                    - text: "38014338"
+                  - generic [ref=e2137]:
+                    - strong [ref=e2138]: "Sat:"
+                    - text: "66797223"
+                  - generic [ref=e2139]:
+                    - strong [ref=e2140]: "Sun:"
+                    - text: "48021579"
+              - cell "2026" [ref=e2141]
+              - cell "Edit Delete" [ref=e2142]:
+                - button "Edit" [ref=e2143] [cursor=pointer]
+                - button "Delete" [ref=e2144] [cursor=pointer]
+            - 'row "jodi doller night 2026-01-26 to 2026-02-01 Mon: 68 Tue: 54 Wed: 69 Thu: 83 Fri: 41 Sat: 72 Sun: 53 2026 Edit Delete" [ref=e2145]':
+              - cell "jodi" [ref=e2146]
+              - cell "doller night" [ref=e2147]
+              - cell "2026-01-26 to 2026-02-01" [ref=e2148]
+              - 'cell "Mon: 68 Tue: 54 Wed: 69 Thu: 83 Fri: 41 Sat: 72 Sun: 53" [ref=e2149]':
+                - generic [ref=e2150]:
+                  - generic [ref=e2151]:
+                    - strong [ref=e2152]: "Mon:"
+                    - text: "68"
+                  - generic [ref=e2153]:
+                    - strong [ref=e2154]: "Tue:"
+                    - text: "54"
+                  - generic [ref=e2155]:
+                    - strong [ref=e2156]: "Wed:"
+                    - text: "69"
+                  - generic [ref=e2157]:
+                    - strong [ref=e2158]: "Thu:"
+                    - text: "83"
+                  - generic [ref=e2159]:
+                    - strong [ref=e2160]: "Fri:"
+                    - text: "41"
+                  - generic [ref=e2161]:
+                    - strong [ref=e2162]: "Sat:"
+                    - text: "72"
+                  - generic [ref=e2163]:
+                    - strong [ref=e2164]: "Sun:"
+                    - text: "53"
+              - cell "2026" [ref=e2165]
+              - cell "Edit Delete" [ref=e2166]:
+                - button "Edit" [ref=e2167] [cursor=pointer]
+                - button "Delete" [ref=e2168] [cursor=pointer]
+            - 'row "panel kalyan 2026-01-26 to 2025-01-31 Mon: ** Tue: 25076600 Wed: 34859234 Thu: 78835159 Fri: 14612778 Sat: 70070235 2026 Edit Delete" [ref=e2169]':
+              - cell "panel" [ref=e2170]
+              - cell "kalyan" [ref=e2171]
+              - cell "2026-01-26 to 2025-01-31" [ref=e2172]
+              - 'cell "Mon: ** Tue: 25076600 Wed: 34859234 Thu: 78835159 Fri: 14612778 Sat: 70070235" [ref=e2173]':
+                - generic [ref=e2174]:
+                  - generic [ref=e2175]:
+                    - strong [ref=e2176]: "Mon:"
+                    - text: "**"
+                  - generic [ref=e2177]:
+                    - strong [ref=e2178]: "Tue:"
+                    - text: "25076600"
+                  - generic [ref=e2179]:
+                    - strong [ref=e2180]: "Wed:"
+                    - text: "34859234"
+                  - generic [ref=e2181]:
+                    - strong [ref=e2182]: "Thu:"
+                    - text: "78835159"
+                  - generic [ref=e2183]:
+                    - strong [ref=e2184]: "Fri:"
+                    - text: "14612778"
+                  - generic [ref=e2185]:
+                    - strong [ref=e2186]: "Sat:"
+                    - text: "70070235"
+              - cell "2026" [ref=e2187]
+              - cell "Edit Delete" [ref=e2188]:
+                - button "Edit" [ref=e2189] [cursor=pointer]
+                - button "Delete" [ref=e2190] [cursor=pointer]
+            - 'row "panel Suraj Mukhi 2026-01-26 to 2026-01-31 Mon: 46880488 Tue: 12470235 Wed: 14832255 Thu: 56010389 Fri: 45870677 Sat: 35080235 2026 Edit Delete" [ref=e2191]':
+              - cell "panel" [ref=e2192]
+              - cell "Suraj Mukhi" [ref=e2193]
+              - cell "2026-01-26 to 2026-01-31" [ref=e2194]
+              - 'cell "Mon: 46880488 Tue: 12470235 Wed: 14832255 Thu: 56010389 Fri: 45870677 Sat: 35080235" [ref=e2195]':
+                - generic [ref=e2196]:
+                  - generic [ref=e2197]:
+                    - strong [ref=e2198]: "Mon:"
+                    - text: "46880488"
+                  - generic [ref=e2199]:
+                    - strong [ref=e2200]: "Tue:"
+                    - text: "12470235"
+                  - generic [ref=e2201]:
+                    - strong [ref=e2202]: "Wed:"
+                    - text: "14832255"
+                  - generic [ref=e2203]:
+                    - strong [ref=e2204]: "Thu:"
+                    - text: "56010389"
+                  - generic [ref=e2205]:
+                    - strong [ref=e2206]: "Fri:"
+                    - text: "45870677"
+                  - generic [ref=e2207]:
+                    - strong [ref=e2208]: "Sat:"
+                    - text: "35080235"
+              - cell "2026" [ref=e2209]
+              - cell "Edit Delete" [ref=e2210]:
+                - button "Edit" [ref=e2211] [cursor=pointer]
+                - button "Delete" [ref=e2212] [cursor=pointer]
+            - 'row "panel sridevi night 2026-01-26 to 2026-02-01 Mon: ******** Tue: 22600677 Wed: 59935249 Thu: 68933157 Fri: 24731245 Sat: 13714680 Sun: 35759289 2026 Edit Delete" [ref=e2213]':
+              - cell "panel" [ref=e2214]
+              - cell "sridevi night" [ref=e2215]
+              - cell "2026-01-26 to 2026-02-01" [ref=e2216]
+              - 'cell "Mon: ******** Tue: 22600677 Wed: 59935249 Thu: 68933157 Fri: 24731245 Sat: 13714680 Sun: 35759289" [ref=e2217]':
+                - generic [ref=e2218]:
+                  - generic [ref=e2219]:
+                    - strong [ref=e2220]: "Mon:"
+                    - text: "********"
+                  - generic [ref=e2221]:
+                    - strong [ref=e2222]: "Tue:"
+                    - text: "22600677"
+                  - generic [ref=e2223]:
+                    - strong [ref=e2224]: "Wed:"
+                    - text: "59935249"
+                  - generic [ref=e2225]:
+                    - strong [ref=e2226]: "Thu:"
+                    - text: "68933157"
+                  - generic [ref=e2227]:
+                    - strong [ref=e2228]: "Fri:"
+                    - text: "24731245"
+                  - generic [ref=e2229]:
+                    - strong [ref=e2230]: "Sat:"
+                    - text: "13714680"
+                  - generic [ref=e2231]:
+                    - strong [ref=e2232]: "Sun:"
+                    - text: "35759289"
+              - cell "2026" [ref=e2233]
+              - cell "Edit Delete" [ref=e2234]:
+                - button "Edit" [ref=e2235] [cursor=pointer]
+                - button "Delete" [ref=e2236] [cursor=pointer]
+            - 'row "panel KBC 2026-01-26 to 2026-01-31 Mon: ** Tue: 12924248 Wed: 12477250 Thu: 67818350 Fri: 55999234 Sat: 68045357 2026 Edit Delete" [ref=e2237]':
+              - cell "panel" [ref=e2238]
+              - cell "KBC" [ref=e2239]
+              - cell "2026-01-26 to 2026-01-31" [ref=e2240]
+              - 'cell "Mon: ** Tue: 12924248 Wed: 12477250 Thu: 67818350 Fri: 55999234 Sat: 68045357" [ref=e2241]':
+                - generic [ref=e2242]:
+                  - generic [ref=e2243]:
+                    - strong [ref=e2244]: "Mon:"
+                    - text: "**"
+                  - generic [ref=e2245]:
+                    - strong [ref=e2246]: "Tue:"
+                    - text: "12924248"
+                  - generic [ref=e2247]:
+                    - strong [ref=e2248]: "Wed:"
+                    - text: "12477250"
+                  - generic [ref=e2249]:
+                    - strong [ref=e2250]: "Thu:"
+                    - text: "67818350"
+                  - generic [ref=e2251]:
+                    - strong [ref=e2252]: "Fri:"
+                    - text: "55999234"
+                  - generic [ref=e2253]:
+                    - strong [ref=e2254]: "Sat:"
+                    - text: "68045357"
+              - cell "2026" [ref=e2255]
+              - cell "Edit Delete" [ref=e2256]:
+                - button "Edit" [ref=e2257] [cursor=pointer]
+                - button "Delete" [ref=e2258] [cursor=pointer]
+            - 'row "panel main bazar 2026-01-26 to 2026-01-30 Mon: ** Tue: 24730235 Wed: 35753670 Thu: 69947188 Fri: 33957557 Sat: 2026 Edit Delete" [ref=e2259]':
+              - cell "panel" [ref=e2260]
+              - cell "main bazar" [ref=e2261]
+              - cell "2026-01-26 to 2026-01-30" [ref=e2262]
+              - 'cell "Mon: ** Tue: 24730235 Wed: 35753670 Thu: 69947188 Fri: 33957557 Sat:" [ref=e2263]':
+                - generic [ref=e2264]:
+                  - generic [ref=e2265]:
+                    - strong [ref=e2266]: "Mon:"
+                    - text: "**"
+                  - generic [ref=e2267]:
+                    - strong [ref=e2268]: "Tue:"
+                    - text: "24730235"
+                  - generic [ref=e2269]:
+                    - strong [ref=e2270]: "Wed:"
+                    - text: "35753670"
+                  - generic [ref=e2271]:
+                    - strong [ref=e2272]: "Thu:"
+                    - text: "69947188"
+                  - generic [ref=e2273]:
+                    - strong [ref=e2274]: "Fri:"
+                    - text: "33957557"
+                  - strong [ref=e2276]: "Sat:"
+              - cell "2026" [ref=e2277]
+              - cell "Edit Delete" [ref=e2278]:
+                - button "Edit" [ref=e2279] [cursor=pointer]
+                - button "Delete" [ref=e2280] [cursor=pointer]
+            - 'row "panel doller night 2026-01-26 to 2026-02-01 Mon: 88068558 Tue: 69054770 Wed: 12369180 Thu: 26083166 Fri: 26641146 Sat: 17972679 Sun: 69053337 2026 Edit Delete" [ref=e2281]':
+              - cell "panel" [ref=e2282]
+              - cell "doller night" [ref=e2283]
+              - cell "2026-01-26 to 2026-02-01" [ref=e2284]
+              - 'cell "Mon: 88068558 Tue: 69054770 Wed: 12369180 Thu: 26083166 Fri: 26641146 Sat: 17972679 Sun: 69053337" [ref=e2285]':
+                - generic [ref=e2286]:
+                  - generic [ref=e2287]:
+                    - strong [ref=e2288]: "Mon:"
+                    - text: "88068558"
+                  - generic [ref=e2289]:
+                    - strong [ref=e2290]: "Tue:"
+                    - text: "69054770"
+                  - generic [ref=e2291]:
+                    - strong [ref=e2292]: "Wed:"
+                    - text: "12369180"
+                  - generic [ref=e2293]:
+                    - strong [ref=e2294]: "Thu:"
+                    - text: "26083166"
+                  - generic [ref=e2295]:
+                    - strong [ref=e2296]: "Fri:"
+                    - text: "26641146"
+                  - generic [ref=e2297]:
+                    - strong [ref=e2298]: "Sat:"
+                    - text: "17972679"
+                  - generic [ref=e2299]:
+                    - strong [ref=e2300]: "Sun:"
+                    - text: "69053337"
+              - cell "2026" [ref=e2301]
+              - cell "Edit Delete" [ref=e2302]:
+                - button "Edit" [ref=e2303] [cursor=pointer]
+                - button "Delete" [ref=e2304] [cursor=pointer]
+            - 'row "panel sridevi 2026-01-26 to 2026-02-01 Mon: ** Tue: 56785249 Wed: 49036899 Thu: 13043788 Fri: 78945357 Sat: 12690569 Sun: 57796268 2026 Edit Delete" [ref=e2305]':
+              - cell "panel" [ref=e2306]
+              - cell "sridevi" [ref=e2307]
+              - cell "2026-01-26 to 2026-02-01" [ref=e2308]
+              - 'cell "Mon: ** Tue: 56785249 Wed: 49036899 Thu: 13043788 Fri: 78945357 Sat: 12690569 Sun: 57796268" [ref=e2309]':
+                - generic [ref=e2310]:
+                  - generic [ref=e2311]:
+                    - strong [ref=e2312]: "Mon:"
+                    - text: "**"
+                  - generic [ref=e2313]:
+                    - strong [ref=e2314]: "Tue:"
+                    - text: "56785249"
+                  - generic [ref=e2315]:
+                    - strong [ref=e2316]: "Wed:"
+                    - text: "49036899"
+                  - generic [ref=e2317]:
+                    - strong [ref=e2318]: "Thu:"
+                    - text: "13043788"
+                  - generic [ref=e2319]:
+                    - strong [ref=e2320]: "Fri:"
+                    - text: "78945357"
+                  - generic [ref=e2321]:
+                    - strong [ref=e2322]: "Sat:"
+                    - text: "12690569"
+                  - generic [ref=e2323]:
+                    - strong [ref=e2324]: "Sun:"
+                    - text: "57796268"
+              - cell "2026" [ref=e2325]
+              - cell "Edit Delete" [ref=e2326]:
+                - button "Edit" [ref=e2327] [cursor=pointer]
+                - button "Delete" [ref=e2328] [cursor=pointer]
+            - 'row "jodi doller night 2026-01-19 to 2026-01-25 Mon: 58 Tue: 00 Wed: 19 Thu: 41 Fri: 78 Sat: 69 Sun: 59 2026 Edit Delete" [ref=e2329]':
+              - cell "jodi" [ref=e2330]
+              - cell "doller night" [ref=e2331]
+              - cell "2026-01-19 to 2026-01-25" [ref=e2332]
+              - 'cell "Mon: 58 Tue: 00 Wed: 19 Thu: 41 Fri: 78 Sat: 69 Sun: 59" [ref=e2333]':
+                - generic [ref=e2334]:
+                  - generic [ref=e2335]:
+                    - strong [ref=e2336]: "Mon:"
+                    - text: "58"
+                  - generic [ref=e2337]:
+                    - strong [ref=e2338]: "Tue:"
+                    - text: "00"
+                  - generic [ref=e2339]:
+                    - strong [ref=e2340]: "Wed:"
+                    - text: "19"
+                  - generic [ref=e2341]:
+                    - strong [ref=e2342]: "Thu:"
+                    - text: "41"
+                  - generic [ref=e2343]:
+                    - strong [ref=e2344]: "Fri:"
+                    - text: "78"
+                  - generic [ref=e2345]:
+                    - strong [ref=e2346]: "Sat:"
+                    - text: "69"
+                  - generic [ref=e2347]:
+                    - strong [ref=e2348]: "Sun:"
+                    - text: "59"
+              - cell "2026" [ref=e2349]
+              - cell "Edit Delete" [ref=e2350]:
+                - button "Edit" [ref=e2351] [cursor=pointer]
+                - button "Delete" [ref=e2352] [cursor=pointer]
+            - 'row "panel kalyan 2026-01-19 to 2026-01-24 Mon: 23502156 Tue: 67039135 Wed: 33406150 Thu: 79067124 Fri: 45769126 Sat: 34854149 2026 Edit Delete" [ref=e2353]':
+              - cell "panel" [ref=e2354]
+              - cell "kalyan" [ref=e2355]
+              - cell "2026-01-19 to 2026-01-24" [ref=e2356]
+              - 'cell "Mon: 23502156 Tue: 67039135 Wed: 33406150 Thu: 79067124 Fri: 45769126 Sat: 34854149" [ref=e2357]':
+                - generic [ref=e2358]:
+                  - generic [ref=e2359]:
+                    - strong [ref=e2360]: "Mon:"
+                    - text: "23502156"
+                  - generic [ref=e2361]:
+                    - strong [ref=e2362]: "Tue:"
+                    - text: "67039135"
+                  - generic [ref=e2363]:
+                    - strong [ref=e2364]: "Wed:"
+                    - text: "33406150"
+                  - generic [ref=e2365]:
+                    - strong [ref=e2366]: "Thu:"
+                    - text: "79067124"
+                  - generic [ref=e2367]:
+                    - strong [ref=e2368]: "Fri:"
+                    - text: "45769126"
+                  - generic [ref=e2369]:
+                    - strong [ref=e2370]: "Sat:"
+                    - text: "34854149"
+              - cell "2026" [ref=e2371]
+              - cell "Edit Delete" [ref=e2372]:
+                - button "Edit" [ref=e2373] [cursor=pointer]
+                - button "Delete" [ref=e2374] [cursor=pointer]
+            - 'row "panel KBC 2026-01-19 to 2026-01-24 Mon: 34072138 Tue: 12585177 Wed: 35539180 Thu: 46666268 Fri: 30036240 Sat: 24402480 2026 Edit Delete" [ref=e2375]':
+              - cell "panel" [ref=e2376]
+              - cell "KBC" [ref=e2377]
+              - cell "2026-01-19 to 2026-01-24" [ref=e2378]
+              - 'cell "Mon: 34072138 Tue: 12585177 Wed: 35539180 Thu: 46666268 Fri: 30036240 Sat: 24402480" [ref=e2379]':
+                - generic [ref=e2380]:
+                  - generic [ref=e2381]:
+                    - strong [ref=e2382]: "Mon:"
+                    - text: "34072138"
+                  - generic [ref=e2383]:
+                    - strong [ref=e2384]: "Tue:"
+                    - text: "12585177"
+                  - generic [ref=e2385]:
+                    - strong [ref=e2386]: "Wed:"
+                    - text: "35539180"
+                  - generic [ref=e2387]:
+                    - strong [ref=e2388]: "Thu:"
+                    - text: "46666268"
+                  - generic [ref=e2389]:
+                    - strong [ref=e2390]: "Fri:"
+                    - text: "30036240"
+                  - generic [ref=e2391]:
+                    - strong [ref=e2392]: "Sat:"
+                    - text: "24402480"
+              - cell "2026" [ref=e2393]
+              - cell "Edit Delete" [ref=e2394]:
+                - button "Edit" [ref=e2395] [cursor=pointer]
+                - button "Delete" [ref=e2396] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=e2402] [cursor=pointer]:
+    - img [ref=e2403]
+  - alert [ref=e2406]
