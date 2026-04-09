@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import { sanitizeHexColor } from '@/lib/chart-display';
 import { getActiveMarkets, getLatestResultsByMarket } from '@/lib/page-resolver';
@@ -5,9 +6,34 @@ import { HomeScrollRestore } from '@/app/_components/HomeScrollRestore';
 import { ReloadButton } from '@/app/_components/ReloadButton';
 import { getGeneralInfoSections } from '@/lib/dpboss-general-info';
 import { PANNA_PATTI_RECORDS } from '@/lib/panna-patti-records';
+import { absoluteUrl, getSiteUrl } from '@/lib/site';
 import type { Market, MarketResult } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
+
+const siteUrl = getSiteUrl();
+const homeTitle = 'DLBOSS.COM | Satta Matka | Kalyan Matka | Fast Result';
+const homeDescription =
+  'Check live market outcomes, jodi charts, and panel charts on DLBOSS.COM with fast admin-managed updates.';
+
+export const metadata: Metadata = {
+  title: homeTitle,
+  description: homeDescription,
+  alternates: {
+    canonical: '/'
+  },
+  openGraph: {
+    type: 'website',
+    url: siteUrl,
+    title: homeTitle,
+    description: homeDescription
+  },
+  twitter: {
+    card: 'summary',
+    title: homeTitle,
+    description: homeDescription
+  }
+};
 
 type HomeMarket = {
   id: string;
@@ -67,6 +93,23 @@ export default async function HomePage() {
   const markets = await getActiveMarkets();
   const latestByMarket = await getLatestResultsByMarket(markets.map((market) => market.id));
   const generalInfo = await getGeneralInfoSections();
+  const structuredData = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'DLBOSS',
+      alternateName: ['DL BOSS', 'DLBOSS.COM', 'DLBOSSS', 'DLBOSSS.COM'],
+      url: siteUrl.toString()
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'DLBOSS',
+      alternateName: ['DL BOSS', 'DLBOSS.COM', 'DLBOSSS', 'DLBOSSS.COM'],
+      url: siteUrl.toString(),
+      logo: absoluteUrl('/icon.jpg')
+    }
+  ];
 
   const rows: HomeMarket[] = markets.map((market) => ({
     id: market.id,
@@ -86,6 +129,10 @@ export default async function HomePage() {
   return (
     <main className="site-shell dl-home-shell">
       <HomeScrollRestore />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
 
       <header className="m-icon" id="top-brand">
         <Image src="/dlboss-logo.svg" alt="DLBOSS.COM" width={816} height={271} priority />

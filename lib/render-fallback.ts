@@ -9,6 +9,7 @@ import {
   sanitizeHexColor,
   type ChartDayKey
 } from '@/lib/chart-display';
+import { absoluteUrl } from '@/lib/site';
 
 function escapeHtml(value: string) {
   return value
@@ -91,6 +92,11 @@ export function renderChartSnapshot(params: {
   const filtered = includeAll ? records : records.slice(-300);
   const visibleDays = getVisibleDayKeys(market.show_sunday);
   const headingYear = getChartYearRange(filtered);
+  const pageTitle = `${market.name} ${titlePrefix} Chart`;
+  const description = `Check the ${market.name} ${titlePrefix.toLowerCase()} chart on DLBOSS.COM. Open days: ${getOpenDaysLabel(
+    market.show_sunday
+  )}. Market timing: ${market.open_time ?? '--'} - ${market.close_time ?? '--'}.`;
+  const previewImage = absoluteUrl('/icon.jpg');
 
   return `<!doctype html>
 <html amp lang="en-in">
@@ -98,8 +104,20 @@ export function renderChartSnapshot(params: {
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
 <script async src="https://cdn.ampproject.org/v0.js"></script>
-<title>${escapeHtml(`${market.name} ${titlePrefix} Chart`)}</title>
+<title>${escapeHtml(pageTitle)}</title>
+<meta name="description" content="${escapeHtml(description)}" />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 <link rel="canonical" href="${escapeHtml(pagePath)}" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="DLBOSS" />
+<meta property="og:title" content="${escapeHtml(pageTitle)}" />
+<meta property="og:description" content="${escapeHtml(description)}" />
+<meta property="og:url" content="${escapeHtml(pagePath)}" />
+<meta property="og:image" content="${escapeHtml(previewImage)}" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="${escapeHtml(pageTitle)}" />
+<meta name="twitter:description" content="${escapeHtml(description)}" />
+<meta name="twitter:image" content="${escapeHtml(previewImage)}" />
 <style amp-custom>
 body{background:#fc9;font-family:Helvetica,sans-serif;font-style:italic;font-weight:700;margin:0;padding:6px;text-align:center}
 .container{max-width:1320px;margin:0 auto}

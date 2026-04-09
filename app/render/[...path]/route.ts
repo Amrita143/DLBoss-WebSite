@@ -34,7 +34,7 @@ export async function GET(request: NextRequest, context: { params: Promise<{ pat
     const records = await getChartRecords(market.id, chartMeta.chartType, fullChart);
     const html = renderChartSnapshot({
       market,
-      pagePath: request.nextUrl.href,
+      pagePath: `${request.nextUrl.origin}${request.nextUrl.pathname}`,
       chartType: chartMeta.chartType,
       records,
       includeAll: fullChart
