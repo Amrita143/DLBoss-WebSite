@@ -139,7 +139,12 @@ export default async function HomePage() {
       </header>
 
       <section className="welcome-strip">
-        <p>!! Welcome to DLBOSS.COM International !! Satta Matka Fast Result</p>
+        <div className="welcome-strip-inner">
+          <div className="welcome-strip-media">
+            <Image src="/ganesh-lakshmi.jpg" alt="Ganesh and Lakshmi" width={736} height={957} priority={false} />
+          </div>
+          <p>!! Welcome to DLBOSS.COM International !! Satta Matka Fast Result</p>
+        </div>
       </section>
 
       <section className="text2 intro-box">
@@ -182,7 +187,7 @@ export default async function HomePage() {
               <span>{formatMainResult(market.latest)}</span>
               <p>{formatRange(market.open_time, market.close_time)}</p>
 
-              <div className="result-actions">
+              <div className={`result-actions ${market.has_jodi && market.has_panel ? 'result-actions-double' : 'result-actions-single'}`}>
                 {market.has_jodi ? (
                   <a href={`/jodi-chart-record/${market.slug}.php`} className="gm-clk">
                     Jodi Chart

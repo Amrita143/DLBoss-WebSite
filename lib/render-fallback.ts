@@ -129,38 +129,41 @@ th{background:#f7bf14;color:#111;font-style:normal;font-weight:900}
 a.btn{display:inline-block;margin:4px;padding:6px 12px;border:2px solid #2244aa;border-radius:6px;color:#0a2463;text-decoration:none;font-weight:800}
 .table-wrap{overflow:visible}
 .chart-date{width:clamp(40px,13vw,120px);font-size:clamp(7px,2vw,18px);line-height:1.05;font-style:normal;font-weight:900;background:#f4c79b}
-.chart-cell-jodi,.chart-cell-panel{width:auto}
-.jodi-value{display:inline-block;padding:2px 4px;font-size:clamp(11px,3vw,28px);line-height:1.05;color:#111;border-radius:4px;font-style:normal}
-.panel-value{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;column-gap:clamp(2px,0.75vw,8px);padding:2px 2px;border-radius:4px;min-height:clamp(34px,6.2vw,72px);width:100%;max-width:100%;box-sizing:border-box;color:inherit;font-style:normal}
-.panel-side{display:grid;grid-template-rows:repeat(3,1fr);font-size:clamp(8px,2.55vw,18px);line-height:0.9;color:inherit;font-weight:800}
+.chart-cell-jodi,.chart-cell-panel{width:auto;padding:2px 1px}
+.jodi-value{display:inline-block;padding:1px 2px;font-size:clamp(13px,3.4vw,30px);line-height:1;color:#111;border-radius:4px;font-style:normal;font-weight:900}
+.panel-value{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;column-gap:clamp(1px,0.55vw,6px);padding:1px 1px;border-radius:4px;min-height:clamp(30px,5.4vw,60px);width:100%;max-width:100%;box-sizing:border-box;color:inherit;font-style:normal}
+.panel-side{display:grid;grid-template-rows:repeat(3,1fr);font-size:clamp(10px,2.9vw,20px);line-height:0.88;color:inherit;font-weight:900}
 .panel-side-left{justify-items:start;text-align:left;padding-left:1px}
 .panel-side-right{justify-items:end;text-align:right;padding-right:1px}
-.panel-center{display:inline-block;font-size:clamp(10px,3.05vw,30px);line-height:1;color:inherit;font-weight:900;justify-self:center}
-.panel-fallback{display:inline-block;padding:2px 4px;border-radius:4px;font-size:clamp(10px,3.2vw,22px);line-height:1.05;color:inherit;font-style:normal}
+.panel-center{display:inline-block;font-size:clamp(12px,3.35vw,31px);line-height:1;color:inherit;font-weight:900;justify-self:center}
+.panel-fallback{display:inline-block;padding:1px 2px;border-radius:4px;font-size:clamp(11px,3.3vw,24px);line-height:1;color:inherit;font-style:normal;font-weight:900}
 @media (max-width:700px){
   body{padding:3px}
   .container{max-width:none}
   .meta{padding:6px}
   a.btn{margin:3px;padding:5px 8px;font-size:13px}
-  th,td{padding:3px 1px;font-size:clamp(6px,1.85vw,11px)}
-  .chart-date{width:clamp(34px,16vw,78px);font-size:clamp(6px,1.95vw,11px)}
-  .jodi-value{padding:1px 2px;font-size:clamp(8px,3vw,16px)}
-  .panel-value{column-gap:clamp(1px,0.55vw,4px);padding:1px 2px;min-height:clamp(26px,9vw,44px)}
-  .panel-side{font-size:clamp(7px,2.5vw,12px);line-height:0.94}
-  .panel-center{font-size:clamp(8px,2.55vw,14px)}
-  .panel-fallback{font-size:clamp(8px,2.8vw,14px)}
+  th,td{padding:2px 1px;font-size:clamp(5px,1.45vw,9px)}
+  .chart-date{width:clamp(28px,14vw,64px);font-size:clamp(5px,1.7vw,10px);line-height:1}
+  .chart-cell-jodi,.chart-cell-panel{padding:1px 0}
+  .jodi-value{padding:0 1px;font-size:clamp(11px,3.65vw,18px);line-height:0.96}
+  .panel-value{column-gap:clamp(1px,0.4vw,3px);padding:0 1px;min-height:clamp(23px,7.2vw,34px)}
+  .panel-side{font-size:clamp(8px,2.85vw,13px);line-height:0.9}
+  .panel-center{font-size:clamp(10px,3.45vw,16px)}
+  .panel-fallback{font-size:clamp(10px,3.15vw,15px);line-height:0.96}
 }
 @media (max-width:420px){
   body{padding:2px}
   .heading{padding:7px 4px}
   .meta{padding:5px}
   a.btn{margin:2px;padding:4px 6px;font-size:12px}
-  th,td{padding:2px 1px;font-size:clamp(5px,1.7vw,8px)}
-  .chart-date{width:clamp(30px,18vw,64px);font-size:clamp(5px,1.7vw,8px)}
-  .jodi-value{font-size:clamp(7px,2.7vw,13px)}
-  .panel-side{font-size:clamp(6px,2.35vw,10px);line-height:0.96}
-  .panel-center{font-size:clamp(7px,2.55vw,11px)}
-  .panel-fallback{font-size:clamp(7px,2.5vw,12px)}
+  th,td{padding:1px 0;font-size:clamp(4px,1.3vw,6px)}
+  .chart-date{width:clamp(25px,16vw,52px);font-size:clamp(4px,1.45vw,7px);line-height:0.98}
+  .chart-cell-jodi,.chart-cell-panel{padding:0}
+  .jodi-value{font-size:clamp(10px,3.7vw,15px);line-height:0.94}
+  .panel-value{column-gap:1px;padding:0;min-height:clamp(20px,6.9vw,28px)}
+  .panel-side{font-size:clamp(7px,2.95vw,11px);line-height:0.88}
+  .panel-center{font-size:clamp(9px,3.8vw,14px)}
+  .panel-fallback{font-size:clamp(9px,3.3vw,13px);line-height:0.94}
 }
 </style>
 </head>

@@ -62,19 +62,41 @@
 }
 
 .welcome-strip {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   background: linear-gradient(180deg, #ffd8aa, #ffc58f);
   padding: 8px 10px;
 }
 
+.welcome-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: 100%;
+}
+
+.welcome-strip-media {
+  flex: 0 0 auto;
+  width: clamp(62px, 7.5vw, 113px);
+}
+
+.welcome-strip-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
 .welcome-strip p {
   margin: 0;
+  flex: 1 1 auto;
   color: #111;
-  font-size: 16px;
+  font-size: 20px;
   text-shadow: none;
   font-style: normal;
+  text-align: right;
+  line-height: 1.15;
 }
 
 .text2 {
@@ -180,7 +202,8 @@
 
 .market-row {
   position: relative;
-  padding: 5px 6px;
+  min-height: 118px;
+  padding: 10px clamp(112px, 23vw, 170px);
   border-bottom: 1px solid #ff0018;
 }
 
@@ -220,11 +243,24 @@
 }
 
 .result-actions {
-  margin: 6px 0 0;
+  position: absolute;
+  inset-inline: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
   display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.result-actions-double {
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: nowrap;
+}
+
+.result-actions-single {
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px;
 }
 
 .gm-clk {
@@ -238,6 +274,9 @@
   border: 1px solid #e6e6e6;
   background: #522f92;
   font-style: normal;
+  min-width: 120px;
+  text-align: center;
+  pointer-events: auto;
 }
 
 .gm-clk:hover {
@@ -555,7 +594,15 @@
   }
 
   .welcome-strip p {
-    font-size: 14px;
+    font-size: 17px;
+  }
+
+  .welcome-strip-inner {
+    gap: 14px;
+  }
+
+  .welcome-strip-media {
+    width: clamp(54px, 12vw, 90px);
   }
 
   .intro-box h1 {
@@ -568,6 +615,11 @@
 
   .market-row p {
     font-size: 16px;
+  }
+
+  .market-row {
+    min-height: 110px;
+    padding-inline: clamp(98px, 22vw, 142px);
   }
 
   .panna-patti-section h4 {
@@ -614,7 +666,15 @@
   }
 
   .welcome-strip p {
-    font-size: 13px;
+    font-size: 15px;
+  }
+
+  .welcome-strip-inner {
+    gap: 10px;
+  }
+
+  .welcome-strip-media {
+    width: clamp(48px, 16.5vw, 72px);
   }
 
   .intro-box h1 {
@@ -627,6 +687,12 @@
 
   .market-row p {
     font-size: 13px;
+  }
+
+  .market-row {
+    min-height: 104px;
+    padding-inline: clamp(92px, 21vw, 118px);
+    padding-block: 8px;
   }
 
   .panna-patti-section h4 {
@@ -656,9 +722,22 @@
     gap: 6px;
   }
 
+  .result-actions-double {
+    gap: 10px;
+  }
+
+  .result-actions-single .gm-clk {
+    width: 100%;
+  }
+
+  .result-actions-double .gm-clk {
+    min-width: 88px;
+    width: auto;
+    padding-inline: 8px;
+  }
+
   .gm-clk,
   .reload-btn {
-    width: 100%;
     box-sizing: border-box;
     font-size: 13px;
   }
