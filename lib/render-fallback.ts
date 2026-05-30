@@ -125,7 +125,7 @@ body{background:#fc9;font-family:Helvetica,sans-serif;font-style:italic;font-wei
 .meta{border:2px solid #ff182c;border-radius:10px;padding:8px;margin-bottom:8px;background:#ffe4c0}
 table{width:100%;border-collapse:collapse;table-layout:fixed;background:#f4c79b}
 th,td{border:1px solid #ff0016;padding:4px 2px;font-size:clamp(7px,1.55vw,13px);text-align:center;vertical-align:middle;background:#f4c79b}
-th{background:#f7bf14;color:#111;font-style:normal;font-weight:900}
+th{background:#f7bf14;color:#111;font-style:normal;font-weight:900;font-size:clamp(11px,1.9vw,18px);line-height:1}
 a.btn{display:inline-block;margin:4px;padding:6px 12px;border:2px solid #2244aa;border-radius:6px;color:#0a2463;text-decoration:none;font-weight:800}
 .table-wrap{overflow:visible}
 .chart-date{width:clamp(40px,13vw,120px);font-size:clamp(7px,2vw,18px);line-height:1.05;font-style:normal;font-weight:900;background:#f4c79b}
@@ -143,9 +143,10 @@ a.btn{display:inline-block;margin:4px;padding:6px 12px;border:2px solid #2244aa;
   .meta{padding:6px}
   a.btn{margin:3px;padding:5px 8px;font-size:13px}
   th,td{padding:2px 1px;font-size:clamp(5px,1.45vw,9px)}
+  th{font-size:clamp(7px,2.2vw,12px);line-height:1}
   .chart-date{width:clamp(28px,14vw,64px);font-size:clamp(5px,1.7vw,10px);line-height:1}
   .chart-cell-jodi,.chart-cell-panel{padding:1px 0}
-  .jodi-value{padding:0 1px;font-size:clamp(11px,3.65vw,18px);line-height:0.96}
+  .jodi-value{padding:0 1px;font-size:clamp(12px,4vw,20px);line-height:0.94}
   .panel-value{column-gap:clamp(1px,0.4vw,3px);padding:0 1px;min-height:clamp(23px,7.2vw,34px)}
   .panel-side{font-size:clamp(8px,2.85vw,13px);line-height:0.9}
   .panel-center{font-size:clamp(10px,3.45vw,16px)}
@@ -157,9 +158,10 @@ a.btn{display:inline-block;margin:4px;padding:6px 12px;border:2px solid #2244aa;
   .meta{padding:5px}
   a.btn{margin:2px;padding:4px 6px;font-size:12px}
   th,td{padding:1px 0;font-size:clamp(4px,1.3vw,6px)}
+  th{font-size:clamp(6px,2.5vw,10px);line-height:1}
   .chart-date{width:clamp(25px,16vw,52px);font-size:clamp(4px,1.45vw,7px);line-height:0.98}
   .chart-cell-jodi,.chart-cell-panel{padding:0}
-  .jodi-value{font-size:clamp(10px,3.7vw,15px);line-height:0.94}
+  .jodi-value{font-size:clamp(11px,4.25vw,17px);line-height:0.92}
   .panel-value{column-gap:1px;padding:0;min-height:clamp(20px,6.9vw,28px)}
   .panel-side{font-size:clamp(7px,2.95vw,11px);line-height:0.88}
   .panel-center{font-size:clamp(9px,3.8vw,14px)}
