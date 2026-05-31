@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import { DEFAULT_HOMEPAGE_MESSAGE_HTML, HOMEPAGE_MESSAGE_SETTING_KEY } from '@/lib/homepage-message';
 import { PATHS, readJson } from './common';
 import { loadScriptEnv } from '../load-env';
 
@@ -190,6 +191,20 @@ async function run() {
 
   if (settingError) {
     throw new Error(`Failed upserting default settings: ${settingError.message}`);
+  }
+
+  const { error: homepageMessageError } = await supabase.from('site_settings').upsert(
+    {
+      setting_key: HOMEPAGE_MESSAGE_SETTING_KEY,
+      setting_value: {
+        html: DEFAULT_HOMEPAGE_MESSAGE_HTML
+      }
+    },
+    { onConflict: 'setting_key' }
+  );
+
+  if (homepageMessageError) {
+    throw new Error(`Failed upserting homepage message setting: ${homepageMessageError.message}`);
   }
 
   console.log(

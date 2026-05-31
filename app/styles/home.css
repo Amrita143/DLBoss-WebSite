@@ -112,6 +112,31 @@
   line-height: 1.2;
 }
 
+.home-editor-message {
+  background: #ffcc99;
+  padding: 8px 14px;
+  color: #111;
+  border: 2px solid #ff182c;
+  border-style: outset;
+  border-radius: 10px;
+  box-shadow: 0 0 18px 0 rgb(0 0 0 / 28%);
+  margin-bottom: 6px;
+  text-align: center;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.home-editor-message p,
+.home-editor-message div {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.home-editor-message strong,
+.home-editor-message b {
+  font-weight: 800;
+}
+
 .liv-rslt {
   background: #ffcc99;
   padding: 5px 6px;

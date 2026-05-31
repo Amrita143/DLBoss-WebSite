@@ -1,12 +1,15 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { sanitizeHexColor } from '@/lib/chart-display';
+import { getHomepageMessageHtml, HOMEPAGE_MESSAGE_SETTING_KEY } from '@/lib/homepage-message';
 import { getActiveMarkets, getLatestResultsByMarket } from '@/lib/page-resolver';
 import { HomeScrollRestore } from '@/app/_components/HomeScrollRestore';
 import { ReloadButton } from '@/app/_components/ReloadButton';
 import { getGeneralInfoSections } from '@/lib/dpboss-general-info';
 import { PANNA_PATTI_RECORDS } from '@/lib/panna-patti-records';
 import { absoluteUrl, getSiteUrl } from '@/lib/site';
+import { sanitizeRichTextHtml } from '@/lib/sanitize-rich-text';
+import { getSupabaseAdmin } from '@/lib/supabase/admin';
 import type { Market, MarketResult } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
@@ -90,9 +93,16 @@ function getHighlightStyle(market: Pick<Market, 'is_highlighted' | 'highlight_co
 }
 
 export default async function HomePage() {
-  const markets = await getActiveMarkets();
+  const supabase = getSupabaseAdmin();
+  const [markets, generalInfo, homepageMessageResponse] = await Promise.all([
+    getActiveMarkets(),
+    getGeneralInfoSections(),
+    supabase.from('site_settings').select('setting_value').eq('setting_key', HOMEPAGE_MESSAGE_SETTING_KEY).maybeSingle()
+  ]);
   const latestByMarket = await getLatestResultsByMarket(markets.map((market) => market.id));
-  const generalInfo = await getGeneralInfoSections();
+  const homepageMessageHtml = sanitizeRichTextHtml(
+    getHomepageMessageHtml((homepageMessageResponse.data?.setting_value as Record<string, unknown> | undefined) ?? undefined)
+  );
   const structuredData = [
     {
       '@context': 'https://schema.org',
@@ -152,6 +162,8 @@ export default async function HomePage() {
       <section className="text2 intro-box">
         <h1>Satta Matka DLBOSS.COM Kalyan Matka Result</h1>
       </section>
+
+      <section className="home-editor-message" dangerouslySetInnerHTML={{ __html: homepageMessageHtml }} />
 
       <section className="liv-rslt" id="live-results">
         <h4>☔ LIVE RESULT ☔</h4>

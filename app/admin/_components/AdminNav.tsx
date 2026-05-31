@@ -11,6 +11,7 @@ export function AdminNav({ session }: Props) {
       <a href="/admin/markets">Markets</a>
       <a href="/admin/results">Outcomes</a>
       <a href="/admin/charts">Charts</a>
+      <a href="/admin/settings">Settings</a>
       {session.role === 'superadmin' ? <a href="/admin/admins">Admins</a> : null}
       <form action="/api/admin/logout" method="post" style={{ display: 'inline' }}>
         <button className="admin-btn secondary" type="submit">

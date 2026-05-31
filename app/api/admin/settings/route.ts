@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { getSupabaseAdmin } from '@/lib/supabase/admin';
 import { ensureAdmin } from '@/lib/admin-api';
+import { HOMEPAGE_MESSAGE_SETTING_KEY } from '@/lib/homepage-message';
+import { sanitizeRichTextHtml } from '@/lib/sanitize-rich-text';
 
 const upsertSchema = z.object({
   setting_key: z.string().min(1),
@@ -37,10 +39,21 @@ export async function PUT(request: Request) {
     return NextResponse.json({ error: parsed.error.message }, { status: 400 });
   }
 
+  let payload = parsed.data;
+  if (parsed.data.setting_key === HOMEPAGE_MESSAGE_SETTING_KEY) {
+    const candidate = parsed.data.setting_value.html;
+    payload = {
+      setting_key: parsed.data.setting_key,
+      setting_value: {
+        html: sanitizeRichTextHtml(typeof candidate === 'string' ? candidate : '')
+      }
+    };
+  }
+
   const supabase = getSupabaseAdmin();
   const { data, error: upsertError } = await supabase
     .from('site_settings')
-    .upsert(parsed.data, { onConflict: 'setting_key' })
+    .upsert(payload, { onConflict: 'setting_key' })
     .select('*')
     .single();
 
