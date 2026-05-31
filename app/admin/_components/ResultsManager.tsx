@@ -3,6 +3,18 @@
 import { useMemo, useState } from 'react';
 import type { Market, MarketResult } from '@/lib/types';
 
+type ResultFormState = {
+  market_id: string;
+  result_date: string;
+  open_panna: string;
+  open_ank: string;
+  close_panna: string;
+  close_ank: string;
+  jodi: string;
+  notes: string;
+  is_live_result: boolean;
+};
+
 interface Props {
   initialResults: MarketResult[];
   markets: Market[];
@@ -12,7 +24,7 @@ export function ResultsManager({ initialResults, markets }: Props) {
   const [results, setResults] = useState(initialResults);
   const [error, setError] = useState('');
   const [editingId, setEditingId] = useState<string | null>(null);
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<ResultFormState>({
     market_id: markets[0]?.id ?? '',
     result_date: new Date().toISOString().slice(0, 10),
     open_panna: '',
@@ -20,7 +32,8 @@ export function ResultsManager({ initialResults, markets }: Props) {
     close_panna: '',
     close_ank: '',
     jodi: '',
-    notes: ''
+    notes: '',
+    is_live_result: false
   });
 
   const marketById = useMemo(() => {
@@ -83,7 +96,7 @@ export function ResultsManager({ initialResults, markets }: Props) {
     await refresh();
   }
 
-  function patchRow(id: string, field: keyof MarketResult, value: string) {
+  function patchRow<K extends keyof MarketResult>(id: string, field: K, value: MarketResult[K]) {
     setResults((prev) => prev.map((row) => (row.id === id ? { ...row, [field]: value } : row)));
   }
 
@@ -146,6 +159,14 @@ export function ResultsManager({ initialResults, markets }: Props) {
             onChange={(event) => setForm((state) => ({ ...state, notes: event.target.value }))}
           />
         </div>
+        <label style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 10, fontWeight: 600 }}>
+          <input
+            type="checkbox"
+            checked={form.is_live_result}
+            onChange={(event) => setForm((state) => ({ ...state, is_live_result: event.target.checked }))}
+          />
+          Live result/upcoming?
+        </label>
         <div style={{ marginTop: 8 }}>
           <button className="admin-btn" type="button" onClick={createOrUpsert}>
             Save Outcome
@@ -164,6 +185,7 @@ export function ResultsManager({ initialResults, markets }: Props) {
               <th>Open</th>
               <th>Close</th>
               <th>Jodi</th>
+              <th>Live?</th>
               <th>Notes</th>
               <th>Actions</th>
             </tr>
@@ -228,6 +250,22 @@ export function ResultsManager({ initialResults, markets }: Props) {
                       <input className="admin-input" value={row.jodi ?? ''} onChange={(event) => patchRow(row.id, 'jodi', event.target.value)} />
                     ) : (
                       row.jodi || '--'
+                    )}
+                  </td>
+                  <td>
+                    {editable ? (
+                      <label style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontWeight: 600 }}>
+                        <input
+                          type="checkbox"
+                          checked={row.is_live_result}
+                          onChange={(event) => patchRow(row.id, 'is_live_result', event.target.checked)}
+                        />
+                        {row.is_live_result ? 'Yes' : 'No'}
+                      </label>
+                    ) : row.is_live_result ? (
+                      'Yes'
+                    ) : (
+                      'No'
                     )}
                   </td>
                   <td>

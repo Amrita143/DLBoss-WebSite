@@ -124,7 +124,9 @@ export default async function HomePage() {
     latest: latestByMarket.get(market.id)
   }));
 
-  const liveRows = sortByResultDate(rows).slice(0, 12);
+  const sortedRows = sortByResultDate(rows);
+  const liveRows = sortedRows.filter((market) => market.latest?.is_live_result);
+  const regularRows = sortedRows.filter((market) => !market.latest?.is_live_result);
 
   return (
     <main className="site-shell dl-home-shell">
@@ -156,8 +158,7 @@ export default async function HomePage() {
         <div className="live-caption">Sabse Tezz Live Result Yahi Milega</div>
         {liveRows.length === 0 ? (
           <div className="lv-mc">
-            <span className="h8">No Active Markets</span>
-            <span className="h9">Add markets and outcomes from Admin</span>
+            <ReloadButton className="reload-btn">Refresh</ReloadButton>
           </div>
         ) : (
           <div className="lv-mc">
@@ -174,14 +175,14 @@ export default async function HomePage() {
 
       <h4 className="flyr24">WORLD ME SABSE FAST SATTA MATKA RESULT</h4>
 
-      {rows.length === 0 ? (
+      {regularRows.length === 0 ? (
         <section className="tkt-val no-market-box">
-          <h4>No active markets available</h4>
-          <p>Create markets and outcomes from /admin to publish live rows on homepage.</p>
+          <h4>No more markets to show here</h4>
+          <p>Unchecked outcomes stay in this section. Checked ones move to LIVE RESULT above.</p>
         </section>
       ) : (
         <section className="tkt-val" id="market-results">
-          {rows.map((market) => (
+          {regularRows.map((market) => (
             <article key={market.id} className={`market-row${market.is_highlighted ? ' market-row-highlighted' : ''}`} style={getHighlightStyle(market)}>
               <h4>{market.name.toUpperCase()}</h4>
               <span>{formatMainResult(market.latest)}</span>

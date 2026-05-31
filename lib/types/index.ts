@@ -54,6 +54,7 @@ export interface MarketResult {
   close_ank: string | null;
   jodi: string | null;
   notes: string | null;
+  is_live_result: boolean;
   created_at: string;
   updated_at: string;
 }

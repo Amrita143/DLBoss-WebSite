@@ -11,7 +11,8 @@ const baseSchema = z.object({
   close_panna: z.string().optional().nullable(),
   close_ank: z.string().optional().nullable(),
   jodi: z.string().optional().nullable(),
-  notes: z.string().optional().nullable()
+  notes: z.string().optional().nullable(),
+  is_live_result: z.boolean().optional()
 });
 
 function normalizeBody(parsed: z.infer<typeof baseSchema>) {
@@ -26,7 +27,8 @@ function normalizeBody(parsed: z.infer<typeof baseSchema>) {
     close_panna: parsed.close_panna?.trim() || null,
     close_ank: closeAnk,
     jodi: parsed.jodi?.trim() || computedJodi,
-    notes: parsed.notes?.trim() || null
+    notes: parsed.notes?.trim() || null,
+    is_live_result: parsed.is_live_result ?? false
   };
 }
 

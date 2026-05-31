@@ -10,7 +10,8 @@ const updateSchema = z.object({
   close_panna: z.string().optional().nullable(),
   close_ank: z.string().optional().nullable(),
   jodi: z.string().optional().nullable(),
-  notes: z.string().optional().nullable()
+  notes: z.string().optional().nullable(),
+  is_live_result: z.boolean().optional()
 });
 
 function normalize(body: z.infer<typeof updateSchema>) {
@@ -23,8 +24,9 @@ function normalize(body: z.infer<typeof updateSchema>) {
     open_ank: body.open_ank === undefined ? undefined : openAnk || null,
     close_panna: body.close_panna === undefined ? undefined : body.close_panna?.trim() || null,
     close_ank: body.close_ank === undefined ? undefined : closeAnk || null,
-    notes: body.notes === undefined ? undefined : body.notes?.trim() || null
-  } as Record<string, string | null | undefined>;
+    notes: body.notes === undefined ? undefined : body.notes?.trim() || null,
+    is_live_result: body.is_live_result
+  } as Record<string, string | boolean | null | undefined>;
 
   if (body.jodi !== undefined) {
     normalized.jodi = body.jodi?.trim() || null;

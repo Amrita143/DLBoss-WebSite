@@ -54,7 +54,8 @@ async function run() {
       close_panna: '470',
       close_ank: '1',
       jodi: '11',
-      notes: 'test'
+      notes: 'test',
+      is_live_result: true
     });
 
     if (resultError) {
@@ -99,6 +100,7 @@ async function run() {
 
     assert(latest, 'Latest outcome missing for created market');
     assert.equal(latest.jodi, '11', 'Latest jodi mismatch for created market');
+    assert.equal(latest.is_live_result, true, 'Live result flag not stored on outcome');
 
     const marketBySlug = await getMarketBySlug(slug);
     assert(marketBySlug, 'Created market not returned by slug lookup');
